@@ -1,0 +1,38 @@
+{
+  "name": "Récits du Désert",
+  "short_name": "Récits du Désert",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0e1226",
+  "theme_color": "#0e1226",
+  "lang": "fr",
+  "dir": "auto",
+  "categories": [
+    "education",
+    "books"
+  ],
+  "description": "Récits des prophètes et des compagnons, le Coran, un parcours d'apprentissage et des quiz. Sans musique, sources citées.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
