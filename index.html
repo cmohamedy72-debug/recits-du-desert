@@ -199,6 +199,29 @@ h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.1;text-wrap:
 .big{width:100%;padding:16px;border-radius:16px;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:1.05rem}
 .big[disabled]{opacity:.4}
 .score{text-align:center;display:grid;gap:10px;padding-block:30px}
+.fbk{border-radius:18px;padding:16px 18px;border:1.5px solid;display:grid;gap:8px}
+.fbk.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%,var(--surface))}
+.fbk.ko{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 9%,var(--surface))}
+.fbk h4{margin:0;font-size:1.25rem;display:flex;align-items:center;gap:10px}
+.fbk.ok h4{color:var(--ok)} .fbk.ko h4{color:var(--bad)}
+.fbk h4 i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-style:normal;font-size:1rem;flex:none}
+.fbk.ok h4 i{background:var(--ok)} .fbk.ko h4 i{background:var(--bad)}
+.fbk small{font-weight:800;letter-spacing:.12em;font-size:.72rem;color:var(--muted)}
+.fbk p{margin:0;color:var(--muted);line-height:1.55}
+.fbk .ans{color:var(--ink);font-weight:600}
+.qstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.qstats div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 6px;text-align:center}
+.qstats b{display:block;font-size:1.5rem}
+.qstats small{color:var(--muted)}
+.review{display:grid;gap:12px;margin-top:18px}
+.review .rv{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;grid-template-columns:34px 1fr;gap:12px}
+.review .rv i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-style:normal;background:var(--ok)}
+.review .rv.ko i{background:var(--bad)}
+.review .rv b{display:block;line-height:1.3}
+.review .rv .ya{color:var(--ok);font-weight:600;margin-top:6px}
+.review .rv.ko .ya{color:var(--bad)}
+.review .rv .ga{color:var(--ok);font-weight:600;margin-top:4px}
+.review .rv p{margin:6px 0 0;color:var(--muted);font-size:.92rem;line-height:1.5}
 .score .n{font-family:var(--f-display);font-size:4.5rem;color:var(--accent);line-height:1}
 
 .dhero{position:relative;min-height:440px;background:var(--night);color:#f4ead6;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
@@ -386,7 +409,13 @@ window.I18N = {
     'Prophète Ibrahim': ['Prophet Ibrahim', 'النبي إبراهيم'], 'Prophète Youssouf': ['Prophet Yusuf', 'النبي يوسف'], 'Prophète Moussa': ['Prophet Musa', 'النبي موسى'], 'Prophète Younous': ['Prophet Yunus', 'النبي يونس'],
     'Prophète Soulayman': ['Prophet Sulayman', 'النبي سليمان'], "Prophète 'Issa": ["Prophet 'Isa", 'النبي عيسى'], 'Prophète Muhammad': ['Prophet Muhammad', 'النبي محمد'],
     'Abou Bakr as-Siddiq': ['Abu Bakr as-Siddiq', 'أبو بكر الصديق'], 'Omar ibn al-Khattab': ['Umar ibn al-Khattab', 'عمر بن الخطاب'], "'Outhman ibn 'Affan": ['Uthman ibn Affan', 'عثمان بن عفان'], "'Ali ibn Abi Talib": ['Ali ibn Abi Talib', 'علي بن أبي طالب'],
-    'Bilal ibn Rabah': ['Bilal ibn Rabah', 'بلال بن رباح'], 'Khadija bint Khouwaylid': ['Khadija bint Khuwaylid', 'خديجة بنت خويلد'], 'Khalid ibn al-Walid': ['Khalid ibn al-Walid', 'خالد بن الوليد'], "Mous'ab ibn 'Oumayr": ["Mus'ab ibn Umayr", 'مصعب بن عمير'], 'Salman al-Farisi': ['Salman al-Farisi', 'سلمان الفارسي']
+    'Bilal ibn Rabah': ['Bilal ibn Rabah', 'بلال بن رباح'], 'Khadija bint Khouwaylid': ['Khadija bint Khuwaylid', 'خديجة بنت خويلد'], 'Khalid ibn al-Walid': ['Khalid ibn al-Walid', 'خالد بن الوليد'], "Mous'ab ibn 'Oumayr": ["Mus'ab ibn Umayr", 'مصعب بن عمير'], 'Salman al-Farisi': ['Salman al-Farisi', 'سلمان الفارسي'],
+    'Les grands imams': ['The great imams', 'الأئمة الأعلام'], 'Imams': ['Imams', 'الأئمة'], 'IMAMS': ['IMAMS', 'الأئمة'],
+    'Les savants et nous': ['The scholars and us', 'العلماء ونحن'], 'Abou Hanifa': ['Abu Hanifa', 'أبو حنيفة'], 'Malik ibn Anas': ['Malik ibn Anas', 'مالك بن أنس'],
+    "Ach-Chafi'i": ["Ash-Shafi'i", 'الشافعي'], 'Ahmad ibn Hanbal': ['Ahmad ibn Hanbal', 'أحمد بن حنبل'], 'Al-Boukhari': ['Al-Bukhari', 'البخاري'],
+    'Bravo, bonne réponse !': ['Well done, correct!', 'أحسنت، إجابة صحيحة!'], 'Pas tout à fait !': ['Not quite!', 'ليس تمامًا!'], 'EXPLICATION': ['EXPLANATION', 'الشرح'],
+    'Correctes': ['Correct', 'صحيحة'], 'Erronées': ['Wrong', 'خاطئة'], 'Temps': ['Time', 'الوقت'], 'Tes réponses': ['Your answers', 'إجاباتك'],
+    "Revois chaque question pour mieux retenir l'essentiel.": ['Review each question to remember what matters.', 'راجع كل سؤال لتحفظ الأهم.']
   },
   patterns: [
     [/^(\d+) min de lecture · (\d+) épisodes$/, ['$1 min read · $2 episodes', '$1 دقيقة قراءة · $2 حلقة']],
@@ -397,6 +426,7 @@ window.I18N = {
     [/^(\d+) min · En cours$/, ['$1 min · In progress', '$1 د · جارية']], [/^(\d+) min · Lu ✓$/, ['$1 min · Read ✓', '$1 د · مقروءة ✓']],
     [/^Faire le quiz · (\d+) questions$/, ['Take the quiz · $1 questions', 'ابدأ الاختبار · $1 أسئلة']], [/^Meilleur score : (.+)$/, ['Best score: $1', 'أفضل نتيجة: $1']],
     [/^La bonne réponse : (.+)$/, ['Correct answer: $1', 'الإجابة الصحيحة: $1']],
+    [/^La bonne réponse était : (.+)$/, ['The correct answer was: $1', 'الإجابة الصحيحة كانت: $1']], [/^Ta réponse : (.+)$/, ['Your answer: $1', 'إجابتك: $1']], [/^Bonne réponse : (.+)$/, ['Correct answer: $1', 'الإجابة الصحيحة: $1']],
     [/^Unité (\d+) · (\d+) étapes$/, ['Unit $1 · $2 steps', 'الوحدة $1 · $2 خطوة']], [/^Unité (\d+) · Lecture$/, ['Unit $1 · Reading', 'الوحدة $1 · قراءة']], [/^Unité (\d+) · (.+)$/, ['Unit $1 · $2', 'الوحدة $1 · $2']],
     [/^Trésor de l'unité (\d+)$/, ['Treasure of unit $1', 'كنز الوحدة $1']], [/^(.+) · ép\. ([\d-]+)$/, ['$1 · ep. $2', '$1 · ح $2']], [/^(.+) · quiz ?(\d*)$/, ['$1 · quiz $2', '$1 · اختبار $2']],
     [/^(\d+) questions sur le récit\.(.*)$/, ['$1 questions about the story.$2', '$1 أسئلة عن القصة.$2']],
@@ -1695,6 +1725,87 @@ S({
   ]
 });
 
+/* Série : l'imam Abou Hanifa an-Nou'man (80-150 H). */
+S({
+  id: 'abuhanifa', cat: 'savants', title: 'Abou Hanifa', ar: 'أَبُو حَنِيفَة النُّعْمَان', honor: 'rh',
+  teaser: "Un marchand de tissus de Koufa, honnête jusqu'à perdre de l'argent, qui devint l'un des plus grands juristes de l'Islam, et qui préféra la prison au poste de juge.",
+  scene: 'palms',
+  chapters: [
+    { t: "Le marchand de Koufa",
+      hook: "Un jeune commerçant passe devant un savant, qui l'arrête : « Toi, tu devrais fréquenter les savants. »",
+      p: [
+        "Koufa, en Irak, vers l'an 80 de l'hégire. Dans cette ville fondée par les compagnons, naît un garçon nommé an-Nou'man, fils de Thabit. On le connaîtra plus tard sous le nom d'Abou Hanifa.",
+        "Sa famille est d'origine perse et vit du commerce. Le jeune an-Nou'man devient marchand de soie et de tissus, comme son père. Il est intelligent, habile en affaires, et il réussit bien.",
+        "Plusieurs historiens rapportent que, dans son enfance, il vit le compagnon Anas ibn Malik, serviteur du Prophète ﷺ, qui vivait encore à Bassora. D'autres savants discutent de ce point. Ce qui est sûr, c'est qu'il a grandi à l'époque des tabi'oun, les élèves des compagnons.",
+        "On rapporte qu'un jour, le grand savant ach-Cha'bi le vit passer et lui demanda chez qui il étudiait. Le jeune homme répondit qu'il allait surtout au marché. Ach-Cha'bi lui dit, selon le sens : « Je vois en toi de l'éveil. Fréquente les savants. »",
+        "Ce conseil changea sa vie. Sans abandonner son commerce, an-Nou'man se mit à chercher la science avec passion.",
+        "Il étudia d'abord la théologie et le débat, puis il comprit que la science la plus utile pour les gens était le fiqh : savoir ce qu'Allah veut de nous dans la prière, le commerce, le mariage, la justice."
+      ] },
+    { t: "Dix-huit ans avec un maître",
+      hook: "Il reste auprès du même maître jusqu'à la mort de celui-ci. Puis on lui demande de prendre sa place.",
+      p: [
+        "À Koufa, le plus grand juriste de l'époque était Hammad ibn Abi Soulayman, élève d'Ibrahim an-Nakha'i, lui-même héritier de la science d'Ibn Mas'oud, le compagnon que le Prophète ﷺ avait envoyé enseigner en Irak.",
+        "Abou Hanifa s'attacha à Hammad et ne le quitta presque plus. Les historiens rapportent qu'il resta avec lui environ dix-huit ans. Il apprenait, posait des questions, écoutait les réponses, notait les raisonnements.",
+        "Quand Hammad mourut, les élèves demandèrent à Abou Hanifa de prendre sa place. Il avait une quarantaine d'années.",
+        "Sa méthode était particulière. Il ne donnait pas simplement une réponse : il discutait les questions avec ses élèves, parfois pendant des jours, en cherchant la preuve dans le Coran, la Sounna et les paroles des compagnons. Quand il n'y avait pas de texte clair, il raisonnait par analogie (qiyas) avec une prudence extrême.",
+        "Il imaginait même des situations qui n'étaient pas encore arrivées, pour préparer les réponses. Ses élèves l'aimaient pour cela : il leur apprenait à réfléchir, pas seulement à répéter.",
+        "Parmi ses élèves, deux deviendront très célèbres : Abou Youssouf, futur grand juge de Bagdad, et Mouhammad ibn al-Hassan ach-Chaybani, qui mettra par écrit une grande partie de la science de son maître."
+      ] },
+    { t: "Un commerce honnête",
+      hook: "Son associé vend un tissu défectueux sans le dire. Abou Hanifa donne en aumône tout l'argent de la vente.",
+      p: [
+        "Abou Hanifa continua toute sa vie à être commerçant. Et il prouva qu'on peut gagner sa vie sans jamais tricher.",
+        "Les historiens rapportent qu'il avait un jour confié à son associé, Hafs ibn 'Abd ar-Rahman, un tissu qui avait un défaut, en lui demandant d'informer l'acheteur. L'associé oublia, et vendit le tissu sans rien dire. L'acheteur était reparti, on ne savait pas qui il était.",
+        "Quand Abou Hanifa l'apprit, il donna en aumône la totalité du prix de toute cette marchandise, pour ne garder aucun argent douteux. (rapporté par al-Khatib dans Tarikh Baghdad et adh-Dhahabi dans Siyar)",
+        "C'est exactement l'enseignement du Prophète ﷺ : « Le vendeur et l'acheteur ont le choix tant qu'ils ne se sont pas séparés. S'ils disent la vérité et expliquent les défauts, leur vente est bénie. S'ils cachent et mentent, la bénédiction de leur vente est effacée. » (al-Boukhari 2079, Mouslim 1532)",
+        "On rapporte aussi qu'il était très généreux. Il aidait ses élèves pauvres à vivre pour qu'ils puissent étudier, et envoyait des cadeaux à ses maîtres.",
+        "Pour toi qui travailles, qui vends ou qui fais du commerce, voilà un modèle : la science et la piété ne se vivent pas seulement à la mosquée, mais aussi au marché."
+      ] },
+    { t: "Le refus d'être juge",
+      hook: "Le gouverneur lui offre le poste le plus prestigieux de la ville. Il répond non, même sous le fouet.",
+      p: [
+        "Un savant aussi respecté intéressait les puissants. Ils voulaient l'utiliser pour donner de la légitimité à leurs décisions.",
+        "Sous les Omeyyades, le gouverneur de l'Irak, Ibn Houbayra, voulut le nommer à une fonction officielle. Abou Hanifa refusa. Les historiens rapportent qu'il fut frappé pour ce refus, mais qu'il ne céda pas.",
+        "Plus tard, sous les Abbassides, le calife al-Mansour voulut lui confier le poste de grand juge. Abou Hanifa refusa encore. Il expliqua, selon le sens, qu'il ne se sentait pas capable d'assumer cette charge comme il le fallait. Il savait aussi qu'un juge du calife serait sous la pression du pouvoir.",
+        "Pourquoi tant de prudence ? Parce que le Prophète ﷺ a mis en garde contre la responsabilité de juger. Il a dit que les juges sont de trois sortes : un au Paradis, et deux en Enfer. Celui qui connaît la vérité et juge avec elle est au Paradis ; celui qui la connaît et juge injustement, ou qui juge par ignorance, est en Enfer. (Abou Dawoud 3573, hadith authentique)",
+        "Al-Mansour le fit emprisonner. Abou Hanifa mourut en l'an 150 de l'hégire, à Bagdad, alors qu'il était en prison ou tout juste sorti, selon les différentes versions des historiens.",
+        "Il avait environ soixante-dix ans. On rapporte que la foule venue prier sur lui était si nombreuse qu'on dut répéter la prière funéraire plusieurs fois."
+      ] },
+    { t: "« Les gens dépendent de lui »",
+      hook: "Un savant qui n'était pas de son école a fait de lui le plus bel éloge.",
+      p: [
+        "Après sa mort, ses élèves ont transmis et mis par écrit sa méthode. C'est ainsi qu'est née l'école hanafite, qui s'est répandue en Irak, en Asie centrale, en Inde, en Turquie et dans une grande partie du monde musulman.",
+        "L'imam ach-Chafi'i, né l'année même de la mort d'Abou Hanifa, n'a jamais été son élève. Pourtant, il a étudié les livres de son élève Mouhammad ibn al-Hassan, et il a dit : « En matière de fiqh, les gens dépendent tous d'Abou Hanifa. » (rapporté par al-Khatib dans Tarikh Baghdad et adh-Dhahabi dans Siyar)",
+        "Abou Hanifa a aussi été critiqué. Certains savants du hadith lui reprochaient de trop utiliser le raisonnement, et de ne pas connaître certains hadiths. C'est vrai que certains hadiths ne lui étaient pas parvenus, car ils n'avaient pas encore été rassemblés dans les grands recueils.",
+        "Mais lui-même avait répondu à cela d'avance. On lui attribue cette parole : « Si un hadith est authentique, c'est lui mon école. » (rapportée par Ibn 'Abidin dans sa Hachiya) Et il disait : « Il n'est permis à personne de prendre notre parole tant qu'il ne sait pas d'où nous l'avons prise. » (Ibn 'Abd al-Barr, al-Intiqa')",
+        "Ses propres élèves, Abou Youssouf et Mouhammad, ont d'ailleurs changé plusieurs de ses avis quand ils ont trouvé des hadiths qu'il ne connaissait pas. Et ils sont restés fidèles à leur maître. C'est ça, le vrai respect.",
+        "Ce que nous retenons d'Abou Hanifa : l'honnêteté au marché, l'intelligence au service de la religion, le refus de vendre sa conscience aux puissants, et l'humilité de dire : suivez la preuve, pas moi."
+      ] }
+  ],
+  sources: [
+    "adh-Dhahabi : Siyar A'lam an-Noubala', biographie d'Abou Hanifa (vol. 6)",
+    "al-Khatib al-Baghdadi : Tarikh Baghdad, biographie d'an-Nou'man ibn Thabit",
+    "Ibn 'Abd al-Barr : al-Intiqa' fi Fada'il al-A'imma ath-Thalatha al-Fouqaha'",
+    "Ibn 'Abidin : Radd al-Mouhtar (Hachiya), introduction",
+    "al-Boukhari 2079 ; Mouslim 1532 (la vente bénie) ; Abou Dawoud 3573 (les trois juges)",
+    "Les récits marqués « on rapporte » viennent des livres d'histoire et de biographie ; certains détails (par exemple la rencontre avec Anas) sont discutés par les savants."
+  ],
+  quiz: [
+    ["Quel était le métier d'Abou Hanifa ?", ["Forgeron", "Marchand de tissus et de soie", "Soldat", "Berger"], 1,
+      "Il était commerçant en tissus à Koufa, et il le resta toute sa vie, tout en enseignant."],
+    ["Combien de temps environ est-il resté auprès de son maître Hammad ?", ["Un mois", "Deux ans", "Environ dix-huit ans", "Toute sa vie, sans jamais enseigner"], 2,
+      "Les historiens rapportent qu'il resta environ dix-huit ans avec Hammad ibn Abi Soulayman, jusqu'à sa mort."],
+    ["Son associé a vendu un tissu défectueux sans le dire. Qu'a fait Abou Hanifa ?", ["Il a gardé l'argent", "Il a donné en aumône tout le prix de la marchandise", "Il a renvoyé l'associé en prison", "Il a baissé le prix de ses autres tissus"], 1,
+      "Il ne voulait garder aucun argent douteux. Le Prophète ﷺ a dit que cacher les défauts efface la bénédiction de la vente (al-Boukhari 2079)."],
+    ["Pourquoi a-t-il refusé d'être grand juge ?", ["Il n'aimait pas Bagdad", "Il craignait la lourde responsabilité de juger et la pression du pouvoir", "Le salaire était trop bas", "Il voulait devenir calife"], 1,
+      "Le Prophète ﷺ a averti que deux juges sur trois vont en Enfer (Abou Dawoud 3573). Abou Hanifa préféra la prison."],
+    ["Qu'a dit ach-Chafi'i au sujet d'Abou Hanifa ?", ["Qu'il ne connaissait rien", "Qu'en fiqh, les gens dépendent tous de lui", "Qu'il fallait brûler ses livres", "Qu'il était son professeur"], 1,
+      "Ach-Chafi'i, d'une autre école, l'a loué ainsi (Tarikh Baghdad). Les imams se respectaient."],
+    ["Tu vends un téléphone d'occasion qui a un petit défaut caché. Que t'apprend l'histoire d'Abou Hanifa ?", ["Ne rien dire si l'acheteur ne demande pas", "Dire le défaut à l'acheteur, même si tu gagnes moins", "Augmenter le prix", "Vendre vite avant qu'il ne voie"], 1,
+      "Dire la vérité sur les défauts rend la vente bénie. Les cacher efface la bénédiction (al-Boukhari 2079, Mouslim 1532)."]
+  ]
+});
+
 /* Version longue, racontée en série : Prophète Adam. */
 S({
   id: 'adam', cat: 'prophetes', title: 'Prophète Adam', ar: 'آدَم', honor: 'as',
@@ -1928,6 +2039,158 @@ S({
     ["Combien d'années Adam a-t-il données à Dawoud ?", ["Dix", "Quarante", "Soixante", "Cent"], 1],
     ["Quel animal a montré au fils d'Adam comment enterrer son frère ?", ["Un chien", "Un corbeau", "Une colombe", "Un loup"], 1],
     ["Que fait Adam au premier ciel en regardant à sa droite ?", ["Il pleure", "Il rit", "Il prie", "Il dort"], 1]
+  ]
+});
+
+/* Série : l'imam Ahmad ibn Hanbal (164-241 H) et l'épreuve du Coran (al-Mihna). */
+S({
+  id: 'ahmad', cat: 'savants', title: 'Ahmad ibn Hanbal', ar: 'أَحْمَد بْن حَنْبَل', honor: 'rh',
+  teaser: "Un calife, une armée de savants de cour et des fouets. En face, un seul homme qui répète : « Donnez-moi une preuve du Livre d'Allah ou de la Sounna. » L'histoire de l'imam qui a protégé la croyance de toute une Oumma.",
+  scene: 'night',
+  chapters: [
+    { t: "Un orphelin de Bagdad",
+      hook: "Sa mère le réveille avant l'aube, lui chauffe l'eau des ablutions, et l'envoie chercher la science.",
+      p: [
+        "Bagdad, en l'an 164 de l'hégire. C'est alors la plus grande ville du monde musulman, la capitale du califat abbasside. Des marchés immenses, des palais, des bibliothèques, des savants venus de partout. C'est là que naît un garçon nommé Ahmad, fils de Mouhammad ibn Hanbal ach-Chaybani.",
+        "Son père meurt alors qu'il est encore tout petit. Il ne le connaîtra presque pas. C'est sa mère qui l'élève seule, avec très peu d'argent : la famille vit d'un petit héritage.",
+        "Les historiens rapportent que sa mère le réveillait avant l'aube, lui préparait l'eau des ablutions, l'habillait chaudement, puis l'accompagnait jusqu'à la mosquée pour qu'il apprenne. Elle attendait que le jour se lève pour le laisser marcher seul dans les rues. Une mère pauvre, veuve, qui avait compris que le plus grand trésor qu'elle pouvait donner à son fils, c'était la science.",
+        "Ahmad apprend le Coran par cœur dans son enfance. Puis, vers l'âge de quinze ou seize ans, il commence à chercher le hadith, les paroles du Prophète ﷺ avec leurs chaînes de transmission.",
+        "Il se fait remarquer très tôt. Pas seulement par son intelligence, mais par son sérieux et sa droiture. Un de ses anciens maîtres a raconté qu'il voyait déjà, chez ce jeune garçon, une piété que les adultes n'avaient pas.",
+        "Personne ne pouvait imaginer, à ce moment-là, que cet orphelin calme et discret deviendrait un jour l'homme qui tiendrait tête, seul, à trois califes successifs."
+      ] },
+    { t: "Les voyages de la science",
+      hook: "Pour entendre quelques hadiths d'un savant du Yémen, il loue ses bras comme porteur sur la route.",
+      p: [
+        "À cette époque, il n'y avait ni livres imprimés ni internet. Pour apprendre un hadith de façon sûre, il fallait l'entendre de la bouche d'un savant qui l'avait lui-même entendu de son maître, et ainsi de suite jusqu'au Prophète ﷺ.",
+        "Alors Ahmad voyage. Koufa, Bassora, La Mecque, Médine, le Yémen, le Cham. Il traverse des déserts, dort dans des mosquées, mange peu. Il fait plusieurs fois le pèlerinage, et plusieurs fois à pied selon les historiens.",
+        "On rapporte qu'en route vers San'a, au Yémen, pour étudier auprès du grand savant 'Abd ar-Razzaq, il n'avait plus d'argent. Plutôt que de demander l'aumône, il travailla comme porteur et comme aide des chameliers pour payer son voyage. Il refusait de prendre l'argent des gens, même quand on lui en offrait.",
+        "Son élève a rapporté qu'on le voyait marcher avec son encrier, même âgé. Quand on lui demanda jusqu'à quand il chercherait la science, on lui attribue cette réponse : « Avec l'encrier, jusqu'à la tombe. »",
+        "Abou Zour'a, un autre grand savant du hadith, a dit qu'Ahmad connaissait par cœur un nombre immense de hadiths avec leurs chaînes. Les chiffres rapportés sont énormes, et ils comptent chaque chaîne différente comme un hadith. Mais tous sont d'accord : sa mémoire était un des prodiges de son époque.",
+        "Parmi ses maîtres, il y eut un jeune savant de Qouraych venu de La Mecque : Mouhammad ibn Idris ach-Chafi'i. Ahmad étudia auprès de lui, et ach-Chafi'i dira plus tard : « J'ai quitté Bagdad, et je n'y ai laissé personne de plus savant en fiqh, de plus pieux, de plus détaché de ce monde et de plus savant qu'Ahmad ibn Hanbal. » (rapporté par al-Khatib dans Tarikh Baghdad)"
+      ] },
+    { t: "Le Mousnad",
+      hook: "Des dizaines de milliers de hadiths, rangés compagnon par compagnon, pour que la Sounna ne se perde pas.",
+      p: [
+        "De tous ces voyages, Ahmad rapporte un trésor. Il le rassemble dans un livre immense : al-Mousnad.",
+        "Dans ce livre, les hadiths ne sont pas rangés par sujets, mais par compagnons. On y trouve d'abord les hadiths rapportés par Abou Bakr, puis par 'Omar, 'Outhman, 'Ali, et ainsi de suite, des centaines de compagnons. Avec les répétitions, le livre contient plus de vingt-cinq mille hadiths selon les éditions.",
+        "Ahmad le dictait à ses fils, notamment 'Abdoullah, qui l'a transmis après lui en y ajoutant quelques hadiths. Le Mousnad est aujourd'hui encore l'une des plus grandes collections de hadiths de l'Islam.",
+        "Attention, pour être honnête : tous les hadiths du Mousnad ne sont pas authentiques. Ahmad y a rassemblé ce qu'il jugeait utile à transmettre, et les savants ont ensuite étudié chaque chaîne. Certains hadiths sont authentiques, d'autres bons, d'autres faibles. C'est pour cela que, dans cette application, chaque hadith est cité avec son recueil et son numéro.",
+        "Ahmad était aussi un juriste, un faqih. Mais il détestait qu'on écrive ses avis personnels comme s'ils étaient la religion. Il préférait qu'on écrive les hadiths et les paroles des compagnons. Il disait, selon le sens : prenez là d'où ils ont pris.",
+        "Bagdad respectait ce savant modeste qui vivait pauvrement, refusait les cadeaux des puissants et passait ses nuits en prière. Mais un orage se préparait au-dessus de la ville. Et il allait éclater dans le palais même du calife."
+      ] },
+    { t: "Une idée venue de la philosophie",
+      hook: "Le calife adopte une croyance nouvelle, et décide de l'imposer à tous les savants.",
+      p: [
+        "Depuis quelques dizaines d'années, un groupe appelé les Mou'tazila répandait des idées venues de la philosophie grecque. Ils voulaient juger les attributs d'Allah avec leur raison, au lieu de les accepter comme Allah les a décrits.",
+        "Une de leurs idées était grave : ils disaient que le Coran est créé. Pour eux, Allah n'avait pas vraiment parlé. Il aurait créé des paroles, comme Il crée un arbre ou une montagne.",
+        "Les savants de la Sounna, eux, disaient ce que disaient les compagnons et leurs élèves : le Coran est la Parole d'Allah, et Sa parole n'est pas créée. Allah dit : « …jusqu'à ce qu'il entende la Parole d'Allah » (9:6). Et Il dit : « C'est à Lui qu'appartiennent la création et le commandement » (7:54). Les savants expliquaient que Son commandement, Sa parole, n'est pas une de Ses créatures. Comment Sa parole « Sois » pourrait-elle être créée, alors que c'est par elle qu'Il crée ?",
+        "Le calife al-Ma'moun, homme cultivé et passionné de philosophie, se laissa convaincre par les Mou'tazila. Et en l'an 218 de l'hégire, il prit une décision terrible : tous les juges et tous les savants devaient déclarer publiquement que le Coran est créé. Ceux qui refusaient perdraient leur poste, seraient emprisonnés, ou pire.",
+        "C'est ce que l'histoire appelle al-Mihna : l'Épreuve.",
+        "Des lettres partirent vers toutes les provinces. On convoqua les savants un par un. Beaucoup, terrifiés, prononcèrent la phrase demandée. Certains en utilisant la permission qu'Allah donne à celui qui est contraint, tant que son cœur reste ferme dans la foi (16:106). Mais deux hommes refusèrent de céder, même en apparence : Mouhammad ibn Nouh, et Ahmad ibn Hanbal."
+      ],
+      ayah: '7:54' },
+    { t: "Les chaînes",
+      hook: "On l'emmène enchaîné vers le calife. Ahmad lève les yeux au ciel et fait une invocation.",
+      p: [
+        "Ahmad et Mouhammad ibn Nouh sont mis aux fers et envoyés vers le calife al-Ma'moun, qui se trouvait alors près de Tarse, à la frontière byzantine. Le calife avait juré, selon les historiens, de les punir sévèrement s'ils refusaient.",
+        "Les historiens rapportent qu'un homme du peuple vint voir Ahmad pendant ce voyage et lui dit, selon le sens : « Tu es aujourd'hui la tête des gens. Si tu réponds ce qu'ils veulent, les gens répondront avec toi, et tu porteras leur péché. Si tu aimes Allah, sois patient. » Ahmad pleurait en entendant ces mots.",
+        "Il savait que sa réponse ne concernait pas que lui. Si le savant le plus respecté de Bagdad disait « le Coran est créé », même sous la menace, des millions de gens simples croiraient que c'est la vérité.",
+        "On rapporte qu'Ahmad invoqua Allah pour ne pas avoir à rencontrer le calife. Et avant que les prisonniers n'arrivent, une nouvelle tomba : al-Ma'moun était mort, en l'an 218, malade, loin de Bagdad.",
+        "Sur le chemin du retour, toujours enchaînés, Mouhammad ibn Nouh tomba malade et mourut. Ahmad lava lui-même son compagnon, pria sur lui et l'enterra. Il restait seul.",
+        "Ramené à Bagdad, il fut jeté en prison. Mais l'Épreuve n'était pas finie : le nouveau calife, al-Mou'tasim, frère d'al-Ma'moun, avait reçu l'ordre de continuer."
+      ],
+      ayah: '16:106' },
+    { t: "« Donnez-moi une preuve »",
+      hook: "Dans le palais, les savants de la cour l'entourent. Ils parlent pendant des heures. Lui répond toujours la même phrase.",
+      p: [
+        "Ahmad passe de longs mois en prison, enchaîné, dans des conditions dures. Puis on l'amène devant al-Mou'tasim, au palais.",
+        "Autour du calife, il y a Ibn Abi Dou'ad, le grand juge, chef des Mou'tazila, et des savants de la cour. Pendant des jours, ils débattent avec Ahmad. Ils lui posent des questions compliquées, sortent des raisonnements de philosophie, essaient de le piéger.",
+        "Ahmad est épuisé, affaibli par la prison. Mais il répond toujours avec la même clarté. Les historiens rapportent qu'il disait, selon le sens : « Donnez-moi quelque chose du Livre d'Allah ou de la Sounna de Son Messager ﷺ, et je dirai ce que vous dites. »",
+        "Ils n'avaient rien. Aucun verset ne dit que le Coran est créé. Aucun hadith. Aucun compagnon ne l'a jamais dit. Ils n'avaient que leurs raisonnements.",
+        "C'est une leçon pour tous les temps. Ahmad ne gagnait pas le débat par des tours de parole. Il ramenait tout à la source : Allah et Son Messager ﷺ. C'est exactement la règle du verset : « Si vous vous disputez sur une chose, ramenez-la à Allah et au Messager. » (4:59)",
+        "Le calife, dit-on, avait de la pitié pour cet homme. Il lui demanda plusieurs fois de dire juste un mot pour être libéré. Ahmad refusa. Alors Ibn Abi Dou'ad et les siens poussèrent le calife à passer à la force."
+      ],
+      ayah: '4:59' },
+    { t: "Les fouets",
+      hook: "Un voleur emprisonné lui donne une leçon de patience la veille du supplice.",
+      p: [
+        "On rapporte que pendant sa détention, un célèbre voleur, Abou al-Haytham, vint lui parler. Il lui dit, selon le sens : « Ô Ahmad, j'ai été fouetté des milliers de fois pour des choses de ce monde, et j'ai tenu bon pour rien. Toi, tu es fouetté pour ta religion : sois patient. » Ahmad se souviendra de ces paroles toute sa vie et priera pour cet homme.",
+        "Puis vint le jour du supplice, pendant le mois de Ramadan, selon les historiens. Ahmad jeûnait. On le fit sortir devant la foule des courtisans. On apporta des fouets. Des bourreaux se relayaient : chacun donnait quelques coups de toutes ses forces, puis laissait la place à un autre.",
+        "Entre les coups, on lui demandait encore : « Dis que le Coran est créé, et tu seras libre. » Il ne disait rien d'autre que la vérité.",
+        "Il perdit connaissance plusieurs fois sous les coups. Les récits de ses fils et de ses proches décrivent son dos ouvert et des blessures qui mirent très longtemps à guérir. Il en garda des traces jusqu'à sa mort.",
+        "Finalement, voyant qu'il ne céderait jamais, et craignant peut-être la colère du peuple de Bagdad qui attendait devant le palais, le calife le fit libérer et ramener chez lui.",
+        "Ahmad n'avait pas d'armée, pas de pouvoir, pas d'argent. Il avait seulement une certitude : la parole d'Allah n'est pas une créature. Et cette certitude fut plus forte que les fouets d'un empire."
+      ] },
+    { t: "Le pardon",
+      hook: "Des années plus tard, on lui demande ce qu'il pense de celui qui l'a fait fouetter.",
+      p: [
+        "Après sa libération, Ahmad soigne lentement ses blessures. Il reprend son enseignement, mais l'Épreuve continue sous le calife suivant, al-Wathiq. On lui interdit d'enseigner et de se montrer en public. Il reste chez lui, discret, pendant des années.",
+        "Puis arrive le calife al-Moutawakkil, en l'an 232. Celui-ci met fin à l'Épreuve et rend aux savants de la Sounna leur liberté. Ahmad est honoré, le calife veut le couvrir de cadeaux.",
+        "Mais Ahmad refuse ces richesses. Il a peur que l'argent des palais ne gâte son cœur, plus encore que les fouets. On rapporte que lorsqu'on lui apportait de l'argent du calife, il le faisait distribuer aux pauvres sans y toucher.",
+        "Et voici peut-être la plus grande leçon de sa vie. On rapporte qu'il dit avoir pardonné à ceux qui l'avaient frappé, et qu'il déclara le calife al-Mou'tasim libéré de toute réclamation de sa part pour ces coups. Il citait le verset : « Qu'ils pardonnent et qu'ils passent l'éponge. N'aimez-vous pas qu'Allah vous pardonne ? » (24:22)",
+        "Il disait, selon le sens : quel bénéfice aurais-je à ce qu'un musulman soit châtié à cause de moi ?",
+        "Celui qui avait refusé de céder sur la croyance ne gardait pas de haine dans son cœur pour les personnes. Ferme sur la vérité, doux envers les gens. C'est l'équilibre des vrais savants."
+      ],
+      ayah: '24:22' },
+    { t: "Un savant qui vivait pauvrement",
+      hook: "Le savant le plus célèbre de Bagdad réparait lui-même ses vêtements.",
+      p: [
+        "Ceux qui entraient chez l'imam Ahmad étaient souvent surpris. Pas de tapis précieux, pas de beaux meubles. Une maison simple, des vêtements usés mais propres, du pain sec, parfois du vinaigre ou du sel.",
+        "Il vivait principalement d'un petit revenu d'une boutique héritée, et parfois de travaux de ses mains. Il préférait la faim à une richesse dont il n'était pas sûr qu'elle soit halal.",
+        "Ses élèves rapportent qu'il était très humble. Il n'aimait pas qu'on écrive ses paroles, il n'aimait pas la célébrité. On lui attribue cette invocation : « Ô Allah, de même que Tu as préservé mon visage de la prosternation devant un autre que Toi, préserve-le de demander à un autre que Toi. »",
+        "Il priait beaucoup la nuit, lisait le Coran, et pleurait souvent en pensant à l'au-delà. Il était aussi connu pour sa douceur avec sa famille, ses voisins et ses élèves.",
+        "Le Prophète ﷺ a dit : « Ce n'est pas l'abondance des biens qui fait la richesse, mais la richesse est celle de l'âme. » (al-Boukhari 6446, Mouslim 1051) L'imam Ahmad était pauvre en argent et immensément riche en cœur."
+      ] },
+    { t: "Le jour des funérailles",
+      hook: "« Dites aux gens de l'innovation : entre nous et vous, il y aura le jour des funérailles. »",
+      p: [
+        "On attribue à l'imam Ahmad une phrase célèbre, adressée à ceux qui défendaient les innovations et avaient le pouvoir de leur côté : « Dites-leur : entre nous et vous, il y aura le jour des funérailles. » (rapportée par adh-Dhahabi dans Siyar A'lam an-Noubala')",
+        "Il voulait dire : vous avez aujourd'hui les palais et les postes. Mais on verra, le jour où chacun mourra, qui les gens aimaient vraiment.",
+        "En l'an 241 de l'hégire, l'imam Ahmad tomba malade. Il avait soixante-dix-sept ans. On rapporte qu'il demandait, sur son lit de mort, qu'on l'aide à faire ses ablutions correctement, entre les doigts, jusqu'à la fin.",
+        "Il mourut un vendredi du mois de Rabi' al-Awwal, à Bagdad. La nouvelle se répandit dans la ville comme le vent.",
+        "Les historiens décrivent une foule immense pour la prière funéraire, une des plus grandes que Bagdad ait connues. Les chiffres rapportés varient et sont énormes, des centaines de milliers de personnes selon les estimations de l'époque. Tous sont d'accord sur une chose : la ville entière était sortie.",
+        "Le savant qui avait été fouetté dans le palais était accompagné vers sa tombe par tout un peuple. Et les noms de ceux qui l'avaient fait frapper sont aujourd'hui presque oubliés."
+      ] },
+    { t: "Ce qu'il nous a laissé",
+      hook: "Douze siècles plus tard, chaque musulman qui dit « le Coran est la Parole d'Allah » marche dans ses pas.",
+      p: [
+        "Grâce à la patience de l'imam Ahmad et des savants qui ont tenu bon avec lui, la croyance des musulmans a été préservée. Aujourd'hui encore, ce que disent les gens de la Sounna est clair : le Coran est la Parole d'Allah, révélée, non créée.",
+        "Des savants ont dit qu'Allah a protégé cette religion par deux hommes à deux moments : par Abou Bakr le jour de l'apostasie des tribus, et par Ahmad ibn Hanbal le jour de l'Épreuve. C'est une parole rapportée par les historiens. On la cite pour montrer à quel point ils ont estimé son rôle, pas pour mettre Ahmad au-dessus des compagnons.",
+        "Mais rappelle-toi aussi ce qu'il nous a enseigné lui-même : ne m'imite pas aveuglément, prends là où j'ai pris. Ce que nous retenons de lui, ce n'est pas un drapeau ou une école contre une autre. Ce sont des leçons.",
+        "Première leçon : revenir toujours au Coran et à la Sounna, comme il le disait au calife : « Donnez-moi une preuve. »",
+        "Deuxième leçon : la vérité ne dépend pas du nombre. Il était presque seul, et il avait raison.",
+        "Troisième leçon : être ferme sur la croyance et doux avec les personnes. Il a supporté les fouets sans céder, puis il a pardonné.",
+        "Et la dernière leçon, peut-être la plus importante pour toi aujourd'hui : un homme sans richesse, sans pouvoir, orphelin, élevé par une mère pauvre, peut devenir une lumière pour des millions de personnes, s'il cherche la science pour Allah et s'il reste patient. Qu'Allah fasse miséricorde à l'imam Ahmad et à sa mère."
+      ],
+      ayah: '39:10' }
+  ],
+  sources: [
+    "adh-Dhahabi : Siyar A'lam an-Noubala', biographie d'Ahmad ibn Hanbal (vol. 11)",
+    "Ibn al-Jawzi : Manaqib al-Imam Ahmad",
+    "al-Khatib al-Baghdadi : Tarikh Baghdad",
+    "Hanbal ibn Ishaq et Salih ibn Ahmad : récits de l'Épreuve (Dhikr Mihnat al-Imam Ahmad), rapportés par les historiens",
+    "Ibn Kathir : al-Bidaya wan-Nihaya, années 218-241",
+    "Coran : 9:6 ; 7:54 ; 16:106 ; 4:59 ; 24:22 ; 39:10",
+    "al-Boukhari 6446 ; Mouslim 1051 (la richesse de l'âme)",
+    "Les récits marqués « on rapporte » viennent des livres d'histoire et de biographie : leurs chaînes ne sont pas toutes vérifiées comme les hadiths."
+  ],
+  quiz: [
+    ["Qui a élevé l'imam Ahmad après la mort de son père ?", ["Son oncle", "Sa mère", "Le calife", "Un riche marchand"], 1,
+      "Son père est mort quand il était petit. Sa mère, veuve et pauvre, l'a élevé et l'a encouragé à chercher la science."],
+    ["Comment Ahmad payait-il ses voyages quand il n'avait plus d'argent ?", ["Il demandait l'aumône", "Il travaillait de ses mains, par exemple comme porteur", "Il empruntait au calife", "Il vendait ses livres"], 1,
+      "On rapporte qu'en route vers le Yémen, il travailla comme porteur plutôt que de prendre l'argent des gens."],
+    ["Comment s'appelle le grand livre de hadiths de l'imam Ahmad ?", ["Al-Mouwatta'", "Sahih al-Boukhari", "Al-Mousnad", "Ar-Risala"], 2,
+      "Al-Mousnad range les hadiths par compagnon. Tous ses hadiths ne sont pas authentiques : les savants les ont étudiés un par un."],
+    ["Que voulait imposer le calife al-Ma'moun pendant l'Épreuve (al-Mihna) ?", ["Que les savants paient un impôt", "Que tous disent que le Coran est créé", "Qu'on prie en persan", "Qu'on arrête le pèlerinage"], 1,
+      "Influencé par les Mou'tazila, il voulait forcer les savants à dire que le Coran est créé. Les gens de la Sounna disent : le Coran est la Parole d'Allah, non créée."],
+    ["Que répondait Ahmad aux savants de la cour ?", ["« Laissez-moi réfléchir dix ans »", "« Donnez-moi une preuve du Livre d'Allah ou de la Sounna »", "« Le calife a toujours raison »", "« Je ne parle pas aux philosophes »"], 1,
+      "Il ramenait tout à la source. Ils n'avaient aucun verset, aucun hadith, aucune parole de compagnon pour dire que le Coran est créé."],
+    ["Après sa libération, qu'a fait Ahmad envers ceux qui l'avaient fait fouetter ?", ["Il a demandé vengeance", "Il les a maudits toute sa vie", "Il a pardonné, en citant le verset 24:22", "Il a quitté l'Islam"], 2,
+      "Ferme sur la croyance, doux envers les personnes : il a pardonné en citant « N'aimez-vous pas qu'Allah vous pardonne ? » (24:22)."],
+    ["Tous tes amis disent une chose fausse sur la religion, et tu es presque le seul à avoir une preuve claire. Que retiens-tu de l'imam Ahmad ?", ["La majorité a toujours raison", "Il faut se taire pour ne pas être seul", "La vérité ne dépend pas du nombre : on reste ferme, avec douceur et preuves", "Il faut se battre avec eux"], 2,
+      "Ahmad était presque seul face à tout un palais, et il avait raison. Mais il est resté doux et a pardonné."],
+    ["Le calife al-Moutawakkil veut couvrir Ahmad de cadeaux. Que fait-il ?", ["Il achète un palais", "Il refuse et fait distribuer l'argent aux pauvres", "Il le garde pour ses élèves", "Il le rend en se fâchant"], 1,
+      "Il craignait que l'argent des palais ne gâte son cœur. Il vivait simplement : la vraie richesse est celle de l'âme (al-Boukhari 6446)."]
   ]
 });
 
@@ -2290,6 +2553,95 @@ S({
     ["Que disait le Prophète ﷺ à Bilal pour l'iqama ?", ["« Dépêche-toi »", "« Réconforte-nous par elle »", "« Parle plus fort »", "« Attends »"], 1],
     ["Où est monté Bilal pour l'adhan le jour de la conquête, selon la Sîra ?", ["Sur le mont Safa", "Sur le toit de la Kaaba", "Sur un minaret", "Sur une colline"], 1],
     ["Qu'a dit Bilal à Abou Bakr pour partir au Cham ?", ["« Je suis fatigué »", "« Si tu m'as acheté pour Allah, laisse-moi travailler pour Allah »", "« Je veux être riche »", "Rien"], 1]
+  ]
+});
+
+/* Série : l'imam al-Boukhari, Mouhammad ibn Isma'il (194-256 H). */
+S({
+  id: 'bukhari', cat: 'savants', title: 'Al-Boukhari', ar: 'مُحَمَّد بْن إِسْمَاعِيل البُخَارِي', honor: 'rh',
+  teaser: "Un enfant aveugle dont la mère ne cessa jamais d'invoquer Allah. Il devint l'homme qui passa seize ans à choisir, parmi des centaines de milliers de chaînes, les hadiths les plus sûrs. Le livre le plus authentique après le Coran.",
+  scene: 'night',
+  chapters: [
+    { t: "Les invocations d'une mère",
+      hook: "Le garçon a perdu la vue. Sa mère ne cesse pas d'invoquer Allah, nuit après nuit.",
+      p: [
+        "Boukhara, en Asie centrale, dans l'actuel Ouzbékistan. En l'an 194 de l'hégire, au mois de Chawwal, naît Mouhammad, fils d'Isma'il. Son père était lui-même un homme de hadith, honnête et pieux. Il meurt alors que son fils est encore petit.",
+        "On rapporte que le père a dit avant de mourir qu'il ne connaissait pas, dans tout son argent, un seul dirham douteux. Son fils grandit donc avec un héritage pur.",
+        "Les biographes rapportent que, dans son enfance, Mouhammad perdit la vue. Sa mère ne perdit pas espoir : elle invoqua Allah avec insistance, longtemps. Une nuit, elle vit en rêve le prophète Ibrahim عليه السلام qui lui dit, selon le sens : « Allah a rendu la vue à ton fils grâce à tes nombreuses invocations. » Le matin, l'enfant voyait. (rapporté par al-Khatib dans Tarikh Baghdad et al-Lalaka'i)",
+        "C'est un récit de biographie, pas un hadith. Mais la leçon est sûre, car elle vient du Coran : « Votre Seigneur dit : Invoquez-Moi, Je vous répondrai. » (40:60)",
+        "Ne sous-estime jamais les invocations d'une mère. Derrière beaucoup de grands savants, il y a une mère qui priait dans le silence de la nuit."
+      ],
+      ayah: '40:60' },
+    { t: "Une mémoire qui étonnait les maîtres",
+      hook: "À onze ans, il corrige une chaîne de transmission devant son maître. Le maître vérifie dans son livre : l'enfant a raison.",
+      p: [
+        "Mouhammad commence à apprendre les hadiths vers l'âge de dix ans, selon ce qu'il a raconté lui-même. Il fréquente les cercles des savants de Boukhara.",
+        "On rapporte qu'un jour, un maître cita une chaîne de transmission avec une erreur dans un nom. L'enfant, d'une dizaine d'années, lui fit remarquer poliment que ce transmetteur ne pouvait pas avoir rapporté de celui-là. Le maître le gronda d'abord, puis alla vérifier dans son livre, et revint : « Le garçon a raison. » (rapporté par al-Khatib dans Tarikh Baghdad)",
+        "À seize ans, il part au pèlerinage avec sa mère et son frère. Sa famille rentre, mais lui reste au Hijaz pour étudier. Commence alors une vie de voyages : La Mecque, Médine, Bassora, Koufa, Bagdad, l'Égypte, le Cham.",
+        "Il étudie auprès de plus de mille maîtres, selon ce qu'il a dit. Parmi eux, l'imam Ahmad ibn Hanbal à Bagdad.",
+        "Il racontait qu'il avait parfois si peu d'argent pendant ses voyages qu'il mangeait des herbes. Mais il ne s'arrêtait pas. La science valait plus que tout le confort du monde."
+      ] },
+    { t: "Le test de Bagdad",
+      hook: "Dix savants préparent un piège : cent hadiths aux chaînes mélangées. Il les écoute tous sans rien dire.",
+      p: [
+        "Sa réputation arrive à Bagdad avant lui. Les savants de la ville décident de le tester.",
+        "Selon le récit rapporté par al-Khatib al-Baghdadi, ils choisissent cent hadiths et mélangent volontairement leurs chaînes : la chaîne de l'un est mise sur le texte d'un autre. Ils répartissent ces cent hadiths entre dix hommes, dix hadiths chacun.",
+        "Dans une grande assemblée, le premier homme se lève et récite ses dix hadiths faussés. À chacun, al-Boukhari répond seulement : « Je ne le connais pas. » Le deuxième fait de même, puis le troisième, jusqu'au dixième. Certains spectateurs pensent qu'il ne sait rien.",
+        "Puis al-Boukhari se tourne vers le premier homme : « Ton premier hadith, tu l'as dit ainsi, et voici sa vraie chaîne. Ton deuxième, voici sa vraie chaîne… » Il rend à chaque texte sa chaîne correcte, pour les cent hadiths, dans l'ordre exact où ils avaient été récités, même avec les erreurs.",
+        "L'assemblée reconnut sa science. Ce récit est très célèbre. Des savants ont discuté certains détails de sa chaîne, mais tous reconnaissent que sa mémoire et sa précision étaient extraordinaires.",
+        "Et cette mémoire n'était pas là pour se faire admirer. Elle était au service d'un but : protéger les paroles du Prophète ﷺ des erreurs et des mensonges."
+      ] },
+    { t: "Seize ans pour un livre",
+      hook: "Avant d'écrire chaque hadith dans son livre, il fait ses grandes ablutions et prie deux unités.",
+      p: [
+        "Un jour, son maître Ishaq ibn Rahawayh dit à ses élèves, selon ce qui est rapporté : « Si seulement vous pouviez rassembler un livre court des hadiths authentiques du Messager d'Allah ﷺ. » (rapporté par Ibn Hajar dans Hady as-Sari)",
+        "Al-Boukhari prit cette parole à cœur. Il décida de faire un livre qui ne contiendrait que des hadiths dont les chaînes répondaient à des conditions très strictes : chaque transmetteur devait être digne de confiance, précis, et avoir réellement rencontré celui dont il rapportait.",
+        "Il travailla sur ce livre pendant seize ans. Il a dit qu'il l'avait choisi parmi six cent mille chaînes qu'il connaissait. (rapporté par al-Khatib dans Tarikh Baghdad)",
+        "Il a dit aussi : « Je n'ai mis aucun hadith dans ce livre sans avoir fait les grandes ablutions avant, et prié deux unités de prière. » (rapporté par al-Khatib)",
+        "Le résultat, c'est al-Jami' as-Sahih, que nous appelons Sahih al-Boukhari. Avec les répétitions, il contient environ sept mille cinq cents hadiths selon la numérotation courante. Sans les répétitions, environ deux mille six cents, selon le compte d'Ibn Hajar.",
+        "Les savants de l'Oumma, pendant des siècles, ont étudié chaque chaîne de ce livre. Leur conclusion est célèbre : c'est le livre le plus authentique après le Livre d'Allah. Ce n'est pas un livre sans aucune critique possible sur aucun mot, mais aucun autre recueil n'a atteint sa rigueur. C'est pour cela que tu vois si souvent « al-Boukhari » suivi d'un numéro dans cette application."
+      ] },
+    { t: "L'épreuve de Nichapour",
+      hook: "La jalousie se lève contre lui, et on l'accuse d'une parole qu'il n'a pas dite.",
+      p: [
+        "Al-Boukhari arriva à Nichapour, une grande ville de science. Les gens l'accueillirent avec une joie immense. Ses cours se remplirent.",
+        "Mais la jalousie et les malentendus s'installèrent. On l'accusa, à tort, de dire que le Coran est créé, cette même croyance contre laquelle l'imam Ahmad avait été fouetté.",
+        "Al-Boukhari répondit clairement, selon ce que rapporte adh-Dhahabi : « Le Coran est la Parole d'Allah, non créée. Les actes des serviteurs sont créés. » Il voulait dire : la Parole d'Allah n'est pas créée, mais notre voix, notre encre, nos gestes quand nous récitons, sont nos actes, et nos actes sont créés.",
+        "Malgré cela, la discorde continua, et il dut quitter Nichapour.",
+        "Il garda pourtant sa langue propre. On rapporte qu'il a dit : « J'espère rencontrer Allah sans qu'Il me demande des comptes pour avoir médit de qui que ce soit. » (rapporté par adh-Dhahabi dans Siyar) Même quand il critiquait un transmetteur faible, il utilisait les mots les plus doux possibles."
+      ] },
+    { t: "« La terre est devenue étroite »",
+      hook: "Le gouverneur veut des cours privés pour ses enfants. Al-Boukhari refuse d'humilier la science.",
+      p: [
+        "Revenu dans sa ville natale, Boukhara, al-Boukhari enseigne. Le gouverneur, Khalid ibn Ahmad adh-Dhouhli, lui demande de venir au palais donner des cours privés à ses enfants, ou de leur réserver des séances fermées aux autres.",
+        "Al-Boukhari refuse. Il répond, selon ce qui est rapporté : « Je n'humilie pas la science, et je ne la porte pas aux portes des gens. Si tu as besoin de quelque chose de la science, viens à ma mosquée ou dans ma maison. »",
+        "Pour lui, la science du hadith appartenait à tous : au fils du gouverneur comme au fils du pauvre, assis côte à côte.",
+        "Le gouverneur se vengea et le fit expulser de Boukhara. Al-Boukhari, âgé, se réfugia dans un petit village près de Samarcande, Khartank.",
+        "On rapporte qu'une nuit, après avoir prié, il fit cette invocation : « Ô Allah, la terre, malgré son immensité, est devenue étroite pour moi : reprends-moi auprès de Toi. »",
+        "Il mourut peu après, la nuit de l'Aïd al-Fitr de l'an 256 de l'hégire, à soixante-deux ans. Il avait été chassé de sa ville. Mais son livre, lui, est entré dans presque chaque maison musulmane du monde.",
+        "Ce que nous retenons : la force des invocations d'une mère, la rigueur pour protéger la parole du Prophète ﷺ, la langue propre même avec ceux qui nous font du tort, et la dignité de la science qu'on ne vend pas aux puissants. Qu'Allah fasse miséricorde à l'imam al-Boukhari."
+      ] }
+  ],
+  sources: [
+    "Ibn Hajar al-'Asqalani : Hady as-Sari (introduction de Fath al-Bari)",
+    "al-Khatib al-Baghdadi : Tarikh Baghdad, biographie de Mouhammad ibn Isma'il",
+    "adh-Dhahabi : Siyar A'lam an-Noubala', biographie d'al-Boukhari (vol. 12)",
+    "Coran : 40:60",
+    "Les récits marqués « on rapporte » viennent des livres de biographie ; certains détails (le rêve de sa mère, le test de Bagdad) sont rapportés par les historiens et discutés par quelques savants quant à leurs chaînes."
+  ],
+  quiz: [
+    ["Qu'est-il arrivé à al-Boukhari quand il était enfant, selon les biographes ?", ["Il est devenu roi", "Il a perdu la vue, puis l'a retrouvée après les invocations de sa mère", "Il a été enlevé", "Il a quitté l'Islam"], 1,
+      "C'est un récit de biographie (Tarikh Baghdad). La leçon vient du Coran : « Invoquez-Moi, Je vous répondrai » (40:60)."],
+    ["Dans le test de Bagdad, qu'avaient fait les savants ?", ["Ils lui avaient caché ses livres", "Ils avaient mélangé les chaînes de cent hadiths", "Ils lui avaient demandé de réciter le Coran à l'envers", "Ils l'avaient enfermé"], 1,
+      "Il a rendu à chaque texte sa vraie chaîne, dans l'ordre où ils avaient été récités (rapporté par al-Khatib)."],
+    ["Combien d'années al-Boukhari a-t-il travaillé sur son Sahih ?", ["Une semaine", "Seize ans", "Cent ans", "Deux mois"], 1,
+      "Seize ans, en choisissant parmi des centaines de milliers de chaînes, avec des conditions très strictes."],
+    ["Que faisait-il avant d'écrire chaque hadith dans son livre, selon ce qu'il a dit ?", ["Il buvait du thé", "Il faisait les grandes ablutions et priait deux unités", "Il demandait la permission au calife", "Il comptait jusqu'à cent"], 1,
+      "Il a dit n'avoir mis aucun hadith sans avoir fait le ghousl et prié deux rak'a (rapporté par al-Khatib)."],
+    ["Que répondit al-Boukhari quand on l'accusa de dire que le Coran est créé ?", ["« Oui, il est créé »", "« Le Coran est la Parole d'Allah, non créée ; les actes des serviteurs sont créés »", "« Je ne sais pas »", "Il ne répondit rien"], 1,
+      "Comme l'imam Ahmad, il affirmait que le Coran est la Parole d'Allah, non créée."],
+    ["Un riche veut que tu enseignes le Coran seulement à ses enfants, et que tu renvoies les enfants pauvres. Que t'apprend al-Boukhari ?", ["Accepter, c'est bien payé", "La science appartient à tous : on ne l'humilie pas aux portes des puissants", "Enseigner seulement aux pauvres", "Arrêter d'enseigner"], 1,
+      "Il a refusé les cours privés du gouverneur : « Je n'humilie pas la science. » Il a préféré l'exil."]
   ]
 });
 
@@ -2853,6 +3205,86 @@ S({
     ["Sur quoi Ibrahim se tenait-il pour construire la Kaaba ?", ["Une échelle", "Une pierre : le Maqam Ibrahim", "Un chameau", "Le mont Safa"], 1],
     ["Quel titre Allah a-t-Il donné à Ibrahim ?", ["Al-Khalil, l'ami intime", "As-Siddiq", "Kalimoullah", "Al-Amin"], 0],
     ["Qui sera le premier vêtu le Jour de la Résurrection ?", ["Adam", "Moussa", "Ibrahim", "Nouh"], 2]
+  ]
+});
+
+/* Série : Les savants et nous — pourquoi on aime les imams, et pourquoi on ne suit que la preuve. */
+S({
+  id: 'imams', cat: 'savants', title: 'Les savants et nous', ar: 'العُلَمَاءُ وَرَثَةُ الأَنْبِيَاء',
+  teaser: "On les aime, on prie pour eux, on apprend d'eux. Mais eux-mêmes nous ont dit : « Ne nous suivez pas aveuglément. » Avant de raconter leur vie, écoute ce qu'ils voulaient pour toi.",
+  scene: 'night',
+  chapters: [
+    { t: "Les héritiers des prophètes",
+      hook: "Les prophètes n'ont laissé ni or ni argent. Alors qu'ont-ils laissé ?",
+      p: [
+        "Quand un roi meurt, ses enfants héritent de son palais, de ses terres, de son trésor. Mais quand un prophète quitte ce monde, que laisse-t-il derrière lui ?",
+        "Le Prophète ﷺ a répondu à cette question : « Les savants sont les héritiers des prophètes. Les prophètes n'ont laissé en héritage ni dinar ni dirham : ils ont laissé la science. Celui qui la prend a pris une part abondante. » (Abou Dawoud 3641, Tirmidhi 2682, hadith jugé hassan par plusieurs savants grâce à ses différentes chaînes)",
+        "L'héritage des prophètes, c'est donc la science : connaître Allah, Son Livre, et la Sounna de Son Messager ﷺ. Et ceux qui portent cet héritage, génération après génération, ce sont les savants.",
+        "Allah les honore dans le Coran : « Allah élèvera en degrés ceux d'entre vous qui ont cru et ceux qui ont reçu la science. » (58:11) Et Il dit aussi : « Parmi Ses serviteurs, seuls les savants craignent vraiment Allah. » (35:28)",
+        "Sans eux, nous n'aurions ni le Coran bien récité, ni les hadiths vérifiés, ni les règles de la prière, du jeûne et du commerce. Chaque fois que tu fais tes ablutions correctement, tu profites du travail de centaines de savants qui ont transmis ce savoir avec soin pendant quatorze siècles.",
+        "Dans cette nouvelle partie de l'application, nous allons raconter la vie de quelques-uns des plus grands : Abou Hanifa, Malik, ach-Chafi'i, Ahmad ibn Hanbal et al-Boukhari. Qu'Allah leur fasse miséricorde.",
+        "Mais avant de commencer, il faut poser une règle très importante. Une règle que ces imams eux-mêmes ont posée. Sans elle, l'amour des savants peut devenir un piège."
+      ],
+      ayah: '58:11' },
+    { t: "Ils peuvent se tromper",
+      hook: "Un savant qui se trompe peut quand même recevoir une récompense. Comment est-ce possible ?",
+      p: [
+        "Un seul être humain ne se trompait jamais dans ce qu'il transmettait de la religion : le Messager d'Allah ﷺ. Allah dit de lui : « Il ne parle pas sous l'effet de la passion. Ce n'est qu'une révélation qui lui est inspirée. » (53:3-4)",
+        "Tous les autres, même les plus grands savants, sont des êtres humains. Ils cherchent la vérité avec sincérité, ils travaillent dur, mais parfois ils se trompent. Parfois un hadith ne leur est pas parvenu. Parfois ils l'ont compris autrement.",
+        "Le Prophète ﷺ a dit : « Quand le juge fait un effort pour juger et qu'il atteint la vérité, il a deux récompenses. Et s'il fait un effort et se trompe, il a une récompense. » (al-Boukhari 7352, Mouslim 1716)",
+        "Regarde la justice d'Allah. Le savant sincère qui s'est trompé n'est pas puni : il est même récompensé pour son effort. Donc nous ne l'insultons pas, nous ne le méprisons pas, nous prions pour lui.",
+        "Mais attention : la récompense est pour lui, pas pour nous. Si nous savons qu'un avis est contraire à un verset clair ou à un hadith authentique, nous n'avons pas le droit de le suivre en disant : « C'est mon imam qui l'a dit. »",
+        "Allah nous donne la méthode : « Si vous vous disputez sur une chose, ramenez-la à Allah et au Messager, si vous croyez en Allah et au Jour dernier. » (4:59) Il n'a pas dit : ramenez-la à tel savant ou à tel groupe.",
+        "Voilà l'équilibre : on aime les savants, on apprend d'eux, on respecte leurs efforts. Et on place au-dessus de tout la parole d'Allah et celle de Son Messager ﷺ."
+      ],
+      ayah: '4:59' },
+    { t: "Ce qu'ils ont dit d'eux-mêmes",
+      hook: "Les quatre imams ont laissé, chacun, une phrase pour ceux qui viendraient après eux.",
+      p: [
+        "Ce qui est beau, c'est que cette règle ne vient pas de nous. Elle vient des imams eux-mêmes. Chacun d'eux a mis en garde ses élèves contre le fait de le suivre aveuglément.",
+        "L'imam Abou Hanifa a dit : « Il n'est permis à personne de prendre notre parole tant qu'il ne sait pas d'où nous l'avons prise. » (rapporté par Ibn 'Abd al-Barr dans al-Intiqa')",
+        "L'imam Malik a dit : « Je ne suis qu'un être humain : je me trompe et j'ai raison. Regardez donc mon avis : tout ce qui est conforme au Livre et à la Sounna, prenez-le, et tout ce qui ne l'est pas, laissez-le. » (rapporté par Ibn 'Abd al-Barr dans Jami' Bayan al-'Ilm) On lui attribue aussi cette phrase célèbre, en montrant la tombe du Prophète ﷺ : « La parole de chacun peut être prise ou rejetée, sauf celle de l'homme de cette tombe. »",
+        "L'imam ach-Chafi'i a dit : « Si un hadith est authentique, c'est lui mon école. » (rapporté par an-Nawawi dans l'introduction d'al-Majmou') Et il a dit aussi : si vous trouvez dans mon livre une chose contraire à la Sounna du Messager d'Allah ﷺ, prenez la Sounna et laissez ce que j'ai dit.",
+        "L'imam Ahmad a dit : « Ne m'imite pas aveuglément, n'imite pas Malik, ni ach-Chafi'i, ni al-Awza'i, ni ath-Thawri : prends là où ils ont pris. » (rapporté par Ibn al-Qayyim dans I'lam al-Mouwaqqi'in)",
+        "Quatre imams, quatre pays, quatre époques, et le même message : nous ne sommes pas la source. La source, c'est le Coran et la Sounna.",
+        "Celui qui aime vraiment ces imams obéit donc à leur conseil. Il apprend avec eux, il suit leurs preuves. Et si une preuve claire montre une erreur, il laisse l'erreur, en continuant à les aimer et à prier pour eux. C'est exactement ce qu'ils voulaient."
+      ] },
+    { t: "Le piège du fanatisme",
+      hook: "Un compagnon chrétien devenu musulman entend un verset et dit : « Mais nous ne les adorions pas ! »",
+      p: [
+        "'Adi ibn Hatim était chrétien avant de devenir musulman. Un jour, il entendit le Prophète ﷺ réciter ce verset sur les gens du Livre : « Ils ont pris leurs rabbins et leurs moines comme seigneurs en dehors d'Allah. » (9:31)",
+        "'Adi s'étonna : « Mais nous ne les adorions pas ! » Le Prophète ﷺ expliqua, selon le sens : quand ils vous rendaient licite ce qu'Allah avait interdit, vous le considériez licite, et quand ils interdisaient ce qu'Allah avait permis, vous l'interdisiez. Voilà en quoi consistait cette adoration. (Tirmidhi 3095, hadith jugé hassan par al-Albani)",
+        "Le danger est donc là : obéir à un homme contre la parole claire d'Allah, simplement parce que c'est notre savant, notre groupe, notre cheikh. C'est ce qu'on appelle le fanatisme, at-ta'assoub.",
+        "Le fanatique défend son imam même quand il a tort. Il méprise les autres savants. Il divise les musulmans en équipes, comme des supporters. Les imams eux-mêmes n'ont jamais fait cela.",
+        "Ach-Chafi'i, qui n'était pas de l'école d'Abou Hanifa, a dit : « En matière de fiqh, les gens dépendent tous d'Abou Hanifa. » (rapporté par al-Khatib al-Baghdadi dans Tarikh Baghdad) L'imam Ahmad, qui a étudié auprès d'ach-Chafi'i, priait pour lui pendant des dizaines d'années. Ach-Chafi'i, lui, a été l'élève de Malik. Ils se respectaient et se corrigeaient avec amour.",
+        "Alors, dans les récits qui vont suivre, nous ne racontons pas la vie de « nos » imams contre ceux des autres. Nous racontons la vie de serviteurs d'Allah qui ont tout donné pour transmettre Sa religion. On prend leur exemple, leur patience, leur sincérité, et on garde au-dessus de tout le Livre d'Allah et la Sounna de Son Messager ﷺ.",
+        "Qu'Allah leur fasse miséricorde, et qu'Il nous rassemble avec eux au Paradis, derrière le Messager d'Allah ﷺ."
+      ],
+      ayah: '9:31' }
+  ],
+  sources: [
+    "Coran : 58:11 ; 35:28 ; 53:3-4 ; 4:59 ; 9:31",
+    "Abou Dawoud 3641 ; Tirmidhi 2682 (les savants héritiers des prophètes)",
+    "al-Boukhari 7352 ; Mouslim 1716 (deux récompenses, une récompense)",
+    "Tirmidhi 3095, jugé hassan par al-Albani ('Adi ibn Hatim et le verset 9:31)",
+    "Ibn 'Abd al-Barr : al-Intiqa' ; Jami' Bayan al-'Ilm wa Fadlih (paroles d'Abou Hanifa et de Malik)",
+    "an-Nawawi : al-Majmou', introduction (parole d'ach-Chafi'i)",
+    "Ibn al-Qayyim : I'lam al-Mouwaqqi'in (parole d'Ahmad)",
+    "al-Khatib al-Baghdadi : Tarikh Baghdad (parole d'ach-Chafi'i sur Abou Hanifa)"
+  ],
+  quiz: [
+    ["Selon le hadith, qu'ont laissé les prophètes en héritage ?", ["De l'or et de l'argent", "La science", "Des palais", "Des armées"], 1,
+      "Le Prophète ﷺ a dit que les prophètes n'ont laissé ni dinar ni dirham, mais la science. Les savants sont leurs héritiers (Abou Dawoud 3641)."],
+    ["Un savant sincère fait un effort et se trompe. Que dit le hadith ?", ["Il est puni", "Il a une récompense", "Il doit arrêter d'enseigner", "Son erreur devient vraie"], 1,
+      "Celui qui fait un effort et se trompe a une récompense, celui qui a raison en a deux (al-Boukhari 7352, Mouslim 1716). On ne le méprise pas, mais on ne suit pas son erreur."],
+    ["Quand les musulmans ne sont pas d'accord, à quoi Allah leur dit-Il de revenir ?", ["À l'avis de la majorité", "À leur cheikh préféré", "À Allah et au Messager", "À la tradition du pays"], 2,
+      "« Si vous vous disputez sur une chose, ramenez-la à Allah et au Messager » (4:59)."],
+    ["Quelle phrase est celle de l'imam ach-Chafi'i ?", ["« Si un hadith est authentique, c'est lui mon école »", "« Suivez-moi sans poser de question »", "« Mon école est la seule vraie »", "« Ne lisez pas les hadiths »"], 0,
+      "Ach-Chafi'i a dit : « Si un hadith est authentique, c'est lui mon école » (rapporté par an-Nawawi). Les quatre imams ont dit des paroles semblables."],
+    ["Qu'a expliqué le Prophète ﷺ à 'Adi ibn Hatim au sujet du verset 9:31 ?", ["Qu'ils se prosternaient devant leurs rabbins", "Qu'ils acceptaient ce que leurs rabbins rendaient licite ou illicite contre Allah", "Qu'ils donnaient de l'argent à leurs moines", "Qu'ils lisaient trop de livres"], 1,
+      "Obéir à quelqu'un qui rend licite ce qu'Allah a interdit, ou l'inverse, c'est le prendre comme « seigneur » (Tirmidhi 3095)."],
+    ["Ton ami dit : « Mon imam a toujours raison, les autres savants sont nuls. » Que réponds-tu ?", ["Tu es d'accord pour ne pas le vexer", "Tu lui rappelles que les imams eux-mêmes ont dit de suivre la preuve, et qu'ils se respectaient entre eux", "Tu insultes son imam", "Tu changes de sujet"], 1,
+      "Le fanatisme divise les musulmans. Ach-Chafi'i louait Abou Hanifa, Ahmad priait pour ach-Chafi'i. On les aime tous et on suit la preuve, avec douceur."]
   ]
 });
 
@@ -3512,6 +3944,97 @@ S({
     ["Qui devint commandant à la place de Khalid au Cham ?", ["'Amr ibn al-'As", "Abou 'Oubayda ibn al-Jarrah", "Sa'd ibn Abi Waqqas", "Mou'awiya"], 1],
     ["Pourquoi Omar a-t-il retiré le commandement à Khalid, selon les historiens ?", ["Par colère", "Pour que les gens sachent que la victoire vient d'Allah", "Pour trahison", "Il était malade"], 1],
     ["Que promet le hadith à celui qui demande sincèrement le martyre ?", ["Rien", "Il atteint le rang des martyrs même s'il meurt dans son lit", "Il ne mourra jamais", "Il sera riche"], 1]
+  ]
+});
+
+/* Série : l'imam Malik ibn Anas (93-179 H), l'imam de Médine. */
+S({
+  id: 'malik', cat: 'savants', title: 'Malik ibn Anas', ar: 'مَالِك بْن أَنَس', honor: 'rh',
+  teaser: "L'imam de la ville du Prophète ﷺ. Un homme qui n'osait pas répondre sans être sûr, qui disait souvent « je ne sais pas », et qui refusa qu'on impose son livre au monde entier.",
+  scene: 'mecca',
+  chapters: [
+    { t: "« Apprends son comportement avant sa science »",
+      hook: "Une mère habille son fils, lui pose un turban sur la tête, et lui donne un conseil qu'il n'oubliera jamais.",
+      p: [
+        "Médine, la ville du Prophète ﷺ, vers l'an 93 de l'hégire. Les compagnons ont presque tous disparu, mais leurs élèves sont encore là, dans les ruelles et dans la mosquée du Prophète ﷺ. C'est là que naît Malik, fils d'Anas, d'une famille d'origine yéménite installée à Médine.",
+        "Sa famille aime la science. Son grand-père avait rapporté des hadiths de 'Omar et d'autres compagnons.",
+        "Les biographes rapportent une scène touchante. Quand le jeune Malik voulut aller étudier, sa mère l'habilla de beaux vêtements, lui mit un turban, et lui dit, selon le sens : « Va chez Rabi'a, et apprends son comportement avant sa science. » (rapporté par le Qadi 'Iyad dans Tartib al-Madarik)",
+        "Rabi'a était un grand savant de Médine. La mère de Malik avait compris quelque chose de profond : la science sans bon comportement peut rendre arrogant. Il faut d'abord apprendre le respect, la patience, l'humilité.",
+        "Malik passa sa jeunesse à étudier. Il s'attacha notamment à Nafi', l'affranchi du compagnon 'Abdoullah ibn 'Omar, qui lui transmit les hadiths de son maître. Il étudia aussi auprès d'Ibn Chihab az-Zouhri, l'un des plus grands savants du hadith de son temps.",
+        "On rapporte qu'il attendait parfois des heures devant la porte de ses maîtres, sous le soleil, sans oser frapper, pour ne pas les déranger."
+      ] },
+    { t: "Soixante-dix témoins",
+      hook: "Il ne s'est pas proclamé savant. Il a attendu que d'autres le reconnaissent.",
+      p: [
+        "Aujourd'hui, n'importe qui peut ouvrir un compte sur les réseaux et donner des fatwas. Écoute ce que faisait l'imam Malik.",
+        "On rapporte qu'il a dit : « Je n'ai pas donné de fatwa avant que soixante-dix savants ne témoignent que j'en étais capable. » (rapporté par Abou Nou'aym dans Hilyat al-Awliya')",
+        "Même devenu imam, il avait peur de se tromper sur la religion d'Allah. On rapporte qu'un homme vint de très loin, de l'Occident musulman, avec une longue liste de questions. Malik répondit à quelques-unes, et pour la plupart des autres il dit : « Je ne sais pas. »",
+        "L'homme s'étonna : « J'ai voyagé des mois pour venir te voir, et tu me dis « je ne sais pas » ? » Malik lui répondit, selon le sens : « Retourne dans ton pays et dis-leur : Malik a dit qu'il ne savait pas. » (rapporté par Ibn 'Abd al-Barr et le Qadi 'Iyad)",
+        "Dire « je ne sais pas » n'est pas une honte : c'est une partie de la science. Allah dit : « Ne poursuis pas ce dont tu n'as aucune connaissance. » (17:36)",
+        "Si un aussi grand imam disait « je ne sais pas », qu'en est-il de nous, qui parlons parfois de la religion sans rien vérifier ?"
+      ],
+      ayah: '17:36' },
+    { t: "Le respect du hadith",
+      hook: "Un scorpion le pique plusieurs fois pendant qu'il raconte des hadiths. Il ne s'arrête pas.",
+      p: [
+        "Malik enseignait dans la mosquée du Prophète ﷺ, puis chez lui. Ses cours étaient calmes, sérieux, pleins de respect.",
+        "Les biographes rapportent que, lorsqu'il allait enseigner le hadith, il faisait ses grandes ablutions, mettait ses meilleurs vêtements, se parfumait, et s'asseyait avec calme et dignité. On lui demanda pourquoi. Il répondit, selon le sens : « J'honore ainsi le hadith du Messager d'Allah ﷺ. »",
+        "On rapporte aussi, d'après 'Abdoullah ibn al-Moubarak, qu'un jour un scorpion le piqua plusieurs fois pendant qu'il racontait des hadiths. Son visage pâlissait, mais il ne coupa pas la parole du Prophète ﷺ. À la fin, quand on lui demanda, il dit : « Je l'ai supporté par respect pour le hadith du Messager d'Allah ﷺ. »",
+        "On rapporte enfin qu'il ne montait pas à cheval dans Médine, par respect pour une terre où le Prophète ﷺ avait marché. Ces récits viennent des livres de biographie : ils montrent comment ses contemporains voyaient son amour pour le Prophète ﷺ.",
+        "Malik n'acceptait pas de hadith de n'importe qui. Il vérifiait les transmetteurs avec une grande rigueur, et refusait de rapporter de gens pieux mais peu précis. Pour lui, la piété ne suffisait pas : il fallait aussi la précision."
+      ] },
+    { t: "Al-Mouwatta'",
+      hook: "Le calife veut faire de son livre la loi de tout l'empire. Malik refuse.",
+      p: [
+        "Malik rassembla les hadiths, les paroles des compagnons et la pratique des gens de Médine dans un livre : al-Mouwatta', « le chemin aplani ». C'est l'un des premiers grands livres de hadith et de fiqh de l'Islam.",
+        "Il y travailla pendant des années, revoyant et retirant de nombreux textes pour ne garder que ce qu'il jugeait solide. Ach-Chafi'i a dit plus tard, selon ce qui est rapporté, qu'après le Livre d'Allah, il ne connaissait pas sur terre de livre plus authentique que le Mouwatta' de Malik. C'était avant que les Sahih d'al-Boukhari et de Mouslim n'existent.",
+        "Les historiens rapportent que le calife abbasside voulut faire du Mouwatta' le livre officiel, et obliger tous les juges de l'empire à le suivre. Pour un auteur, c'était une gloire immense.",
+        "Malik refusa. Il expliqua, selon le sens : « Les compagnons du Messager d'Allah ﷺ se sont dispersés dans les pays. Chacun a transmis la science qu'il avait. Les gens de chaque région ont suivi ce qui leur est parvenu. Laisse les gens avec ce qu'ils ont. » (rapporté par Ibn Sa'd et adh-Dhahabi)",
+        "Quelle humilité ! Il aurait pu imposer son avis au monde entier. Il a préféré reconnaître que d'autres savants, ailleurs, avaient aussi reçu une part de la science des compagnons.",
+        "C'est cet esprit que nous voulons garder : aimer la science de notre imam, sans croire qu'elle est la seule."
+      ] },
+    { t: "Frappé pour une fatwa",
+      hook: "Le gouverneur de Médine le fait fouetter. Malik ne change pas sa réponse.",
+      p: [
+        "Comme Abou Hanifa et Ahmad, Malik connut lui aussi l'épreuve du pouvoir.",
+        "En l'an 147 de l'hégire, le gouverneur de Médine, Ja'far ibn Soulayman, le fit fouetter. Selon les historiens, c'était à cause d'une fatwa : Malik enseignait que le divorce prononcé sous la contrainte ne compte pas. Or certains utilisaient des serments forcés de divorce pour obliger les gens à prêter allégeance aux gouvernants. La fatwa de Malik dérangeait. (rapporté par adh-Dhahabi dans Siyar)",
+        "Il fut frappé et blessé à l'épaule. On rapporte qu'après cela, il ne pouvait plus lever correctement le bras.",
+        "Mais Malik ne changea pas sa fatwa. Et après l'épreuve, les gens de Médine l'aimèrent et le respectèrent encore plus. On rapporte qu'il pardonna à celui qui l'avait frappé.",
+        "Il continua à enseigner jusqu'à sa vieillesse. Il mourut à Médine en l'an 179 de l'hégire, à environ quatre-vingt-cinq ans, et fut enterré au cimetière d'al-Baqi', près de nombreux compagnons."
+      ] },
+    { t: "« Sauf l'homme de cette tombe »",
+      hook: "Il montre du doigt la tombe du Prophète ﷺ et prononce une phrase qui traverse les siècles.",
+      p: [
+        "On attribue à l'imam Malik une phrase devenue célèbre. Assis dans la mosquée du Prophète ﷺ, il aurait montré la tombe du Messager d'Allah ﷺ et dit : « La parole de chacun peut être prise ou rejetée, sauf celle de l'homme de cette tombe. »",
+        "Des savants rapportent cette idée aussi de compagnons et de tabi'oun avant lui, comme Ibn 'Abbas et Moujahid. Ce qui compte, c'est que Malik l'a enseignée et vécue.",
+        "Il a dit aussi, de façon rapportée par Ibn 'Abd al-Barr : « Je ne suis qu'un être humain : je me trompe et j'ai raison. Regardez mon avis : ce qui est conforme au Livre et à la Sounna, prenez-le ; ce qui ne l'est pas, laissez-le. »",
+        "L'école malikite s'est répandue au Maghreb, en Afrique de l'Ouest, en Andalousie, en Égypte. En Mauritanie, au Sénégal, au Mali, des générations ont appris le Coran et le fiqh de Malik sous les tentes et dans les mahadras du désert.",
+        "Mais la vraie fidélité à Malik, ce n'est pas de défendre chacune de ses opinions contre une preuve claire. C'est d'apprendre de lui : la politesse avant la science, le courage de dire « je ne sais pas », le respect immense du hadith, et l'humilité de ne pas imposer son livre au monde.",
+        "Le Prophète ﷺ a dit : « Celui à qui Allah veut du bien, Il lui donne la compréhension de la religion. » (al-Boukhari 71, Mouslim 1037) Qu'Allah fasse miséricorde à l'imam de Médine."
+      ] }
+  ],
+  sources: [
+    "adh-Dhahabi : Siyar A'lam an-Noubala', biographie de Malik (vol. 8)",
+    "al-Qadi 'Iyad : Tartib al-Madarik",
+    "Abou Nou'aym : Hilyat al-Awliya'",
+    "Ibn 'Abd al-Barr : Jami' Bayan al-'Ilm wa Fadlih ; al-Intiqa'",
+    "Ibn Sa'd : at-Tabaqat (le refus d'imposer le Mouwatta')",
+    "Coran : 17:36 ; al-Boukhari 71 ; Mouslim 1037",
+    "Les récits marqués « on rapporte » viennent des livres de biographie ; leurs chaînes ne sont pas toutes vérifiées comme les hadiths."
+  ],
+  quiz: [
+    ["Quel conseil la mère de Malik lui a-t-elle donné ?", ["« Deviens riche d'abord »", "« Apprends son comportement avant sa science »", "« Ne pose jamais de question »", "« Quitte Médine »"], 1,
+      "Elle l'envoya chez Rabi'a en lui disant d'apprendre d'abord son adab (Tartib al-Madarik). La science sans bon comportement rend arrogant."],
+    ["Selon ce qui est rapporté, combien de savants ont témoigné avant que Malik donne des fatwas ?", ["Un seul", "Dix", "Soixante-dix", "Aucun"], 2,
+      "Il a dit ne pas avoir donné de fatwa avant que soixante-dix savants ne témoignent de sa capacité (Hilyat al-Awliya')."],
+    ["Un homme vient de loin avec beaucoup de questions. Que répond souvent Malik ?", ["Il invente des réponses pour ne pas le décevoir", "« Je ne sais pas »", "Il le renvoie sans parler", "Il lui demande de l'argent"], 1,
+      "Dire « je ne sais pas » fait partie de la science. Allah dit : « Ne poursuis pas ce dont tu n'as aucune connaissance » (17:36)."],
+    ["Le calife veut imposer al-Mouwatta' à tout l'empire. Que fait Malik ?", ["Il accepte avec joie", "Il refuse : les compagnons ont transmis la science dans d'autres régions aussi", "Il brûle son livre", "Il demande à être calife"], 1,
+      "Il reconnaissait que d'autres savants avaient reçu une part de la science des compagnons. C'est l'humilité des imams."],
+    ["Selon la phrase attribuée à Malik, la parole de qui ne peut jamais être rejetée ?", ["Celle de Malik", "Celle du calife", "Celle du Prophète ﷺ", "Celle de la majorité"], 2,
+      "« La parole de chacun peut être prise ou rejetée, sauf celle de l'homme de cette tombe », en montrant la tombe du Prophète ﷺ."],
+    ["Quelqu'un te pose une question de religion et tu n'es pas sûr de la réponse. Que fais-tu ?", ["Tu inventes pour paraître savant", "Tu dis « je ne sais pas, je vais vérifier »", "Tu réponds au hasard", "Tu te moques de sa question"], 1,
+      "L'imam Malik, l'un des plus grands savants, disait souvent « je ne sais pas ». Parler de la religion sans savoir est grave (17:36)."]
   ]
 });
 
@@ -5189,6 +5712,95 @@ S({
     ["Qu'a dit le Prophète ﷺ en posant la main sur Salman ?", ["« Il sera gouverneur »", "« Si la foi était aux Pléiades, des hommes parmi ceux-ci l'atteindraient »", "« C'est mon frère »", "« Il est perse »"], 1],
     ["Que dit Salman à Abou ad-Darda ?", ["« Prie toute la nuit »", "« Donne à chacun son droit »", "« Jeûne tous les jours »", "« Quitte ta famille »"], 1],
     ["Pourquoi Salman pleurait-il sur son lit de mort ?", ["Il avait peur de mourir", "Il craignait d'avoir plus que le bagage d'un voyageur", "Il regrettait la Perse", "Il était seul"], 1]
+  ]
+});
+
+/* Série : l'imam ach-Chafi'i, Mouhammad ibn Idris (150-204 H). */
+S({
+  id: 'shafii', cat: 'savants', title: 'Ach-Chafi\'i', ar: 'مُحَمَّد بْن إِدْرِيس الشَّافِعِي', honor: 'rh',
+  teaser: "Un orphelin pauvre qui écrivait sur des os faute de papier, appris l'arabe chez les Bédouins, l'élève de Malik, le maître d'Ahmad, et l'homme qui disait : « Si un hadith est authentique, c'est lui mon école. »",
+  scene: 'desert',
+  chapters: [
+    { t: "Né l'année où mourut Abou Hanifa",
+      hook: "Sa mère n'a pas d'argent pour payer le maître. Le maître accepte quand même, à une condition.",
+      p: [
+        "En l'an 150 de l'hégire, l'année même où meurt l'imam Abou Hanifa, naît à Gaza, en Palestine, un garçon nommé Mouhammad, fils d'Idris. Sa famille descend de Qouraych, de la tribu du Prophète ﷺ, par al-Mouttalib.",
+        "Son père meurt alors qu'il est tout petit. Sa mère, pauvre, décide de l'emmener à La Mecque, auprès de sa famille, pour qu'il grandisse près de la Ka'ba et ne perde pas ses racines.",
+        "Elle n'a pas de quoi payer un maître pour lui enseigner le Coran. Les biographes rapportent que le maître accepta tout de même, car il voyait que le garçon retenait vite, et que celui-ci aidait à surveiller les autres enfants en échange.",
+        "Il apprend le Coran par cœur vers l'âge de sept ans, selon ce qui est rapporté. Comme il n'a pas d'argent pour acheter du papier, il écrit les hadiths qu'il entend sur des os plats, des morceaux de poterie, des feuilles de palmier, et sur le dos de papiers déjà utilisés qu'il récupère.",
+        "La pauvreté n'a jamais empêché celui qui cherche la science avec sincérité. Elle a même forgé sa patience."
+      ] },
+    { t: "Chez les Bédouins",
+      hook: "Pour apprendre la langue du Coran à la source, il part vivre des années dans le désert.",
+      p: [
+        "Le jeune Mouhammad comprend une chose : pour comprendre le Coran, il faut maîtriser parfaitement la langue arabe, celle des Arabes du désert, pure, non mélangée aux langues des villes.",
+        "Il part donc vivre auprès de la tribu de Houdhayl, réputée pour la pureté de sa langue. Il reste avec eux de longues années, selon les biographes. Il se déplace avec eux, apprend leurs poèmes par cœur, leur histoire, leur façon de parler.",
+        "Il apprend aussi le tir à l'arc, et devient, dit-on, très habile. Il dira plus tard qu'il avait deux passions dans sa jeunesse : la science et le tir à l'arc.",
+        "Quand il revient à La Mecque, sa maîtrise de la langue est telle que de grands linguistes viendront plus tard le consulter. Ses paroles sont citées comme preuve dans la langue arabe.",
+        "C'est une leçon pour celui qui veut comprendre le Coran : la langue arabe n'est pas un détail. Allah dit : « Nous l'avons fait descendre, un Coran en arabe, afin que vous raisonniez. » (12:2)"
+      ],
+      ayah: '12:2' },
+    { t: "Devant l'imam Malik",
+      hook: "Il récite le Mouwatta' par cœur devant son auteur. Malik l'arrête et lui donne un conseil.",
+      p: [
+        "À La Mecque, ach-Chafi'i étudie auprès des savants de la mosquée sacrée, comme Mouslim ibn Khalid az-Zanji, qui lui donne très jeune la permission d'enseigner, selon ce qui est rapporté.",
+        "Mais il entend parler de l'imam de Médine, Malik ibn Anas, et de son livre al-Mouwatta'. Il emprunte le livre, l'apprend par cœur, et part pour Médine.",
+        "Les biographes racontent qu'il se présenta devant Malik et commença à lui lire le Mouwatta' de mémoire. Malik, impressionné par sa lecture et son intelligence, lui demanda de continuer.",
+        "On rapporte que Malik lui donna alors ce conseil, selon le sens : « Je vois qu'Allah a mis une lumière dans ton cœur. Ne l'éteins pas par la désobéissance. »",
+        "On attribue à ach-Chafi'i ces vers célèbres : « Je me suis plaint à Waki' de ma mauvaise mémoire. Il m'a conseillé de laisser les péchés. Il m'a appris que la science est une lumière, et que la lumière d'Allah n'est pas donnée au pécheur. »",
+        "Ach-Chafi'i resta auprès de Malik jusqu'à la mort de celui-ci. Il l'aima et le respecta toute sa vie, même quand il arriva plus tard à des avis différents des siens."
+      ] },
+    { t: "Les chaînes et le calife",
+      hook: "Accusé à tort, il est conduit enchaîné devant Haroun ar-Rachid avec d'autres prisonniers.",
+      p: [
+        "Après la mort de Malik, ach-Chafi'i, toujours pauvre, accepta un poste administratif au Yémen. Il y fut juste et apprécié. Mais il se fit des ennemis parmi ceux que sa justice dérangeait.",
+        "Il fut accusé, faussement selon les historiens, de soutenir une révolte contre le calife. On l'arrêta avec d'autres hommes, et on les emmena enchaînés jusqu'à Haroun ar-Rachid, en l'an 184 de l'hégire.",
+        "Plusieurs des accusés furent exécutés. Quand vint son tour, ach-Chafi'i se défendit avec éloquence et calme. Le grand juge Mouhammad ibn al-Hassan, élève d'Abou Hanifa, qui le connaissait, témoigna de sa science. Le calife le libéra.",
+        "Ce moment changea encore sa vie. À Bagdad, il resta auprès de Mouhammad ibn al-Hassan et étudia la science de l'école d'Abou Hanifa. On rapporte qu'il dit : « J'ai porté de Mouhammad ibn al-Hassan la charge d'un chameau en livres. » (rapporté par al-Khatib dans Tarikh Baghdad)",
+        "Regarde la beauté de cette histoire : l'élève de Malik apprend aussi auprès de l'élève d'Abou Hanifa. Les imams n'étaient pas des équipes rivales. Ils étaient des chercheurs de vérité qui s'enrichissaient les uns les autres."
+      ] },
+    { t: "La Risala",
+      hook: "Il écrit le premier livre qui explique comment comprendre les preuves de la religion.",
+      p: [
+        "Avec la science de Médine et celle de l'Irak, ach-Chafi'i voit une chose : les savants n'ont pas toujours la même méthode pour tirer les règles des textes. Comment savoir quand un verset est général ou particulier ? Que faire si deux hadiths semblent se contredire ? Quelle est la place de la Sounna à côté du Coran ?",
+        "À la demande du savant 'Abd ar-Rahman ibn Mahdi, il écrit un livre pour répondre à ces questions : ar-Risala, « l'Épître ». C'est le premier livre connu d'oussoul al-fiqh, les fondements de la compréhension de la religion.",
+        "Il y défend avec force la place de la Sounna. Il montre que celui qui accepte le Coran doit accepter les hadiths authentiques, car Allah dit : « Ce que le Messager vous donne, prenez-le, et ce qu'il vous interdit, abstenez-vous-en. » (59:7)",
+        "Ach-Chafi'i a enseigné à Bagdad, où l'imam Ahmad ibn Hanbal devint son élève et son ami. Ahmad dira plus tard qu'il priait pour ach-Chafi'i depuis des dizaines d'années. Et ach-Chafi'i dira qu'il n'avait laissé à Bagdad personne de plus savant et de plus pieux qu'Ahmad."
+      ],
+      ayah: '59:7' },
+    { t: "Changer d'avis pour la vérité",
+      hook: "Arrivé en Égypte, il réécrit une grande partie de son école. Pourquoi ?",
+      p: [
+        "À la fin de sa vie, ach-Chafi'i part pour l'Égypte. Là, il découvre de nouveaux hadiths, de nouveaux savants, et réfléchit encore. Il change alors plusieurs de ses avis. Les savants parlent de son « ancienne école » (celle d'Irak) et de sa « nouvelle école » (celle d'Égypte).",
+        "Un grand savant qui change d'avis ? Pour certains, ce serait une honte. Pour lui, c'était un devoir : quand la preuve devient plus claire, on la suit.",
+        "C'est lui qui a dit : « Si un hadith est authentique, c'est lui mon école. » (rapporté par an-Nawawi dans al-Majmou') Et on rapporte qu'il disait : « Je n'ai jamais débattu avec quelqu'un sans souhaiter qu'Allah fasse apparaître la vérité par sa bouche à lui. » (rapporté par adh-Dhahabi dans Siyar)",
+        "Imagine : débattre en espérant que c'est l'autre qui a raison, parce que ce qu'on veut, c'est la vérité, pas gagner.",
+        "Ach-Chafi'i tomba gravement malade en Égypte. Il mourut en l'an 204 de l'hégire, à Foustat (au Caire d'aujourd'hui), à cinquante-quatre ans seulement. Une vie courte, mais une science qui a traversé les siècles. Son école s'est répandue en Égypte, au Cham, au Yémen, en Asie du Sud-Est, en Afrique de l'Est.",
+        "Ce que nous retenons : chercher la science malgré la pauvreté, apprendre de tous les savants, et avoir le courage de changer d'avis quand la preuve est claire. Qu'Allah lui fasse miséricorde."
+      ] }
+  ],
+  sources: [
+    "adh-Dhahabi : Siyar A'lam an-Noubala', biographie d'ach-Chafi'i (vol. 10)",
+    "al-Bayhaqi : Manaqib ach-Chafi'i",
+    "al-Khatib al-Baghdadi : Tarikh Baghdad",
+    "an-Nawawi : al-Majmou', introduction",
+    "ach-Chafi'i : ar-Risala ; Diwan (vers attribués)",
+    "Coran : 12:2 ; 59:7",
+    "Les récits marqués « on rapporte » viennent des livres de biographie ; leurs chaînes ne sont pas toutes vérifiées comme les hadiths."
+  ],
+  quiz: [
+    ["Sur quoi ach-Chafi'i écrivait-il les hadiths quand il était pauvre ?", ["Sur des tablettes d'or", "Sur des os, des poteries et des feuilles de palmier", "Sur un ordinateur", "Il ne les écrivait jamais"], 1,
+      "Il n'avait pas d'argent pour le papier. La pauvreté ne l'a pas empêché d'apprendre."],
+    ["Pourquoi a-t-il vécu chez la tribu de Houdhayl ?", ["Pour faire du commerce", "Pour apprendre l'arabe pur et mieux comprendre le Coran", "Pour fuir le calife", "Pour se marier"], 1,
+      "La langue arabe est la clé du Coran : « Nous l'avons fait descendre, un Coran en arabe, afin que vous raisonniez » (12:2)."],
+    ["Quel conseil Malik a-t-il donné à ach-Chafi'i, selon ce qui est rapporté ?", ["« Deviens commerçant »", "« Ne laisse pas la désobéissance éteindre la lumière qu'Allah a mise dans ton cœur »", "« Ne lis que mon livre »", "« Quitte la science »"], 1,
+      "La science est une lumière, et les péchés l'éteignent. Ach-Chafi'i en a fait des vers célèbres."],
+    ["Auprès de qui ach-Chafi'i a-t-il aussi étudié à Bagdad ?", ["Auprès de Mouhammad ibn al-Hassan, élève d'Abou Hanifa", "Auprès d'Iblis", "Auprès du calife seulement", "Personne"], 0,
+      "L'élève de Malik a appris aussi auprès de l'élève d'Abou Hanifa. Les imams s'enrichissaient les uns les autres."],
+    ["Quel est le premier livre connu sur les fondements du fiqh, écrit par ach-Chafi'i ?", ["Al-Mousnad", "Ar-Risala", "Sahih al-Boukhari", "Al-Mouwatta'"], 1,
+      "Ar-Risala explique comment comprendre les preuves, et défend la place de la Sounna (59:7)."],
+    ["Pendant un débat, ton ami apporte une preuve plus forte que la tienne. Que t'apprend ach-Chafi'i ?", ["Ne jamais reconnaître qu'on a tort", "Se réjouir que la vérité apparaisse, même par l'autre, et changer d'avis", "Crier plus fort", "Quitter la discussion fâché"], 1,
+      "Il disait souhaiter que la vérité apparaisse par la bouche de l'autre (Siyar). Et il a changé plusieurs de ses avis en Égypte."]
   ]
 });
 
@@ -7212,7 +7824,8 @@ function localizeStories(){ const L=st.lang||'fr'; BASE.forEach((b,i)=>{ const t
 const CATS = [
   {id:'creation', name:'La Création', short:'Création'},
   {id:'prophetes', name:'Les récits des prophètes', short:'Prophètes'},
-  {id:'compagnons', name:'Les récits des compagnons', short:'Compagnons'}
+  {id:'compagnons', name:'Les récits des compagnons', short:'Compagnons'},
+  {id:'savants', name:'Les grands imams', short:'Imams'}
 ];
 const app = document.getElementById('app');
 
@@ -7234,6 +7847,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&
 function honor(s){
   if(s.honor==='saw') return '<span class="honor">ﷺ</span>';
   if(s.honor==='as') return '<span class="honor">عَلَيْهِ ٱلسَّلَام</span>';
+  if(s.honor==='rh') return '<span class="honor">رَحِمَهُ ٱللَّه</span>';
   if(s.honor==='ra') return '<span class="honor">'+(s.id==='khadija'?'رَضِيَ ٱللَّهُ عَنْهَا':'رَضِيَ ٱللَّهُ عَنْهُ')+'</span>';
   return '';
 }
@@ -7572,7 +8186,8 @@ const UNITS = [
   {t:'Des prophètes et des signes', ar:'آيَاتُ ٱلْأَنْبِيَاء', ids:['yunus','sulaiman','issa'], z:'sea', treasure:'21:87'},
   {t:'Le Sceau des prophètes', ar:'خَاتَمُ ٱلنَّبِيِّين', ids:['muhammad'], z:'mecca', treasure:'21:107'},
   {t:'Les quatre califes', ar:'ٱلْخُلَفَاءُ ٱلرَّاشِدُون', ids:['abubakr','omar','uthman','ali'], z:'medina', treasure:'9:100'},
-  {t:'Les héros de la foi', ar:'رِجَالٌ صَدَقُوا', ids:['bilal','khadija','khalid','musab','salman'], z:'oasis', treasure:'33:23'}
+  {t:'Les héros de la foi', ar:'رِجَالٌ صَدَقُوا', ids:['bilal','khadija','khalid','musab','salman'], z:'oasis', treasure:'33:23'},
+  {t:'Les grands imams', ar:'ٱلْأَئِمَّةُ ٱلْأَعْلَام', ids:['imams','abuhanifa','malik','shafii','ahmad','bukhari'], z:'medina', treasure:'58:11'}
 ];
 const ZONES = {
   cosmos:{bg:'#1d1b4a', bg2:'#2a2766', ink:'#e9e3ff'}, flood:{bg:'#24506a', bg2:'#2d6482', ink:'#e6f4ff'},
@@ -7682,46 +8297,55 @@ function openChest(ui){
   d.addEventListener('click',e=>{ if(e.target.closest('[data-close]')) learn(); });
 }
 function runQuiz(title, Q, backHash, onEnd){
-  let k=0, pick=null, checked=false, score=0;
+  let k=0, pick=null, checked=false, score=0; const log=[], t0=Date.now();
   setTab('apprendre');
   function show(){
-    if(k>=Q.length){ onEnd(score); return; }
+    if(k>=Q.length){ onEnd(score, log, Math.round((Date.now()-t0)/1000)); return; }
     const q=Q[k];
     app.innerHTML='<div class="wrap qwrap"><div class="qtop"><a class="ib" href="#'+backHash+'" aria-label="Quitter" style="color:var(--ink)">✕</a><span>'+esc(title.toUpperCase())+'</span><span>'+(k+1)+'/'+Q.length+'</span></div><div class="qbar"><div class="seg">'+Q.map((_,j)=>'<i class="'+(j<=k?'on':'')+'"></i>').join('')+'</div></div>'+
       '<div class="eyebrow" style="text-align:center">À toi de jouer</div><div class="qq">'+esc(q[0])+'</div><p class="muted" style="text-align:center;margin:0">Choisis la réponse qui te semble juste.</p><div style="display:grid;gap:10px">'+
-      q[1].map((o,j)=>'<button class="opt" data-j="'+j+'" aria-pressed="'+(pick===j)+'">'+esc(o)+'<span class="dot"></span></button>').join('')+'</div><div id="fb" style="min-height:1.4em;text-align:center;font-weight:700"></div><button class="big" id="chk" '+(pick===null?'disabled':'')+'>Vérifier</button></div>';
+      q[1].map((o,j)=>'<button class="opt" data-j="'+j+'" aria-pressed="'+(pick===j)+'">'+esc(o)+'<span class="dot"></span></button>').join('')+'</div><div id="fb"></div><button class="big" id="chk" '+(pick===null?'disabled':'')+'>Vérifier</button></div>';
     app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{ if(checked) return; pick=+b.dataset.j; app.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed',x===b)); document.getElementById('chk').disabled=false; });
     document.getElementById('chk').onclick=()=>{
-      if(!checked){ checked=true; const ok=pick===q[2]; if(ok) score++; fx(ok); buzz(ok);
+      if(!checked){ checked=true; const ok=pick===q[2]; if(ok) score++; fx(ok); buzz(ok); log.push({q:q[0], pick:q[1][pick], good:q[1][q[2]], ok, why:q[3]||''});
         app.querySelectorAll('.opt').forEach(x=>{ const j=+x.dataset.j; if(j===q[2]) x.classList.add('good'); else if(j===pick) x.classList.add('wrong'); });
-        const fb=document.getElementById('fb'); fb.textContent= ok?'Bonne réponse':'La bonne réponse : '+q[1][q[2]]; fb.style.color= ok?'var(--ok)':'var(--bad)';
+        const fb=document.getElementById('fb');
+        fb.innerHTML='<div class="fbk '+(ok?'ok':'ko')+'" role="status"><h4><i>'+(ok?'✓':'✕')+'</i>'+(ok?'Bravo, bonne réponse !':'Pas tout à fait !')+'</h4>'+(ok?'':'<p class="ans">La bonne réponse était : '+esc(q[1][q[2]])+'</p>')+(q[3]?'<small>EXPLICATION</small><p>'+esc(q[3])+'</p>':'')+'</div>';
+        fb.scrollIntoView({behavior:'smooth', block:'nearest'});
         document.getElementById('chk').textContent= k===Q.length-1?'Voir mon résultat':'Suivant';
       } else { k++; pick=null; checked=false; show(); window.scrollTo(0,0); }
     };
   }
   show(); window.scrollTo(0,0);
 }
+function fmtTime(sec){ return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0'); }
+function reviewHTML(log, secs){
+  const good=log.filter(x=>x.ok).length;
+  return '<div class="qstats"><div><b>'+good+'/'+log.length+'</b><small>Correctes</small></div><div><b>'+(log.length-good)+'</b><small>Erronées</small></div><div><b>⏱ '+fmtTime(secs)+'</b><small>Temps</small></div></div>'+
+    '<h2 style="font-size:1.6rem;margin:26px 0 4px">Tes réponses</h2><p class="muted" style="margin:0">Revois chaque question pour mieux retenir l\'essentiel.</p><div class="review">'+
+    log.map((x,i)=>'<div class="rv '+(x.ok?'ok':'ko')+'"><i>'+(x.ok?'✓':'✕')+'</i><div><b>'+(i+1)+'. '+esc(x.q)+'</b><div class="ya">Ta réponse : '+esc(x.pick)+'</div>'+(x.ok?'':'<div class="ga">Bonne réponse : '+esc(x.good)+'</div>')+(x.why?'<p>'+esc(x.why)+'</p>':'')+'</div></div>').join('')+'</div>';
+}
 function lesson(key){
   const l=LBY[key], s=BY[l.id], gi=PATH.indexOf(l);
   if(l.type!=='quiz') return go('apprendre');
   if(gi>currentIndex()){ toast('Cette leçon est encore verrouillée'); return go('apprendre'); }
   const Q=s.quiz.slice(l.from,l.to);
-  runQuiz(s.title, Q, 'apprendre', score=>{
+  runQuiz(s.title, Q, 'apprendre', (score, log, secs)=>{
     const ratio=score/Q.length, starsNow= ratio===1?3:ratio>=.75?2:ratio>=.5?1:0, prev=st.lessons[key];
     const passed=starsNow>0;
     if(passed){ st.lessons[key]=Math.max(prev||0,starsNow); if(!st.days.includes(today())) st.days.push(today()); st.days=st.days.slice(-400); save(); }
     const nextL=PATH[gi+1], unitEnd = !nextL || nextL.unit!==l.unit;
     app.innerHTML='<div class="wrap"><div class="score"><div class="eyebrow">'+esc(s.title)+(l.total>1?' · leçon '+(l.k+1)+'/'+l.total:'')+'</div><div class="bigstars">'+'<b>★</b>'.repeat(starsNow)+'<i>★</i>'.repeat(3-starsNow)+'</div><div class="n" style="font-size:3rem">'+score+' / '+Q.length+'</div><h2 style="font-size:1.7rem">'+(starsNow===3?'Parfait, macha\'Allah !':passed?'Leçon réussie !':'Pas encore. Relis le récit et réessaie.')+'</h2>'+(passed&&unitEnd&&unitDone(l.unit)&&!st.chests[l.unit]?'<p style="color:var(--accent);font-weight:700">Le trésor de l\'unité est prêt à être ouvert !</p>':'')+'</div><div class="endcard">'+
       (passed?'<a class="big" style="text-align:center;text-decoration:none" href="#apprendre">Continuer le parcours</a>':'<a class="big" style="text-align:center;text-decoration:none" href="#r-'+l.id+'">Relire le récit</a>')+
-      '<button class="pbtn" id="again" style="justify-content:center">Refaire la leçon</button></div></div>';
+      '<button class="pbtn" id="again" style="justify-content:center">Refaire la leçon</button></div>'+reviewHTML(log, secs)+'<div style="height:30px"></div></div>';
     document.getElementById('again').onclick=()=>lesson(key);
     mapFocus=true;
   });
 }
 function quiz(id){
   const s=BY[id];
-  runQuiz(s.title, s.quiz, 'r-'+id, score=>{ const best=Math.max(st.quiz[id]||0,score); st.quiz[id]=best; save();
-    app.innerHTML='<div class="wrap"><div class="score"><div class="eyebrow">'+esc(s.title)+'</div><div class="n">'+score+' / '+s.quiz.length+'</div><h2 style="font-size:1.8rem">'+(score===s.quiz.length?'Excellent, macha\'Allah !':score>=s.quiz.length/2?'Bien joué !':'Relis le récit et réessaie')+'</h2><p class="muted">Meilleur score : '+best+' / '+s.quiz.length+'</p></div><div class="endcard"><a class="big" style="text-align:center;text-decoration:none" href="#apprendre">Voir le parcours</a><a class="pbtn" style="justify-content:center;text-decoration:none" href="#r-'+id+'">Relire le récit</a></div></div>'; });
+  runQuiz(s.title, s.quiz, 'r-'+id, (score, log, secs)=>{ const best=Math.max(st.quiz[id]||0,score); st.quiz[id]=best; save();
+    app.innerHTML='<div class="wrap"><div class="score"><div class="eyebrow">'+esc(s.title)+'</div><div class="n">'+score+' / '+s.quiz.length+'</div><h2 style="font-size:1.8rem">'+(score===s.quiz.length?'Excellent, macha\'Allah !':score>=s.quiz.length/2?'Bien joué !':'Relis le récit et réessaie')+'</h2><p class="muted">Meilleur score : '+best+' / '+s.quiz.length+'</p></div><div class="endcard"><a class="big" style="text-align:center;text-decoration:none" href="#apprendre">Voir le parcours</a><a class="pbtn" style="justify-content:center;text-decoration:none" href="#r-'+id+'">Relire le récit</a></div>'+reviewHTML(log, secs)+'<div style="height:30px"></div></div>'; window.scrollTo(0,0); });
 }
 
 /* ---------- Profil ---------- */
