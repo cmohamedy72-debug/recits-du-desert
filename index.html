@@ -1806,6 +1806,184 @@ S({
   ]
 });
 
+/* Abou Hanifa, partie 2 : épisodes insérés pour atteindre environ 30 minutes. */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'abuhanifa'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("Le marchand de Koufa", {
+    t: "Koufa, la ville d'Ibn Mas'oud",
+    p: [
+      "Pour comprendre Abou Hanifa, il faut comprendre sa ville. Koufa n'était pas une ville comme les autres. Elle avait été fondée sous le califat de 'Omar, et des centaines de compagnons s'y étaient installés.",
+      "'Omar y avait envoyé 'Abdoullah ibn Mas'oud pour enseigner aux gens le Coran et la religion. Il écrivit aux habitants de Koufa, selon ce qui est rapporté : « Je vous ai envoyé 'Abdoullah, et je vous l'ai préféré à moi-même. » Plus tard, 'Ali ibn Abi Talib fit lui aussi de Koufa sa capitale.",
+      "Ibn Mas'oud forma une génération entière d'élèves. Le plus célèbre fut 'Alqama ibn Qays. Puis vint Ibrahim an-Nakha'i, puis Hammad ibn Abi Soulayman, le maître d'Abou Hanifa.",
+      "Voilà donc la chaîne de la science d'Abou Hanifa : le Prophète ﷺ, Ibn Mas'oud, 'Alqama, Ibrahim an-Nakha'i, Hammad, puis Abou Hanifa. Une lumière transmise de maître à élève pendant près d'un siècle.",
+      "Koufa était aussi une ville agitée. Des groupes politiques et des sectes y naissaient : les Khawarij, des groupes extrêmes chiites, puis plus tard des débats de théologie. Les savants de Koufa devaient répondre à des questions nouvelles, et défendre la religion contre des idées étranges.",
+      "C'est peut-être pour cela que l'école d'Abou Hanifa a développé un raisonnement si précis. Il fallait répondre aux situations de la vie d'une grande ville commerçante, avec des marchands venus de partout et des contrats de toutes sortes.",
+      "Mais le fondement restait le même : le Livre d'Allah, la Sounna de Son Messager ﷺ, et la compréhension des compagnons. Abou Hanifa disait qu'il prenait le Livre d'Allah, puis la Sounna, puis les paroles des compagnons, et qu'il ne sortait pas de leurs avis. (rapporté par al-Khatib dans Tarikh Baghdad)"
+    ]
+  }, "Une ville fondée par les compagnons, où 'Omar avait envoyé Ibn Mas'oud enseigner.");
+
+  insertAfter("Koufa, la ville d'Ibn Mas'oud", {
+    t: "Le bateau sans capitaine",
+    p: [
+      "Dans sa jeunesse, Abou Hanifa s'intéressa beaucoup aux débats avec ceux qui avaient des croyances déviées. Il était rapide, logique, et savait répondre.",
+      "Un récit très célèbre est raconté à son sujet. Attention : c'est un récit populaire, transmis dans les livres tardifs, et sa chaîne n'est pas établie. On le raconte pour sa leçon, pas comme un fait certain.",
+      "On raconte que des gens qui niaient l'existence du Créateur voulurent débattre avec lui. Il arriva en retard. Ils lui demandèrent pourquoi. Il répondit : « J'ai vu un bateau traverser le fleuve tout seul. Sans capitaine, sans rameurs, il est venu, s'est arrêté au bon endroit, les marchandises sont montées toutes seules, et il est reparti. »",
+      "Ils rirent : « Tu es fou ? Un bateau ne peut pas faire cela sans personne pour le diriger ! » Il répondit : « Un simple bateau ne peut pas avancer sans quelqu'un qui le dirige. Et vous prétendez que ce monde immense, le soleil, la lune, les étoiles, la vie, tout cela existe et fonctionne sans Créateur ? »",
+      "Que le récit soit vrai ou non, l'argument, lui, vient du Coran. Allah dit : « Ont-ils été créés à partir de rien, ou sont-ils eux-mêmes les créateurs ? Ou bien ont-ils créé les cieux et la terre ? Non, mais ils n'ont pas de certitude. » (52:35-36)",
+      "Ce qui est rapporté de façon plus sûre, c'est qu'Abou Hanifa a ensuite délaissé les débats de théologie pour se consacrer au fiqh. On lui attribue l'idée que ces débats durcissaient le cœur, alors que la science du licite et de l'illicite était utile aux gens dans leur vie.",
+      "Leçon pour toi : il est bon de connaître les preuves de sa foi, et le Coran en est plein. Mais ne passe pas ta vie dans les disputes. Les compagnons, eux, consacraient leur temps à agir."
+    ],
+    ayah: '52:35'
+  }, "Un récit célèbre : des gens qui nient le Créateur attendent Abou Hanifa pour débattre. Il arrive en retard.");
+
+  insertAfter("Dix-huit ans avec un maître", {
+    t: "Le cercle de discussion",
+    p: [
+      "Abou Hanifa n'enseignait pas comme un professeur qui dicte. Son cercle ressemblait plutôt à une assemblée où l'on cherchait la vérité ensemble.",
+      "Selon ce que rapportent les biographes, quand une question arrivait, il l'exposait à ses élèves. Chacun donnait son avis et ses preuves. On discutait, parfois pendant des heures, parfois pendant des jours. Puis, quand une conclusion s'imposait, on la notait.",
+      "Ses élèves venaient d'horizons différents. Certains étaient forts en hadith, d'autres en langue arabe, d'autres en raisonnement. Cette méthode rassemblait leurs forces.",
+      "On rapporte qu'Abou Hanifa écoutait volontiers ses élèves le contredire. Quand l'un d'eux apportait un argument plus fort, il revenait sur son avis.",
+      "C'est une belle image de la choura, la consultation, qu'Allah a louée : « …et dont les affaires se décident par consultation entre eux. » (42:38)",
+      "C'est aussi pour cela que l'école hanafite contient souvent plusieurs avis : celui d'Abou Hanifa, celui d'Abou Youssouf, celui de Mouhammad ibn al-Hassan, celui de Zoufar. Ses élèves n'étaient pas des copies de lui. Ils étaient des savants qui pensaient par eux-mêmes, avec les mêmes fondements.",
+      "Un bon maître ne fabrique pas des perroquets. Il apprend à ses élèves à chercher la preuve, même si cela les conduit parfois à ne pas être d'accord avec lui."
+    ],
+    ayah: '42:38'
+  }, "Son cercle ressemblait à une assemblée où chacun avait le droit de le contredire.");
+
+  insertAfter("Le cercle de discussion", {
+    t: "Abou Youssouf, l'élève pauvre",
+    p: [
+      "Parmi ceux qui fréquentaient le cercle d'Abou Hanifa, il y avait un jeune garçon très pauvre : Ya'qoub ibn Ibrahim, qu'on appellera plus tard Abou Youssouf.",
+      "Selon ce que rapporte al-Khatib dans Tarikh Baghdad, sa mère voulait qu'il quitte les études pour apprendre un métier et gagner de quoi vivre. Elle venait le chercher au cercle et le ramenait chez un artisan.",
+      "Abou Hanifa remarqua l'absence du garçon. Quand il comprit la situation, il lui donna discrètement une somme d'argent, en lui disant de la dépenser pour sa famille et de revenir quand elle serait finie. Il continua à l'aider ainsi pendant des années, pour qu'il puisse étudier sans souci.",
+      "On rapporte que la mère d'Abou Youssouf se plaignit un jour à Abou Hanifa : « Ce garçon n'a rien, et toi tu le gâtes avec tes leçons ! » Abou Hanifa lui aurait répondu, selon le sens, que son fils apprenait une science qui le mènerait un jour très haut.",
+      "Des années plus tard, Abou Youssouf devint le grand juge de Bagdad sous le calife Haroun ar-Rachid. On dit qu'il fut le premier à porter le titre de « juge des juges ». Il écrivit Kitab al-Kharaj, un livre sur les finances publiques et la justice fiscale, adressé au calife.",
+      "On rapporte qu'il parlait souvent de son maître avec émotion, et qu'il priait pour lui, et même pour ses propres parents après lui, selon certains récits.",
+      "Pense à tous les élèves pauvres qui n'auraient jamais étudié sans un bienfaiteur. Le Prophète ﷺ a dit : « Quand l'homme meurt, ses œuvres s'arrêtent, sauf trois : une aumône continue, une science utile, ou un enfant pieux qui invoque pour lui. » (Mouslim 1631) En aidant Abou Youssouf, Abou Hanifa s'est offert une aumône continue et une science utile à la fois."
+    ]
+  }, "Une mère arrache son fils au cercle des savants pour qu'il gagne sa vie. Abou Hanifa trouve une solution.");
+
+  insertAfter("Un commerce honnête", {
+    t: "La mère et le prédicateur",
+    p: [
+      "Abou Hanifa était devenu le plus grand juriste de Koufa. Les gens venaient de loin pour lui poser leurs questions. Mais pour sa mère, il restait son fils.",
+      "Al-Khatib rapporte dans Tarikh Baghdad qu'un jour, sa mère lui posa une question de religion. Il lui donna la réponse. Elle répondit : « Je ne l'accepte pas de toi. Je ne l'accepterai que de Zour'a, le prédicateur. »",
+      "Zour'a était un conteur de la mosquée, bien moins savant qu'Abou Hanifa. Le grand imam aurait pu se vexer. Il ne dit rien. Il emmena sa mère chez Zour'a.",
+      "Quand ils arrivèrent, Abou Hanifa expliqua : « Ma mère te pose telle question. » Zour'a, gêné, répondit : « Tu es plus savant que moi, c'est à toi de répondre. » Abou Hanifa lui dit : « Je lui ai déjà répondu : c'est ceci. » Alors Zour'a dit à la mère : « La réponse est celle d'Abou Hanifa. » Et elle fut satisfaite, et ils rentrèrent.",
+      "On rapporte aussi qu'Abou Hanifa emmenait sa mère sur sa monture aux assemblées des prédicateurs qu'elle aimait, pour lui faire plaisir.",
+      "Quelle humilité devant une mère ! Il n'a pas dit : « Tu ne sais pas qui je suis ? » Il a cherché à lui faire plaisir, sans changer la vérité.",
+      "Allah dit : « Ton Seigneur a décrété que vous n'adoriez que Lui, et la bonté envers les parents. Si l'un d'eux ou tous deux atteignent la vieillesse auprès de toi, ne leur dis pas : Ouf ! et ne les brusque pas, mais adresse-leur des paroles respectueuses. » (17:23)"
+    ],
+    ayah: '17:23'
+  }, "Sa mère refuse sa réponse et préfère celle d'un simple prédicateur. Que fait le grand imam ?");
+
+  insertAfter("La mère et le prédicateur", {
+    t: "Le voisin qui chantait la nuit",
+    p: [
+      "Voici un autre récit rapporté par al-Khatib dans Tarikh Baghdad, sur la façon dont Abou Hanifa traitait ses voisins.",
+      "Il avait un voisin, un cordonnier, qui travaillait toute la journée. Le soir, il rentrait, buvait, et chantait à voix haute des vers pendant une bonne partie de la nuit. Abou Hanifa, qui priait la nuit, l'entendait chaque soir.",
+      "Une nuit, il n'entendit plus rien. Il demanda de ses nouvelles le lendemain. On lui dit que la garde de nuit avait arrêté l'homme, et qu'il était en prison.",
+      "Abou Hanifa se leva, mit son turban, et alla voir le gouverneur en personne pour demander la libération de son voisin. Le gouverneur, impressionné qu'un tel savant se déplace, libéra l'homme, et même tous ceux qui avaient été arrêtés cette nuit-là avec lui, selon le récit.",
+      "Sur le chemin du retour, Abou Hanifa dit au cordonnier, selon le sens : « Ô jeune homme, est-ce que nous t'avons négligé ? » L'homme répondit : « Non, par Allah, tu as protégé et gardé ton voisin. » Et il se repentit, et ne retourna plus à ses anciennes habitudes.",
+      "Abou Hanifa n'a pas commencé par crier, ni par dénoncer son voisin. Il l'a aidé quand il était en difficulté. Et c'est ce bienfait qui a ouvert le cœur de l'homme.",
+      "Le Prophète ﷺ a dit : « Jibril n'a cessé de me recommander le voisin, au point que j'ai pensé qu'il allait lui donner une part de l'héritage. » (al-Boukhari 6014, Mouslim 2625) Et le bon comportement est souvent la plus forte des prédications."
+    ]
+  }, "Chaque nuit, son voisin boit et chante sous ses fenêtres. Une nuit, le silence.");
+
+  insertAfter("Le refus d'être juge", {
+    t: "Les nuits d'Abou Hanifa",
+    p: [
+      "Les biographes décrivent Abou Hanifa comme un homme de longue prière nocturne et de récitation du Coran.",
+      "On rapporte qu'il entendit un jour des gens dire en le voyant passer : « Voici l'homme qui passe toute la nuit en prière. » Ce n'était pas encore le cas. Il dit alors, selon le sens : « Je ne veux pas qu'on dise de moi ce que je ne fais pas. » Et il se mit à prier une grande partie de ses nuits. (rapporté par al-Khatib dans Tarikh Baghdad)",
+      "Il existe aussi, dans certains livres, des récits très exagérés sur ses nuits : par exemple qu'il aurait prié la prière de l'aube avec les ablutions de la prière de la nuit pendant quarante ans. Des savants, comme adh-Dhahabi et d'autres, ont critiqué ce genre de chiffres et leurs chaînes. Nous ne les affirmons donc pas.",
+      "Ce qui est sûr, c'est sa réputation d'adorateur sincère, de crainte d'Allah, et de pleurs pendant la prière. Ses contemporains, même ceux qui critiquaient certains de ses avis, reconnaissaient sa piété.",
+      "Le Prophète ﷺ lui-même a enseigné la modération : « Les œuvres les plus aimées d'Allah sont les plus régulières, même si elles sont petites. » (al-Boukhari 6464, Mouslim 783) Il n'a jamais demandé qu'on prie toute la nuit tous les jours. Il priait et dormait, jeûnait et mangeait.",
+      "Pourquoi ce détail est-il important ? Parce qu'on ne rend pas service aux imams en leur attribuant des exploits impossibles. On leur rend service en racontant ce qui est vrai, et en les imitant dans ce qui est possible.",
+      "Alors ce soir, avant de dormir, prie deux unités de prière. Même petites, même courtes. Et demande à Allah de te rendre régulier. C'est cela, imiter Abou Hanifa."
+    ]
+  }, "On dit de lui qu'il prie toute la nuit. Il l'entend, et prend une décision.");
+
+  s.sources.push(
+    "Coran : 52:35-36 ; 42:38 ; 17:23",
+    "Mouslim 1631 (les trois œuvres qui continuent) ; al-Boukhari 6014, Mouslim 2625 (le voisin) ; al-Boukhari 6464, Mouslim 783 (les œuvres régulières)",
+    "Le récit du « bateau sans capitaine » est un récit populaire sans chaîne établie : il est raconté pour sa leçon. Les récits exagérés sur ses nuits ont été critiqués par adh-Dhahabi et d'autres."
+  );
+  s.quiz.push(
+    ["Quelle est la chaîne de la science d'Abou Hanifa à Koufa ?", ["Ibn Mas'oud, 'Alqama, Ibrahim an-Nakha'i, Hammad", "Malik, Nafi', Ibn 'Omar", "Al-Boukhari, Mouslim, Tirmidhi", "Aucune chaîne"], 0,
+      "'Omar avait envoyé Ibn Mas'oud enseigner à Koufa. Sa science passa à 'Alqama, puis à Ibrahim an-Nakha'i, puis à Hammad, le maître d'Abou Hanifa."],
+    ["Sa mère préfère la réponse d'un simple prédicateur. Que fait Abou Hanifa ?", ["Il se fâche", "Il l'emmène chez le prédicateur pour lui faire plaisir, sans changer la vérité", "Il refuse de lui parler", "Il change sa réponse"], 1,
+      "« Ne leur dis pas : Ouf ! … adresse-leur des paroles respectueuses » (17:23). La bonté envers les parents passe avant l'orgueil du savant."],
+    ["Ton voisin fait du bruit et a de mauvaises habitudes. Il a un problème. Que t'apprend Abou Hanifa ?", ["Te réjouir de son malheur", "L'aider dans sa difficulté : le bienfait peut ouvrir son cœur", "Le dénoncer à tout le quartier", "L'ignorer complètement"], 1,
+      "Abou Hanifa est allé faire libérer son voisin, qui s'est ensuite repenti (Tarikh Baghdad). Jibril recommandait sans cesse le voisin (al-Boukhari 6014)."]
+  );
+})();
+
+/* Abou Hanifa, partie 3 : épisodes supplémentaires (environ 30 minutes au total). */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'abuhanifa'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("Dix-huit ans avec un maître", {
+    t: "La fidélité au maître",
+    p: [
+      "Abou Hanifa est devenu un savant plus célèbre que son maître Hammad. Mais il ne l'a jamais oublié.",
+      "On rapporte qu'il a dit : « Je n'ai jamais prié une prière depuis la mort de Hammad sans demander pardon pour lui en même temps que pour mes parents. Et je demande pardon pour tous ceux auprès de qui j'ai appris une science, ou à qui j'ai enseigné une science. » (rapporté par al-Khatib dans Tarikh Baghdad)",
+      "On rapporte aussi qu'il ne tendait jamais les jambes en direction de la maison de son maître, même de loin, par respect, alors qu'il y avait plusieurs rues entre eux.",
+      "Aujourd'hui, beaucoup d'élèves oublient ceux qui leur ont appris à lire, à écrire, à réciter le Coran. Ils dépassent leurs professeurs, et les traitent avec mépris. Abou Hanifa nous montre le contraire : plus on grandit en science, plus on doit être reconnaissant.",
+      "Le Prophète ﷺ a dit : « Celui qui ne remercie pas les gens ne remercie pas Allah. » (Abou Dawoud 4811, Tirmidhi 1954, hadith authentique)",
+      "Et Allah nous a appris à invoquer pour ceux qui nous ont précédés : « Seigneur, pardonne-nous, ainsi qu'à nos frères qui nous ont précédés dans la foi, et ne mets dans nos cœurs aucune rancune envers ceux qui ont cru. » (59:10)",
+      "Pense à ton premier maître de Coran, à l'enseignant qui t'a appris les lettres arabes, à la personne qui t'a parlé de la prière. Ce soir, fais une invocation pour eux, comme Abou Hanifa pour Hammad."
+    ],
+    ayah: '59:10'
+  }, "Devenu plus célèbre que son maître, il prie pour lui à chaque prière, avec ses parents.");
+
+  insertAfter("Un commerce honnête", {
+    t: "La science du marché",
+    p: [
+      "Parce qu'il était commerçant, Abou Hanifa connaissait de l'intérieur les problèmes des gens du marché : les ventes à crédit, les associations, les commandes à l'avance, les dettes. Son école a développé une science très précise des contrats.",
+      "L'Islam a donné au commerce des règles claires. Allah dit : « Allah a rendu licite le commerce et a interdit l'usure. » (2:275) Le commerce est permis et même encouragé, mais l'usure, ribâ, l'intérêt sur les prêts, est interdite.",
+      "Le Prophète ﷺ a aussi permis certains contrats utiles. Par exemple, la vente salam, où l'acheteur paie à l'avance une marchandise qui sera livrée plus tard, comme une récolte. Il a dit : « Celui qui fait une vente salam, qu'il la fasse pour une mesure connue, un poids connu, jusqu'à un terme connu. » (al-Boukhari 2240, Mouslim 1604)",
+      "Tout est dans la clarté : on doit savoir ce qu'on vend, combien, à quel prix, et quand. Le Prophète ﷺ a interdit la vente pleine d'incertitude, al-gharar (Mouslim 1513), parce qu'elle mène aux disputes et à l'injustice.",
+      "Abou Hanifa et ses élèves ont étudié des centaines de situations : que faire si la marchandise est abîmée ? Si l'acheteur découvre un défaut ? Si un associé meurt ? Leurs réponses ont servi de base aux tribunaux de nombreux pays pendant des siècles.",
+      "Pour un musulman d'aujourd'hui qui vend en ligne, achète à crédit ou fait des affaires, ces règles sont plus actuelles que jamais. Avant de signer un contrat ou de lancer un commerce, renseigne-toi auprès de gens de science.",
+      "'Omar ibn al-Khattab, selon ce que rapporte at-Tirmidhi, disait : « Que ne vende sur notre marché que celui qui a appris la religion. » (Tirmidhi 487) Abou Hanifa était exactement ce genre de commerçant."
+    ],
+    ayah: '2:275'
+  }, "Commandes à l'avance, crédits, associations : le commerçant de Koufa connaît les problèmes du marché de l'intérieur.");
+
+  insertAfter("« Les gens dépendent de lui »", {
+    t: "Être juste avec ceux qu'on critique",
+    p: [
+      "Dans les livres anciens, on trouve à la fois de grands éloges d'Abou Hanifa et des critiques sévères contre lui. Comment faire le tri ?",
+      "Certains savants du hadith lui reprochaient de ne pas connaître assez de hadiths, ou de trop raisonner. D'autres rapportaient contre lui des paroles dures, parfois avec des chaînes faibles, parfois dans des moments de dispute entre écoles.",
+      "De grands savants ont pris la défense de l'équité. Ibn 'Abd al-Barr, un savant malikite d'Andalousie, a écrit un livre où il rassemble les éloges des trois imams Malik, ach-Chafi'i et Abou Hanifa. Adh-Dhahabi, dans ses biographies, reconnaît la grandeur d'Abou Hanifa en fiqh, sa piété et son intelligence, tout en mentionnant honnêtement les critiques sur le hadith.",
+      "Voilà l'attitude juste : ni exagérer les éloges au point d'en faire un homme sans erreur, ni répéter les critiques au point de le mépriser. On prend la vérité de chaque côté.",
+      "Allah dit : « Que la haine d'un peuple ne vous pousse pas à être injustes. Soyez justes, cela est plus proche de la piété. » (5:8) Si Allah nous ordonne d'être justes même avec nos ennemis, combien plus avec un grand imam de l'Islam !",
+      "Cette règle vaut pour tous les savants, et même pour les gens ordinaires. Quand tu entends du mal de quelqu'un, demande la source. Regarde aussi ses qualités. Ne juge pas une vie entière sur une phrase.",
+      "Qu'Allah fasse miséricorde à Abou Hanifa, qu'Il lui pardonne ses erreurs, comme nous espérons qu'Il pardonnera les nôtres, et qu'Il le récompense pour tout le bien qu'il a transmis."
+    ],
+    ayah: '5:8'
+  }, "Des éloges immenses, des critiques sévères. Comment être juste avec un savant ?");
+
+  s.sources.push("Coran : 59:10 ; 2:275 ; 5:8 ; Abou Dawoud 4811, Tirmidhi 1954 (remercier les gens) ; al-Boukhari 2240, Mouslim 1604 (la vente salam) ; Mouslim 1513 (le gharar) ; Tirmidhi 487 (parole de 'Omar)");
+  s.quiz.push(
+    ["Pour qui Abou Hanifa demandait-il pardon à chaque prière, avec ses parents ?", ["Pour le calife", "Pour son maître Hammad", "Pour ses clients", "Pour personne"], 1,
+      "« Celui qui ne remercie pas les gens ne remercie pas Allah » (Abou Dawoud 4811). La reconnaissance envers les maîtres fait partie de la science."],
+    ["Tu entends quelqu'un dire beaucoup de mal d'un savant. Quelle attitude juste t'apprend cette série ?", ["Répéter partout", "Demander la source, regarder aussi ses qualités, rester juste", "Insulter celui qui parle", "Ne plus jamais écouter ce savant"], 1,
+      "« Que la haine d'un peuple ne vous pousse pas à être injustes » (5:8)."]
+  );
+})();
+
 /* Version longue, racontée en série : Prophète Adam. */
 S({
   id: 'adam', cat: 'prophetes', title: 'Prophète Adam', ar: 'آدَم', honor: 'as',
@@ -2193,6 +2371,125 @@ S({
       "Il craignait que l'argent des palais ne gâte son cœur. Il vivait simplement : la vraie richesse est celle de l'âme (al-Boukhari 6446)."]
   ]
 });
+
+/* Ahmad ibn Hanbal, partie 2 : épisodes insérés pour atteindre environ 30 minutes. */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'ahmad'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("Les voyages de la science", {
+    t: "Ahmad et ach-Chafi'i",
+    p: [
+      "Parmi tous les maîtres et amis de l'imam Ahmad, une relation est restée célèbre : celle qui l'unissait à l'imam ach-Chafi'i.",
+      "Ach-Chafi'i était plus âgé de quatorze ans. Il était déjà un grand juriste quand Ahmad le rencontra, à La Mecque puis à Bagdad. Ahmad, lui, était un spécialiste du hadith. Les deux hommes s'apportèrent mutuellement.",
+      "On rapporte qu'ach-Chafi'i dit à Ahmad, selon le sens : « Vous êtes plus savants que nous en hadith et en transmetteurs. Quand un hadith est authentique, informe-moi, qu'il vienne de Koufa, de Bassora ou du Cham, pour que j'aille vers lui. » (rapporté par Ibn Abi Hatim et adh-Dhahabi) Le grand juriste demandait humblement au jeune spécialiste de lui signaler les hadiths authentiques.",
+      "De son côté, Ahmad aimait profondément son maître. Son fils 'Abdoullah raconte : « J'ai dit à mon père : quel genre d'homme était ach-Chafi'i, pour que je t'entende tant prier pour lui ? » Ahmad répondit : « Mon fils, ach-Chafi'i était comme le soleil pour le monde, et comme la santé pour le corps. Ces deux choses ont-elles un remplaçant ? » (rapporté par adh-Dhahabi dans Siyar)",
+      "On rapporte aussi qu'Ahmad disait prier pour ach-Chafi'i dans ses prières depuis des dizaines d'années.",
+      "Ces deux hommes n'étaient pas toujours du même avis. Ach-Chafi'i a fondé une école, Ahmad une autre. Mais il n'y avait entre eux ni jalousie ni rivalité. Chacun voyait dans l'autre un frère qui l'aidait à atteindre la vérité.",
+      "Le Prophète ﷺ a dit : « Aucun de vous ne croit vraiment tant qu'il n'aime pas pour son frère ce qu'il aime pour lui-même. » (al-Boukhari 13, Mouslim 45) Ahmad et ach-Chafi'i aimaient l'un pour l'autre la science, la vérité et le Paradis."
+    ]
+  }, "Le grand juriste de Qouraych demande au jeune homme de hadith : « Quand un hadith est authentique, préviens-moi. »");
+
+  insertAfter("Le Mousnad", {
+    t: "La Sounna avant les opinions",
+    p: [
+      "Quelle était la méthode de l'imam Ahmad pour répondre aux questions des gens ?",
+      "D'abord, il cherchait dans le Coran. Puis dans la Sounna authentique. S'il trouvait un texte clair, il n'allait pas plus loin : aucune opinion humaine ne pouvait passer devant.",
+      "S'il n'y avait pas de texte clair, il regardait les avis des compagnons. Quand ils étaient d'accord, il suivait leur accord. Quand ils divergeaient, il choisissait l'avis le plus proche du Coran et de la Sounna, et ne sortait pas de leurs avis.",
+      "Le raisonnement par analogie, il ne l'utilisait qu'en dernier recours, par nécessité. Il préférait même un hadith dont la chaîne n'était pas parfaite, tant qu'il n'était pas mensonger ni contredit, plutôt qu'une opinion purement humaine. Les savants ont expliqué que ce qu'il appelait parfois « faible » correspond souvent à ce que d'autres appellent « bon » (hassan).",
+      "Ahmad détestait aussi le kalam, la théologie spéculative inspirée de la philosophie. Il avait vu où elle avait mené les Mou'tazila : à juger Allah avec la raison humaine, et à dire que Sa parole est créée.",
+      "Il était très prudent avec les fatwas. On rapporte qu'il répondait souvent : « Je ne sais pas », ou : « Demande aux savants. » Quand on lui posait des questions imaginaires sur des situations qui n'existaient pas, il refusait parfois de répondre : laissez-la jusqu'à ce qu'elle arrive, disait-il en substance.",
+      "Cette méthode, c'est la même que celle des autres imams : le Coran, puis la Sounna, puis les compagnons. Ils différaient sur des détails, sur la place qu'ils donnaient à tel ou tel outil. Mais leur boussole était la même."
+    ]
+  }, "Quand on lui pose une question, par où commence-t-il ? Et qu'est-ce qu'il refuse de faire passer avant ?");
+
+  insertAfter("Les fouets", {
+    t: "La patience en prison",
+    p: [
+      "Selon les historiens, l'imam Ahmad resta en prison environ vingt-huit mois. Plus de deux ans dans l'obscurité, avec des chaînes aux pieds.",
+      "On rapporte qu'il priait en prison avec ses chaînes, et qu'il dirigeait parfois la prière pour les autres prisonniers. Ses fers étaient si lourds qu'il avait du mal à marcher.",
+      "Que pense un homme pendant tout ce temps ? Ahmad connaissait par cœur les versets qui expliquent pourquoi Allah éprouve les croyants : « Les gens pensent-ils qu'on les laissera dire : Nous croyons, sans les éprouver ? Nous avons certes éprouvé ceux qui les ont précédés, afin qu'Allah connaisse ceux qui disent la vérité et ceux qui mentent. » (29:2-3)",
+      "Il connaissait aussi ce hadith. On demanda au Prophète ﷺ : « Quels sont les gens les plus durement éprouvés ? » Il répondit : « Les prophètes, puis les meilleurs après eux, puis les meilleurs après eux. L'homme est éprouvé selon sa religion. » (Tirmidhi 2398, hadith hassan sahih)",
+      "L'épreuve n'est donc pas un signe qu'Allah nous abandonne. Elle peut être un signe qu'Il nous élève. Ahmad le savait, et c'est ce qui l'a tenu debout.",
+      "Pendant ce temps, dehors, sa famille souffrait aussi. Ses enfants grandissaient sans leur père. Ses élèves priaient pour lui. Et le peuple de Bagdad suivait les nouvelles avec angoisse : tant que l'imam Ahmad ne cédait pas, ils savaient que la vérité n'était pas perdue.",
+      "Toi aussi, tu traverseras des épreuves : une maladie, une injustice, une solitude, des moqueries à cause de ta religion. Souviens-toi de l'homme enchaîné qui priait dans sa cellule. Allah dit : « Seuls les endurants recevront leur pleine récompense sans compter. » (39:10)"
+    ],
+    ayah: '29:2'
+  }, "Vingt-huit mois de prison, des chaînes aux pieds. À quoi pense un homme pendant tout ce temps ?");
+
+  insertAfter("Un savant qui vivait pauvrement", {
+    t: "Ahmad dans sa maison",
+    p: [
+      "On imagine parfois les grands savants comme des hommes durs et lointains. L'imam Ahmad, dans sa maison, était un mari et un père tendre.",
+      "Sa première épouse s'appelait 'Abbasa, la mère de son fils Salih. On rapporte qu'il a dit d'elle : « Oumm Salih a vécu avec moi trente ans, et nous n'avons jamais été en désaccord sur une seule parole. » (rapporté par al-Khatib dans Tarikh Baghdad) Après sa mort, il épousa Rayhana, la mère de son fils 'Abdoullah.",
+      "Ses deux fils, Salih et 'Abdoullah, ont transmis sa science. C'est 'Abdoullah qui a transmis le Mousnad et rapporté beaucoup de ses paroles. C'est grâce aux récits de ses fils que nous connaissons les détails de l'Épreuve.",
+      "Ahmad était aussi très scrupuleux. On rapporte que son fils Salih, devenu juge, avait accepté des cadeaux du calife. Ahmad cessa alors de manger chez lui. Un jour, on lui servit du pain, et il demanda d'où venait le levain. Quand on lui dit qu'il venait de la maison de Salih, il refusa d'en manger. (rapporté par Ibn al-Jawzi dans Manaqib al-Imam Ahmad)",
+      "Ce n'était pas de la dureté envers son fils, qu'il aimait. C'était la peur de nourrir son corps avec un bien dont l'origine n'était pas sûre. Le Prophète ﷺ a dit : « Laisse ce qui te fait douter pour ce qui ne te fait pas douter. » (Tirmidhi 2518, an-Nasa'i 5711, hadith authentique)",
+      "Il était aussi plein de bonté avec ses voisins, ses élèves, les pauvres. Il riait peu, mais souriait avec douceur. Il ne se vantait jamais de son épreuve. Quand on le louait, il disait : « Que Dieu nous préserve de l'orgueil. »",
+      "Le Prophète ﷺ a dit : « Le meilleur d'entre vous est le meilleur envers sa famille, et je suis le meilleur d'entre vous envers ma famille. » (Tirmidhi 3895, hadith authentique) La grandeur d'un homme se voit aussi dans sa maison."
+    ]
+  }, "Le savant qui a tenu tête aux califes : comment était-il avec sa femme et ses enfants ?");
+
+  s.sources.push(
+    "al-Boukhari 13 ; Mouslim 45 (aimer pour son frère) ; Tirmidhi 2398 (les plus éprouvés) ; Tirmidhi 2518, an-Nasa'i 5711 (laisser le doute) ; Tirmidhi 3895 (le meilleur envers sa famille)",
+    "Ibn Abi Hatim : Adab ach-Chafi'i wa Manaqibouh ; Coran 29:2-3"
+  );
+  s.quiz.push(
+    ["Que demandait ach-Chafi'i à Ahmad au sujet des hadiths ?", ["De lui cacher les hadiths", "De le prévenir quand un hadith est authentique, pour le suivre", "D'écrire ses livres à sa place", "De ne plus étudier"], 1,
+      "Le grand juriste demandait humblement au spécialiste du hadith de lui signaler les hadiths authentiques (rapporté par Ibn Abi Hatim)."],
+    ["Selon le hadith, qui sont les gens les plus durement éprouvés ?", ["Les plus riches", "Les prophètes, puis les meilleurs après eux", "Les mécréants seulement", "Les enfants"], 1,
+      "« L'homme est éprouvé selon sa religion » (Tirmidhi 2398). L'épreuve peut être un signe qu'Allah élève le croyant."],
+    ["Pourquoi Ahmad refusa-t-il le pain fait avec le levain de la maison de son fils Salih ?", ["Il n'aimait pas le pain", "Il craignait que ce bien vienne de cadeaux douteux du pouvoir", "Il était fâché pour toujours", "Il jeûnait toute l'année"], 1,
+      "« Laisse ce qui te fait douter pour ce qui ne te fait pas douter » (Tirmidhi 2518). C'était du scrupule, pas de la dureté."]
+  );
+})();
+
+/* Ahmad ibn Hanbal, partie 3 : épisodes supplémentaires (environ 30 minutes au total). */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'ahmad'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("La Sounna avant les opinions", {
+    t: "L'imam et le Coran",
+    p: [
+      "Avant d'être un savant du hadith, l'imam Ahmad était un homme du Coran. Il l'avait appris par cœur enfant, et il ne le quitta jamais.",
+      "Ses fils rapportent qu'il lisait chaque jour une grande partie du Coran, et qu'il le terminait régulièrement, en une semaine selon certains récits. La nuit, il se levait pour prier et pour réciter.",
+      "On rapporte aussi qu'il pleurait souvent pendant sa lecture, surtout en lisant les versets sur le Jour dernier. Il disait que le Coran était ce qu'il y avait de plus précieux dans sa vie.",
+      "C'est justement parce qu'il aimait tant le Coran qu'il a refusé de dire qu'il était créé. Pour lui, le Coran n'était pas un objet comme les autres. C'était la parole de son Seigneur, celle qu'il récitait chaque nuit, celle que Jibril avait apportée au Prophète ﷺ.",
+      "Le Prophète ﷺ a dit : « Le meilleur d'entre vous est celui qui apprend le Coran et l'enseigne. » (al-Boukhari 5027) Et il a dit : « Lisez le Coran, car il viendra le Jour de la Résurrection intercéder pour ceux qui le lisaient. » (Mouslim 804)",
+      "Ahmad conseillait aussi de lire le Coran avec réflexion, en comprenant, plutôt que de courir sans réfléchir. Allah dit : « Voici un Livre béni que Nous avons fait descendre vers toi, afin qu'ils méditent sur ses versets. » (38:29)",
+      "Quelle part du Coran lis-tu chaque jour ? Même une page, même quelques versets, avec leur sens. Commence petit, et sois régulier, comme l'imam Ahmad."
+    ],
+    ayah: '38:29'
+  }, "Avant d'être un savant du hadith, il était un homme du Coran. Et c'est pour cela qu'il a tout supporté.");
+
+  insertAfter("Ahmad dans sa maison", {
+    t: "Ses élèves",
+    p: [
+      "De nombreux savants se sont formés auprès de l'imam Ahmad. Ils sont venus de partout pour l'écouter, et ont transmis sa science dans le monde entier.",
+      "Le plus célèbre est peut-être Abou Dawoud as-Sijistani, l'auteur des Sounan d'Abou Dawoud, l'un des six grands recueils de hadiths. Abou Dawoud a aussi rassemblé dans un livre les réponses de l'imam Ahmad aux questions qu'il lui posait : les Masa'il, les questions d'Abou Dawoud à Ahmad.",
+      "Al-Boukhari et Mouslim ont eux aussi rencontré l'imam Ahmad et rapporté de lui. Son fils 'Abdoullah a transmis le Mousnad, son fils Salih a transmis ses réponses. D'autres élèves, comme al-Athram et al-Marroudhi, ont noté ses paroles et sa façon de vivre.",
+      "Ahmad était un maître exigeant mais tendre. Il n'aimait pas qu'on écrive ses avis personnels. On rapporte qu'il disait, quand il voyait des élèves noter ses opinions : « Écrivez les hadiths, pas mes avis. » Il craignait qu'on fasse de ses paroles une religion.",
+      "Pourtant, ses élèves ont rassemblé ses réponses, par fidélité et pour que les gens en profitent. C'est ainsi qu'est née l'école hanbalite, même si Ahmad lui-même ne cherchait pas à fonder une école.",
+      "Le plus beau dans tout cela, c'est la chaîne. Ahmad, élève d'ach-Chafi'i, lui-même élève de Malik. Al-Boukhari, Mouslim et Abou Dawoud, élèves d'Ahmad. Les grands recueils de hadiths sont nés dans les cercles de ces hommes qui s'aimaient pour Allah.",
+      "Le Prophète ﷺ a dit : « Qu'Allah illumine le visage d'une personne qui a entendu de nous un hadith, l'a retenu, puis l'a transmis. Car combien de transmetteurs le portent à quelqu'un qui le comprend mieux qu'eux. » (Abou Dawoud 3660, Tirmidhi 2656, hadith authentique)"
+    ]
+  }, "Al-Boukhari, Mouslim, Abou Dawoud : les plus grands noms du hadith se sont assis devant lui.");
+
+  s.sources.push("al-Boukhari 5027 ; Mouslim 804 (le Coran) ; Abou Dawoud 3660, Tirmidhi 2656 (transmettre le hadith) ; Coran 38:29 ; Abou Dawoud : Masa'il al-Imam Ahmad");
+  s.quiz.push(
+    ["Quel grand recueil de hadiths a été écrit par un élève de l'imam Ahmad ?", ["Les Sounan d'Abou Dawoud", "Al-Mouwatta'", "Ar-Risala", "Aucun"], 0,
+      "Abou Dawoud, al-Boukhari et Mouslim ont tous appris auprès de l'imam Ahmad."]
+  );
+})();
 
 /* Version longue, racontée en série : 'Ali ibn Abi Talib. */
 S({
@@ -2644,6 +2941,181 @@ S({
       "Il a refusé les cours privés du gouverneur : « Je n'humilie pas la science. » Il a préféré l'exil."]
   ]
 });
+
+/* Al-Boukhari, partie 2 : épisodes insérés pour atteindre environ 30 minutes. */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'bukhari'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("Une mémoire qui étonnait les maîtres", {
+    t: "Un livre écrit au clair de lune",
+    p: [
+      "Pendant son séjour au Hijaz, le jeune Mouhammad ne se contenta pas d'apprendre. Il commença à écrire.",
+      "Il raconte lui-même, selon ce que rapporte al-Khatib, qu'à dix-huit ans, il écrivit son premier grand livre sur les transmetteurs, at-Tarikh al-Kabir, « la Grande Histoire ». Il l'écrivit à Médine, près de la tombe du Prophète ﷺ, pendant les nuits de pleine lune.",
+      "Ce livre rassemble des milliers de biographies de transmetteurs de hadiths : leur nom, leurs maîtres, leurs élèves, parfois une remarque sur leur fiabilité. Il a dit : « Il y a peu de noms dans l'Histoire pour lesquels je n'aie pas une histoire, mais j'ai évité d'allonger le livre. »",
+      "Pourquoi un livre sur des hommes, et pas directement sur les hadiths ? Parce qu'un hadith ne vaut que par ceux qui l'ont transmis. Pour savoir si une parole vient vraiment du Prophète ﷺ, il faut connaître chaque maillon de la chaîne.",
+      "Al-Boukhari était aussi d'une grande douceur dans ses jugements. Quand il devait dire qu'un transmetteur était faible, il employait des mots prudents, comme « on a des réserves sur lui », ou « il y a à redire ». Il évitait les mots durs.",
+      "Il savait que juger les transmetteurs, c'était parler de personnes. On ne le fait que par nécessité, pour protéger la Sounna, et jamais pour se moquer ou humilier.",
+      "Allah dit : « Ô vous qui avez cru ! Si un pervers vous apporte une nouvelle, vérifiez-en la teneur, de peur de faire du tort à des gens par ignorance. » (49:6) Toute la science des transmetteurs est contenue dans ce verset : vérifier."
+    ],
+    ayah: '49:6'
+  }, "À dix-huit ans, près de la tombe du Prophète ﷺ, il écrit un livre sous la lumière de la lune.");
+
+  insertAfter("Le test de Bagdad", {
+    t: "Ses maîtres",
+    p: [
+      "Al-Boukhari a dit qu'il avait écrit les hadiths de plus de mille maîtres, tous des gens de hadith. Parmi eux, quelques noms ont particulièrement marqué sa vie.",
+      "À Bagdad, il rencontra l'imam Ahmad ibn Hanbal. On rapporte qu'Ahmad l'encourageait à rester à Bagdad, et lui reprochait affectueusement de partir vers le Khorasan.",
+      "Il y avait aussi 'Ali ibn al-Madini, le plus grand spécialiste des défauts cachés des hadiths. Al-Boukhari, qui étonnait tout le monde, a dit à son sujet, selon ce que rapporte adh-Dhahabi : « Je ne me suis jamais senti petit devant quelqu'un, sauf devant 'Ali ibn al-Madini. »",
+      "Imagine ! L'homme qui avait corrigé cent hadiths mélangés devant tout Bagdad se sentait petit devant son maître. C'est le signe d'un vrai savant : plus il apprend, plus il mesure ce qu'il ne sait pas.",
+      "Il y avait enfin Ishaq ibn Rahawayh, au Khorasan, celui qui avait souhaité qu'on rassemble un livre court des hadiths authentiques. Ce souhait allait devenir le Sahih.",
+      "Chaque grand savant a été d'abord un bon élève. Avant de devenir un maître, al-Boukhari a passé des années à s'asseoir aux pieds des autres, à écouter, à noter, à voyager.",
+      "Le Prophète ﷺ a dit : « Celui qui emprunte un chemin pour y chercher une science, Allah lui facilite par cela un chemin vers le Paradis. » (Mouslim 2699)"
+    ]
+  }, "L'homme qui avait étonné Bagdad dit : « Je ne me suis jamais senti petit devant quelqu'un, sauf devant un seul homme. »");
+
+  insertAfter("Seize ans pour un livre", {
+    t: "Qu'est-ce qu'un hadith authentique ?",
+    p: [
+      "On dit souvent : « Ce hadith est sahih, authentique. » Mais qu'est-ce que cela veut dire exactement ? Les savants ont défini cinq conditions.",
+      "Un : la chaîne doit être continue. Chaque transmetteur doit avoir réellement reçu le hadith de celui qui le précède, sans maillon manquant, jusqu'au Prophète ﷺ.",
+      "Deux : chaque transmetteur doit être intègre, 'adl. Un musulman pieux, honnête, connu pour ne pas mentir.",
+      "Trois : chaque transmetteur doit être précis, dabit. Une bonne mémoire, ou un livre bien tenu. Un homme très pieux mais qui confond les choses ne suffit pas.",
+      "Quatre : le hadith ne doit pas contredire ce que rapportent des transmetteurs plus fiables que lui. Cinq : il ne doit pas avoir de défaut caché, que seuls les grands spécialistes savent détecter, comme 'Ali ibn al-Madini.",
+      "Al-Boukhari a ajouté une condition plus stricte encore : il voulait la preuve que deux transmetteurs successifs s'étaient vraiment rencontrés au moins une fois. Pour d'autres savants, comme son élève Mouslim, il suffisait qu'ils aient vécu à la même époque et qu'une rencontre soit possible. C'est l'une des raisons pour lesquelles les savants placent souvent le Sahih d'al-Boukhari en premier.",
+      "Pourquoi tant de rigueur ? Parce que le Prophète ﷺ a dit : « Celui qui ment sur moi volontairement, qu'il prépare sa place dans le Feu. » (al-Boukhari 110, Mouslim 3) Attribuer au Prophète ﷺ une parole qu'il n'a pas dite est l'une des choses les plus graves. Les savants du hadith ont consacré leur vie à empêcher cela."
+    ]
+  }, "Sahih, authentique : on l'entend partout. Mais quelles sont exactement les conditions ?");
+
+  insertAfter("Qu'est-ce qu'un hadith authentique ?", {
+    t: "Du premier au dernier hadith",
+    p: [
+      "Le Sahih d'al-Boukhari est rangé en livres et en chapitres : le livre de la foi, le livre de la science, le livre des ablutions, de la prière, du jeûne, du commerce, des bonnes manières, et des dizaines d'autres.",
+      "Les titres de ses chapitres sont célèbres. Souvent, al-Boukhari y glisse sa propre compréhension, en citant un verset ou une parole de compagnon. Les savants disent : « La science d'al-Boukhari est dans les titres de ses chapitres. »",
+      "Regarde comment il commence. Le tout premier hadith du livre est celui de 'Omar : « Les actions ne valent que par les intentions, et chacun n'aura que ce qu'il a eu l'intention de faire. » (al-Boukhari 1) Avant toute chose, il rappelle au lecteur : vérifie pourquoi tu lis ce livre. Pour Allah, ou pour paraître savant ?",
+      "Et regarde comment il termine. Le tout dernier hadith est celui-ci : « Deux paroles légères sur la langue, lourdes dans la Balance, aimées du Tout Miséricordieux : Soubhana-llahi wa bi-hamdih, Soubhana-llahi-l-'Azim. » (al-Boukhari 7563)",
+      "Les savants ont vu dans ce choix une grande finesse. Le livre commence par l'intention, et se termine par la Balance du Jour du Jugement. Entre les deux, toute la vie du musulman.",
+      "Al-Boukhari a écrit d'autres livres encore. Al-Adab al-Moufrad rassemble des hadiths et des paroles de compagnons sur le comportement : les parents, les voisins, la miséricorde envers les animaux. Et Khalq Af'al al-'Ibad défend la croyance des gens de la Sounna au sujet du Coran.",
+      "Ce soir, essaie de faire comme le dernier chapitre du Sahih : dis cent fois « Soubhana-llahi wa bi-hamdih ». Le Prophète ﷺ a dit que celui qui le dit cent fois dans la journée voit ses péchés effacés, même s'ils sont comme l'écume de la mer. (al-Boukhari 6405, Mouslim 2691)"
+    ]
+  }, "Le premier hadith du Sahih parle de l'intention. Le dernier parle de la Balance. Ce n'est pas un hasard.");
+
+  insertAfter("L'épreuve de Nichapour", {
+    t: "La piété cachée",
+    p: [
+      "Al-Boukhari n'était pas seulement un homme de livres. Ceux qui vivaient près de lui ont raconté sa piété.",
+      "Un de ses proches, Mouhammad ibn Abi Hatim, rapporte qu'un jour al-Boukhari pria longuement dans un jardin. Quand il eut fini, il souleva le bas de sa chemise et dit : « Regardez s'il y a quelque chose sous ma chemise. » On trouva une guêpe, qui l'avait piqué de nombreuses fois. Son corps avait enflé. On lui demanda : « Pourquoi n'as-tu pas interrompu ta prière ? » Il répondit : « J'étais en train de réciter une sourate, et j'ai voulu la terminer. » (rapporté par al-Khatib et adh-Dhahabi)",
+      "On rapporte aussi qu'il faisait du commerce avec un capital hérité de son père, et qu'il était très honnête. Un jour, des marchands vinrent le soir lui proposer un prix pour une marchandise. Il eut l'intention, dans son cœur, de la leur vendre. Le lendemain, d'autres marchands lui proposèrent beaucoup plus. Il refusa, et vendit aux premiers, en disant, selon le sens : « J'avais eu l'intention de la leur vendre, je ne veux pas trahir mon intention. » (rapporté par adh-Dhahabi dans Siyar)",
+      "Il donnait beaucoup en aumône, en secret, surtout aux étudiants pauvres. Il mangeait peu. Il s'entraînait aussi au tir à l'arc, et on dit qu'il manquait rarement sa cible.",
+      "Il terminait la lecture complète du Coran souvent, en particulier pendant le Ramadan, selon ce que rapportent ses proches.",
+      "Le Prophète ﷺ a dit : « Parmi les sept qu'Allah abritera sous Son ombre le jour où il n'y aura d'autre ombre que la Sienne : … un homme qui donne une aumône en la cachant, au point que sa main gauche ne sait pas ce que donne sa main droite. » (al-Boukhari 1423, Mouslim 1031)"
+    ]
+  }, "Après sa prière, il demande : « Regardez sous ma chemise. » Ce qu'on y trouve surprend tout le monde.");
+
+  insertAfter("La piété cachée", {
+    t: "Mouslim, l'élève",
+    p: [
+      "Parmi les élèves d'al-Boukhari à Nichapour, il y avait un homme qui deviendra lui-même immense : Mouslim ibn al-Hajjaj, l'auteur du Sahih de Mouslim, le deuxième recueil le plus authentique.",
+      "Mouslim aimait et admirait son maître. Al-Khatib rapporte qu'un jour, il vint vers al-Boukhari, l'embrassa entre les yeux et lui dit : « Laisse-moi embrasser tes pieds, ô maître des maîtres, ô chef des spécialistes du hadith, ô médecin du hadith dans ses défauts. »",
+      "Pendant la discorde de Nichapour, quand beaucoup de gens s'éloignèrent d'al-Boukhari, Mouslim resta fidèle à son maître, au risque de se faire des ennemis.",
+      "Il y eut aussi, parmi ses élèves, at-Tirmidhi, l'auteur des Sounan d'at-Tirmidhi, que tu vois cité si souvent dans cette application. At-Tirmidhi rapporte dans son livre de nombreux échanges avec son maître, en lui demandant son avis sur tel ou tel hadith.",
+      "Pense à cette chaîne. Al-Boukhari, élève d'Ahmad. Mouslim et at-Tirmidhi, élèves d'al-Boukhari. Les grands recueils de hadiths que nous lisons aujourd'hui viennent d'une même famille de savants qui se sont transmis la science et l'amour de la Sounna.",
+      "Un maître ne meurt pas tout à fait quand ses élèves continuent son œuvre. C'est le sens du hadith : « une science utile » qui continue à profiter après la mort. (Mouslim 1631)"
+    ]
+  }, "Un élève l'embrasse entre les yeux : « Ô maître des maîtres, ô médecin du hadith. »");
+
+  insertAfter("« La terre est devenue étroite »", {
+    t: "Défendre le Sahih aujourd'hui",
+    p: [
+      "Douze siècles après sa mort, al-Boukhari est encore attaqué. Sur internet, certains disent : « Al-Boukhari était un homme, il a pu se tromper, jetons son livre. » Que répondre ?",
+      "D'abord, c'est vrai : al-Boukhari était un être humain. Nous ne disons pas qu'il était infaillible. Mais son livre n'a pas été accepté parce qu'il l'a écrit. Il a été accepté parce que, pendant des siècles, des milliers de savants ont étudié chacune de ses chaînes, une par une.",
+      "Certains savants, comme ad-Daraqoutni, ont même critiqué quelques dizaines de hadiths du Sahih, sur des points techniques de chaînes. Et d'autres savants, comme Ibn Hajar, leur ont répondu en détail. Voilà comment travaille la science : on vérifie, on discute, avec des preuves.",
+      "Le résultat de ce travail immense, c'est un accord de l'Oumma : le Sahih d'al-Boukhari, puis celui de Mouslim, sont les deux livres les plus authentiques après le Coran. Ce n'est pas de l'aveuglement, c'est le fruit de douze siècles de vérification.",
+      "Souvent, ceux qui attaquent al-Boukhari n'ont jamais étudié une seule chaîne. Ils prennent un hadith qu'ils comprennent mal, le sortent de son contexte, et s'en moquent. La bonne réponse n'est pas l'insulte, mais la science : aller voir les explications des savants, comme Fath al-Bari d'Ibn Hajar.",
+      "Et rappelle-toi : rejeter la Sounna, c'est perdre la façon de prier, de jeûner, de faire le pèlerinage. Allah dit : « Ce que le Messager vous donne, prenez-le, et ce qu'il vous interdit, abstenez-vous-en. » (59:7)",
+      "Qu'Allah fasse miséricorde à l'imam al-Boukhari, qui a donné sa vie pour que nous puissions dire aujourd'hui, avec confiance : « Le Prophète ﷺ a dit… »"
+    ],
+    ayah: '59:7'
+  }, "Douze siècles après sa mort, on l'attaque encore sur internet. Que répondre ?");
+
+  s.sources.push(
+    "Coran : 49:6 ; 59:7",
+    "al-Boukhari 1 et 7563 (premier et dernier hadith du Sahih) ; 110 et Mouslim 3 (mentir sur le Prophète ﷺ) ; 6405 et Mouslim 2691 (Soubhana-llahi wa bi-hamdih) ; 1423 et Mouslim 1031 (l'aumône cachée) ; Mouslim 2699 (le chemin de la science) ; Mouslim 1631 (la science utile)",
+    "Ibn as-Salah : Mouqaddima (conditions du hadith authentique) ; ad-Daraqoutni : al-Ilzamat wa at-Tatabbou' ; Ibn Hajar : Fath al-Bari et Hady as-Sari"
+  );
+  s.quiz.push(
+    ["Quelle condition supplémentaire al-Boukhari exigeait-il pour son Sahih ?", ["Que le transmetteur soit riche", "La preuve que deux transmetteurs successifs se sont vraiment rencontrés", "Que le hadith soit court", "Que le transmetteur vienne de Boukhara"], 1,
+      "Les autres conditions sont : chaîne continue, transmetteurs intègres et précis, pas de contradiction, pas de défaut caché."],
+    ["Par quel hadith commence le Sahih d'al-Boukhari ?", ["Les deux paroles légères sur la langue", "Les actions ne valent que par les intentions", "Le hadith de Jibril", "Le hadith du voisin"], 1,
+      "Il commence par l'intention (al-Boukhari 1) et se termine par la Balance : « Deux paroles légères sur la langue… » (al-Boukhari 7563)."],
+    ["Quelqu'un dit en ligne : « Al-Boukhari était un humain, jetons son livre. » Quelle est la meilleure réponse ?", ["L'insulter", "Expliquer calmement que son livre a été vérifié chaîne par chaîne par des savants pendant des siècles", "Dire qu'al-Boukhari était infaillible", "Ne jamais en parler"], 1,
+      "Al-Boukhari n'était pas infaillible, mais son livre est le fruit d'une vérification immense. On répond par la science, pas par l'insulte."]
+  );
+})();
+
+/* Al-Boukhari, partie 3 : épisodes supplémentaires (environ 30 minutes au total). */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'bukhari'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("Un livre écrit au clair de lune", {
+    t: "Sur les routes du hadith",
+    p: [
+      "Al-Boukhari a passé une grande partie de sa vie sur les routes. Il a dit lui-même, selon ce que rapporte al-Khatib : « Je suis allé au Cham, en Égypte et dans la Péninsule deux fois, à Bassora quatre fois, je suis resté au Hijaz six ans, et je ne peux pas compter combien de fois je suis allé à Koufa et à Bagdad avec les gens du hadith. »",
+      "Imagine ces voyages au troisième siècle de l'hégire. Pas d'avion, pas de voiture. Des semaines de marche ou de chameau, des déserts, des montagnes, des fleuves. Des nuits dans des caravansérails, des journées de chaleur ou de froid.",
+      "Pourquoi tant de voyages ? Parce que les hadiths étaient dispersés chez des centaines de maîtres, dans des dizaines de villes. Pour vérifier une chaîne, il fallait parfois entendre le même hadith de plusieurs bouches différentes, et comparer.",
+      "Les savants avaient un nom pour cela : ar-rihla fi talab al-hadith, le voyage pour chercher le hadith. Le compagnon Jabir ibn 'Abdillah lui-même avait voyagé un mois entier jusqu'au Cham pour entendre un seul hadith d'un autre compagnon. (rapporté par al-Boukhari dans le Livre de la science, sans chaîne complète)",
+      "Al-Boukhari dépensait son héritage dans ces voyages. On rapporte qu'il lui arrivait de ne plus avoir d'argent et de rester des jours sans manger correctement. Mais il ne demandait rien à personne.",
+      "Allah dit : « Il ne convient pas que tous les croyants partent ensemble. Pourquoi donc de chaque groupe quelques-uns ne partiraient-ils pas pour s'instruire dans la religion, et pour avertir leur peuple quand ils reviennent vers eux ? » (9:122)",
+      "Toi, tu n'as pas besoin de traverser des déserts. Un cours, un livre, une application avec des sources. Le voyage le plus difficile, aujourd'hui, c'est parfois celui qui va du canapé à la page du livre."
+    ],
+    ayah: '9:122'
+  }, "« Je ne peux pas compter combien de fois je suis allé à Koufa et à Bagdad. »");
+
+  insertAfter("Du premier au dernier hadith", {
+    t: "Le livre des bonnes manières",
+    p: [
+      "En plus du Sahih, al-Boukhari a écrit un livre plus petit mais très aimé : al-Adab al-Moufrad, « le livre unique des bonnes manières ».",
+      "Ce livre rassemble des hadiths et des paroles de compagnons sur le comportement : envers les parents, la famille, les voisins, les orphelins, les invités, les malades, les animaux. Al-Boukhari y a mis aussi des textes qu'il n'avait pas mis dans son Sahih, et les savants ont étudié leur authenticité un par un.",
+      "Le livre commence par les parents. Al-Boukhari ouvre avec le verset : « Nous avons enjoint à l'homme la bonté envers ses père et mère. » (29:8) Puis il cite le hadith d'Ibn Mas'oud : il demanda au Prophète ﷺ quelle était l'action la plus aimée d'Allah. Il répondit : « La prière à son heure. » Puis ? « La bonté envers les parents. » Puis ? « Le combat dans le chemin d'Allah. » (al-Boukhari 527, Mouslim 85)",
+      "Pourquoi un si grand savant du hadith a-t-il consacré un livre entier aux bonnes manières ? Parce que la science sans comportement ne vaut rien. Le Prophète ﷺ a dit : « Je n'ai été envoyé que pour parfaire les nobles caractères. » (rapporté par Ahmad et al-Boukhari dans al-Adab al-Moufrad, hadith authentique)",
+      "Dans ce livre, on trouve aussi la miséricorde : « Celui qui ne fait pas miséricorde, on ne lui fera pas miséricorde. » (al-Boukhari 5997, Mouslim 2318) Et le sourire, la visite des malades, la salutation, le respect des aînés et la tendresse envers les petits.",
+      "Al-Boukhari lui-même appliquait ce qu'il écrivait. Ses proches racontent sa douceur, sa patience avec ceux qui lui faisaient du tort, et sa langue propre.",
+      "Si tu veux un livre simple pour commencer avec les hadiths, al-Adab al-Moufrad est un très bon choix, avec un commentaire qui précise l'authenticité de chaque texte."
+    ],
+    ayah: '29:8'
+  }, "Le plus grand savant du hadith écrit aussi un livre entier sur les bonnes manières. Il commence par les parents.");
+
+  insertAfter("« La terre est devenue étroite »", {
+    t: "Comment le Sahih est arrivé jusqu'à nous",
+    p: [
+      "Al-Boukhari est mort en l'an 256. Comment son livre est-il arrivé jusque dans nos mains, plus de mille ans plus tard, sans être modifié ?",
+      "Pendant sa vie, des milliers d'élèves l'ont entendu lire son Sahih, ou l'ont lu devant lui. Son élève Mouhammad ibn Youssouf al-Firabri a dit, selon ce que rapporte al-Khatib, qu'un très grand nombre de personnes avaient entendu le Sahih d'al-Boukhari avec lui. C'est surtout par la transmission d'al-Firabri que le livre nous est parvenu.",
+      "Ensuite, génération après génération, le livre a été lu à voix haute devant un maître qui l'avait lui-même reçu de son maître. Chaque élève recevait une autorisation, l'ijaza, avec la chaîne complète jusqu'à al-Boukhari. Aujourd'hui encore, des savants transmettent le Sahih avec une chaîne ininterrompue jusqu'à lui.",
+      "Les copies manuscrites étaient comparées entre elles. Au septième siècle de l'hégire, à Damas, le savant al-Younini établit une édition très soignée, en comparant plusieurs manuscrits célèbres et en notant chaque petite différence. C'est sur cette édition qu'est basée l'édition imprimée de référence au Caire, à la fin du treizième siècle de l'hégire, sur ordre du sultan ottoman. On l'appelle l'édition Sultaniyya.",
+      "Les numéros que tu vois dans cette application, comme « al-Boukhari 1 » ou « al-Boukhari 7563 », viennent d'une numérotation moderne, faite au vingtième siècle pour faciliter les recherches.",
+      "Ainsi, le livre a été protégé par trois choses à la fois : la mémoire des hommes, l'écriture des manuscrits, et les chaînes de transmission. C'est une des grandes merveilles de la science islamique.",
+      "Allah dit : « C'est Nous qui avons fait descendre le Rappel, et c'est Nous qui en sommes les gardiens. » (15:9) Les savants ont expliqué que la protection du Coran inclut la protection de la Sounna qui l'explique. Le Sahih d'al-Boukhari en est un des plus beaux exemples."
+    ],
+    ayah: '15:9'
+  }, "Mort en l'an 256. Comment son livre est-il arrivé jusque dans ta main, sans être changé ?");
+
+  s.sources.push("Coran : 9:122 ; 29:8 ; 15:9 ; al-Boukhari 527, Mouslim 85 (l'action la plus aimée) ; al-Boukhari 5997, Mouslim 2318 (la miséricorde) ; al-Boukhari, al-Adab al-Moufrad ; al-Khatib : ar-Rihla fi Talab al-Hadith ; édition al-Younini et édition Sultaniyya du Sahih");
+  s.quiz.push(
+    ["Par quoi commence le livre al-Adab al-Moufrad d'al-Boukhari ?", ["Par le commerce", "Par la bonté envers les parents", "Par la guerre", "Par la médecine"], 1,
+      "Après la prière à son heure, l'action la plus aimée d'Allah est la bonté envers les parents (al-Boukhari 527)."],
+    ["Comment le Sahih a-t-il été protégé jusqu'à nous ?", ["Par un seul manuscrit caché", "Par la mémoire, les manuscrits comparés et les chaînes de transmission", "Par hasard", "Il a été réécrit au vingtième siècle"], 1,
+      "Des milliers d'élèves, des manuscrits comparés (édition al-Younini), et des chaînes jusqu'à al-Boukhari."]
+  );
+})();
 
 /* Version longue, racontée en série : la création des cieux et de la terre. */
 S({
@@ -3287,6 +3759,186 @@ S({
       "Le fanatisme divise les musulmans. Ach-Chafi'i louait Abou Hanifa, Ahmad priait pour ach-Chafi'i. On les aime tous et on suit la preuve, avec douceur."]
   ]
 });
+
+/* Les savants et nous, partie 2 : épisodes insérés pour atteindre environ 30 minutes. */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'imams'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("Les héritiers des prophètes", {
+    t: "Les premiers savants : les compagnons",
+    p: [
+      "Avant les quatre imams, avant les grands livres, il y eut une première génération de savants : les compagnons du Prophète ﷺ. Ils avaient appris directement de lui, en le regardant prier, en l'écoutant parler, en lui posant leurs questions.",
+      "Certains d'entre eux sont devenus des références de la science. Le Prophète ﷺ serra un jour contre lui le jeune 'Abdoullah ibn 'Abbas et dit : « Ô Allah, enseigne-lui le Livre. » (al-Boukhari 75) Et il invoqua aussi pour lui : « Ô Allah, donne-lui la compréhension de la religion. » (al-Boukhari 143)",
+      "Ibn 'Abbas deviendra le plus grand commentateur du Coran de sa génération. On l'appelait « l'interprète du Coran ». Il racontait plus tard qu'après la mort du Prophète ﷺ, il allait chez les compagnons pour apprendre les hadiths qu'il ne connaissait pas. Il attendait devant leur porte, la tête posée sur son manteau, pendant que le vent lui jetait la poussière au visage, plutôt que de les réveiller. (rapporté par ad-Darimi)",
+      "'Abdoullah ibn Mas'oud disait : « Par Allah, il n'y a pas une sourate du Livre d'Allah sans que je sache où elle a été révélée, ni un verset sans que je sache à propos de quoi il a été révélé. » (al-Boukhari 5002) Le calife 'Omar l'envoya enseigner à Koufa, en Irak.",
+      "Il y avait aussi 'Aïcha, la mère des croyants. Les plus grands compagnons venaient lui poser leurs questions sur la Sounna du Prophète ﷺ dans sa maison. Il y avait Zayd ibn Thabit, à qui l'on confia la mise par écrit du Coran. Il y avait Mou'adh ibn Jabal, 'Ali ibn Abi Talib, Abou Hourayra, qui transmit plus de hadiths que tout autre.",
+      "Quand les compagnons se dispersèrent dans les pays conquis, chacun emporta sa part de la science. À La Mecque, les élèves d'Ibn 'Abbas. À Médine, ceux d'Ibn 'Omar, de Zayd et de 'Aïcha. À Koufa, ceux d'Ibn Mas'oud et d'Ali. À Bassora, ceux d'Anas ibn Malik.",
+      "Retiens bien cette carte. Car les grands imams que tu vas découvrir ont chacun grandi dans une de ces villes, et ont hérité de la science des compagnons qui y avaient vécu. Malik à Médine, Abou Hanifa à Koufa, ach-Chafi'i à La Mecque. La même lumière, passée de main en main."
+    ]
+  }, "Les compagnons se dispersent dans le monde, et chacun emporte une part de la lumière.");
+
+  insertAfter("Les premiers savants : les compagnons", {
+    t: "« Regardez de qui vous prenez votre religion »",
+    p: [
+      "Après les compagnons vint la génération de leurs élèves, les tabi'oun. Et avec elle, un nouveau danger : des gens commencèrent à inventer de faux hadiths, pour soutenir leur groupe politique, pour faire peur ou pour attirer l'attention.",
+      "Les savants réagirent en inventant une science unique au monde : la science de l'isnad, la chaîne de transmission. Pour chaque hadith, on demandait : qui te l'a dit ? Et lui, de qui le tient-il ? Et ainsi de suite, nom par nom, jusqu'au Prophète ﷺ.",
+      "Mouhammad ibn Sirin, un grand savant de Bassora, a dit : « Cette science est une religion : regardez donc de qui vous prenez votre religion. » Et il a dit aussi : au début, on ne demandait pas la chaîne ; mais quand la discorde est arrivée, on a dit : nommez-nous vos hommes. (rapporté par Mouslim dans l'introduction de son Sahih)",
+      "'Abdoullah ibn al-Moubarak a dit : « La chaîne de transmission fait partie de la religion. Sans elle, n'importe qui dirait n'importe quoi. » (rapporté par Mouslim dans l'introduction de son Sahih)",
+      "Les savants étudièrent alors la vie de milliers de transmetteurs : étaient-ils honnêtes ? Avaient-ils une bonne mémoire ? Avaient-ils vraiment rencontré celui dont ils rapportaient ? Ils écrivirent des livres entiers sur eux. Aucune autre religion, aucune autre civilisation n'a protégé les paroles de son fondateur avec une telle rigueur.",
+      "Le calife 'Omar ibn 'Abd al-'Aziz, craignant que la science ne disparaisse avec la mort des savants, ordonna de mettre par écrit les hadiths du Prophète ﷺ. (rapporté par al-Boukhari dans le Livre de la science, sans chaîne complète)",
+      "Cette parole d'Ibn Sirin est plus actuelle que jamais. Aujourd'hui, une vidéo de trente secondes peut citer un « hadith » sans source, et il fait le tour du monde. Avant de partager, pose la question des savants : d'où ça vient ? Quel recueil ? Quel numéro ? Est-il authentique ?"
+    ]
+  }, "Des menteurs inventent de faux hadiths. Les savants répondent par une science unique au monde.");
+
+  insertAfter("Ils peuvent se tromper", {
+    t: "Pourquoi les savants ne sont pas toujours d'accord",
+    p: [
+      "Si tous les savants suivent le Coran et la Sounna, pourquoi ne disent-ils pas tous la même chose ? C'est une question que beaucoup de jeunes se posent, et qui trouble parfois leur foi.",
+      "Le Prophète ﷺ lui-même a vu ses compagnons comprendre un ordre de deux façons. Après la bataille du Fossé, il leur dit : « Que personne ne prie la prière de l'après-midi ('asr) ailleurs que chez les Banou Qourayza. » En chemin, l'heure de la prière arriva. Certains dirent : nous ne prierons qu'une fois arrivés. D'autres dirent : il voulait seulement que nous nous dépêchions, prions maintenant. On rapporta cela au Prophète ﷺ, et il ne blâma aucun des deux groupes. (al-Boukhari 946, Mouslim 1770)",
+      "Les savants ont expliqué les principales raisons des divergences. Le savant Ibn Taymiyya en a fait un petit livre célèbre, Raf' al-Malam, « Lever le blâme qui pèse sur les grands imams ».",
+      "Première raison : un hadith n'était pas parvenu à un savant. À l'époque, les hadiths étaient dispersés dans les villes. Un imam de Koufa pouvait ne pas connaître un hadith connu à Médine.",
+      "Deuxième raison : le hadith lui était parvenu, mais par une chaîne qu'il jugeait faible, alors qu'un autre savant l'avait reçu par une chaîne authentique.",
+      "Troisième raison : ils comprenaient le texte différemment, car la langue arabe permet parfois plusieurs sens. Quatrième raison : l'un pensait que le texte avait été abrogé, ou qu'il concernait un cas particulier.",
+      "Aucun de ces imams ne rejetait un hadith authentique en sachant qu'il était authentique. C'est pour cela qu'on ne les accuse pas. Mais c'est aussi pour cela que, lorsque la preuve devient claire pour nous, nous la suivons, comme ils nous l'ont demandé. La divergence n'est pas une raison de douter de l'Islam : c'est la preuve que ses savants étaient honnêtes, et qu'ils ne cachaient pas leurs hésitations."
+    ]
+  }, "Deux groupes de compagnons comprennent le même ordre de deux façons. Le Prophète ﷺ ne blâme personne.");
+
+  insertAfter("Pourquoi les savants ne sont pas toujours d'accord", {
+    t: "Les écoles de jurisprudence",
+    p: [
+      "Tu as sûrement entendu parler des « quatre écoles » : hanafite, malikite, chafi'ite et hanbalite. Qu'est-ce que c'est exactement ?",
+      "Une école de jurisprudence, un madhhab, c'est une méthode pour comprendre les textes, et l'ensemble des réponses qu'un imam et ses élèves ont données, génération après génération. Il y a eu bien d'autres écoles au début : celles d'al-Awza'i, de Soufyan ath-Thawri, d'al-Layth ibn Sa'd, de Dawoud az-Zahiri. Les quatre se sont surtout maintenues parce que leurs élèves les ont mises par écrit et enseignées.",
+      "Est-il interdit d'étudier dans une école ? Non. La plupart des grands savants de l'histoire ont commencé par étudier une école, comme on apprend une langue avec une grammaire. Cela donne de l'ordre et évite de choisir au hasard. Et pour celui qui n'est pas savant, Allah dit : « Demandez aux gens du rappel si vous ne savez pas. » (16:43)",
+      "Le problème n'est donc pas l'école. Le problème, c'est le fanatisme : transformer l'école en équipe, au point de rejeter un hadith authentique parce que « ce n'est pas notre avis », ou de mépriser les musulmans des autres écoles.",
+      "Les savants ont mis la limite : celui qui découvre clairement qu'un avis de son école contredit une preuve authentique doit suivre la preuve. Ach-Chafi'i a dit que les musulmans sont unanimes : celui à qui une Sounna du Messager d'Allah ﷺ est apparue clairement n'a pas le droit de la laisser pour la parole de qui que ce soit. (rapporté par Ibn al-Qayyim dans I'lam al-Mouwaqqi'in)",
+      "Dans un même pays, on suit souvent une même école pour les questions de la vie commune : la prière à la mosquée, le mariage, l'héritage. Cela garde l'unité. Mais le cœur, lui, reste attaché à Allah et à Son Messager ﷺ.",
+      "Toi qui as grandi peut-être dans un pays malikite, ou hanafite, ou chafi'ite : ne méprise pas l'école de ton voisin. Les imams se sont aimés. Pourquoi leurs élèves, des siècles plus tard, se disputeraient-ils à leur place ?"
+    ],
+    ayah: '16:43'
+  }, "Hanafite, malikite, chafi'ite, hanbalite : que sont vraiment les « écoles » ?");
+
+  insertAfter("Le piège du fanatisme", {
+    t: "Frères malgré le désaccord",
+    p: [
+      "Les savants n'étaient pas d'accord sur des centaines de questions. Et pourtant, ils sont restés frères. Comment faisaient-ils ?",
+      "Le compagnon 'Abdoullah ibn Mas'oud n'était pas d'accord avec le calife 'Outhman, qui priait quatre unités à Mina au lieu de deux pendant le pèlerinage. Ibn Mas'oud pria pourtant quatre unités derrière lui. On lui demanda pourquoi. Il répondit : « La division est un mal. » (Abou Dawoud 1960)",
+      "Younous as-Sadafi, un élève d'ach-Chafi'i, raconte qu'il eut un jour un long débat avec son maître sur une question, et qu'ils se séparèrent sans être d'accord. Le lendemain, ach-Chafi'i le rencontra, lui prit la main et lui dit : « Ô Abou Moussa, ne pouvons-nous pas rester frères, même si nous ne sommes pas d'accord sur une question ? » (rapporté par adh-Dhahabi dans Siyar)",
+      "L'imam Ahmad pensait qu'il fallait refaire ses ablutions après une saignée. On lui demanda : prierais-tu derrière un imam qui ne les refait pas ? Il répondit, selon ce qui est rapporté : comment ne prierais-je pas derrière Malik et Sa'id ibn al-Mousayyib ? Car tous deux ne voyaient pas cette obligation.",
+      "Il y a cependant une différence importante. Les questions de fiqh où les preuves se discutent, comme ces exemples, ne doivent pas diviser les cœurs. Mais les fondements de la croyance clairement établis par le Coran et la Sounna, comme le fait que le Coran est la Parole d'Allah non créée, ne sont pas des « avis » parmi d'autres. L'imam Ahmad, si doux dans le fiqh, a supporté les fouets plutôt que de céder sur la croyance.",
+      "Il faut donc savoir distinguer. Sur la croyance établie, la fermeté. Sur le fiqh où les savants divergent, la souplesse et le respect.",
+      "Et dans les deux cas, la politesse. Le Prophète ﷺ a dit : « La douceur n'est dans aucune chose sans l'embellir, et elle n'est retirée d'aucune chose sans l'enlaidir. » (Mouslim 2594)"
+    ]
+  }, "Un compagnon prie quatre unités derrière un calife avec qui il n'est pas d'accord. Pourquoi ?");
+
+  insertAfter("Frères malgré le désaccord", {
+    t: "Apprendre sa religion aujourd'hui",
+    p: [
+      "Les imams ont traversé des déserts pour un seul hadith. Toi, tu as des milliers de vidéos dans ta poche. C'est une chance immense, et un danger immense.",
+      "La chance : jamais l'accès au Coran, aux traductions, aux recueils de hadiths n'a été aussi facile. Le danger : n'importe qui peut parler de la religion avec assurance, citer un hadith inventé, ou donner une fatwa sans aucune science.",
+      "Le Prophète ﷺ a dit : « Allah ne retire pas la science en l'arrachant des gens, mais en faisant mourir les savants. Quand il ne restera plus de savant, les gens prendront pour chefs des ignorants. On les interrogera, ils répondront sans science : ils s'égareront et égareront les autres. » (al-Boukhari 100, Mouslim 2673)",
+      "Alors, comment faire ? Voici quelques règles simples, tirées de la vie des imams. Un : demande toujours la source. Quel verset ? Quel recueil, quel numéro ? Le hadith est-il authentique ? Deux : préfère les savants connus pour leur science et leur piété aux personnes seulement connues pour leur nombre d'abonnés.",
+      "Trois : apprends les bases avec méthode, avec un enseignant si tu peux : la croyance, la prière, la purification, le jeûne. Comme Malik qui ne donnait pas de fatwa avant que soixante-dix savants ne témoignent. Quatre : n'aie pas honte de dire « je ne sais pas ». Cinq : apprends avec un bon comportement. Une science qui te rend arrogant ne vient pas d'Allah.",
+      "Et six : invoque Allah. Il a ordonné à Son Prophète ﷺ de demander une seule chose en plus : « Et dis : Seigneur, augmente-moi en science. » (20:114)",
+      "Maintenant, tu es prêt à découvrir leurs vies. Lis-les comme des histoires de serviteurs d'Allah, avec leurs forces et leurs épreuves. Prends leur sincérité, leur patience, leur amour du Prophète ﷺ. Et garde toujours au-dessus de tout le Livre d'Allah et la Sounna."
+    ],
+    ayah: '20:114'
+  }, "Des milliers de vidéos dans ta poche : une chance immense, et un danger immense.");
+
+  s.sources.push(
+    "al-Boukhari 75, 143 (invocations pour Ibn 'Abbas) ; 5002 (Ibn Mas'oud) ; 946 et Mouslim 1770 (la prière chez les Banou Qourayza) ; 100 et Mouslim 2673 (la disparition de la science)",
+    "Mouslim, introduction du Sahih (paroles d'Ibn Sirin et d'Ibn al-Moubarak) ; Mouslim 2594 (la douceur)",
+    "Abou Dawoud 1960 (Ibn Mas'oud derrière 'Outhman) ; ad-Darimi, Sounan (Ibn 'Abbas à la porte des compagnons)",
+    "Ibn Taymiyya : Raf' al-Malam 'an al-A'imma al-A'lam ; Coran 16:43 ; 20:114"
+  );
+  s.quiz.push(
+    ["Pourquoi les savants du hadith demandaient-ils toujours la chaîne de transmission (isnad) ?", ["Pour faire de longs discours", "Pour protéger les paroles du Prophète ﷺ des mensonges", "Parce que c'était à la mode", "Pour connaître la famille des gens"], 1,
+      "Ibn al-Moubarak a dit : sans la chaîne, n'importe qui dirait n'importe quoi (introduction du Sahih de Mouslim)."],
+    ["Les compagnons comprennent un ordre de deux façons différentes (la prière chez les Banou Qourayza). Comment réagit le Prophète ﷺ ?", ["Il punit les deux groupes", "Il ne blâme aucun des deux groupes", "Il donne raison au groupe le plus nombreux", "Il interdit d'en parler"], 1,
+      "Il ne blâma aucun des deux groupes (al-Boukhari 946, Mouslim 1770). Les divergences sincères dans la compréhension ne doivent pas diviser les cœurs."],
+    ["Tu vois une vidéo qui cite un « hadith » très émouvant, sans aucune source. Que fais-tu avant de la partager ?", ["Tu partages vite, c'est pour la bonne cause", "Tu cherches la source : recueil, numéro, authenticité", "Tu ajoutes ta propre explication", "Tu la partages en disant « à vérifier »"], 1,
+      "« Regardez de qui vous prenez votre religion » (Ibn Sirin). Attribuer au Prophète ﷺ une parole qu'il n'a pas dite est très grave."]
+  );
+})();
+
+/* Les savants et nous, partie 3 : épisodes supplémentaires (environ 30 minutes au total). */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'imams'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("« Regardez de qui vous prenez votre religion »", {
+    t: "Les femmes savantes",
+    p: [
+      "Quand on parle des grands savants, on cite surtout des hommes. Pourtant, dès le début de l'Islam, des femmes ont porté la science, et des hommes très savants ont appris auprès d'elles.",
+      "La première d'entre elles est 'Aïcha, la mère des croyants. Elle a transmis plus de deux mille hadiths selon les comptes des savants. Abou Moussa al-Ach'ari, un grand compagnon, a dit : « Chaque fois que nous, les compagnons du Messager d'Allah ﷺ, avions une difficulté sur un hadith, nous interrogions 'Aïcha, et nous trouvions toujours chez elle une science à ce sujet. » (Tirmidhi 3883, hadith jugé authentique)",
+      "Après elle, il y eut des générations de femmes enseignantes. À Damas, Oumm ad-Darda' la jeune enseignait dans la mosquée. Les biographes rapportent que le calife 'Abd al-Malik ibn Marwan lui-même venait s'asseoir dans son cercle pour apprendre.",
+      "Le Sahih d'al-Boukhari, des siècles plus tard, a été transmis par une femme célèbre : Karima al-Marwaziyya, à La Mecque, au cinquième siècle de l'hégire. Des savants venaient de très loin pour lire le Sahih devant elle et recevoir sa chaîne. Beaucoup d'éditions d'aujourd'hui passent par sa transmission.",
+      "Le grand savant Ibn Hajar al-'Asqalani, l'auteur du commentaire le plus célèbre d'al-Boukhari, cite dans ses livres des dizaines de femmes parmi ses propres maîtres. Et adh-Dhahabi, le grand critique des transmetteurs, a écrit qu'il ne connaissait aucune femme accusée d'avoir inventé des hadiths. (rapporté dans Mizan al-I'tidal)",
+      "La science n'a jamais été réservée aux hommes en Islam. Le Prophète ﷺ a dit : « Chercher la science est une obligation pour chaque musulman. » (Ibn Majah 224, authentifié par al-Albani) Et les femmes des Ansar lui avaient même demandé un jour spécial pour leur enseigner, et il le leur accorda. (al-Boukhari 101, Mouslim 2633)",
+      "Mes sœurs qui lisez ces récits : vous êtes les héritières de 'Aïcha, d'Oumm ad-Darda' et de Karima. Et mes frères : n'oubliez jamais qu'une grande partie de votre religion vous est parvenue par la voix de femmes savantes."
+    ]
+  }, "Un calife s'assoit dans le cercle d'une femme pour apprendre. Le Sahih d'al-Boukhari passe par la voix d'une autre.");
+
+  insertAfter("Frères malgré le désaccord", {
+    t: "Le savant et le pouvoir",
+    p: [
+      "Dans les vies des imams que tu vas lire, un thème revient sans cesse : leur relation avec les gouvernants. Abou Hanifa refuse d'être juge, Malik est fouetté, ach-Chafi'i est enchaîné, Ahmad est emprisonné, al-Boukhari est chassé de sa ville. Pourquoi ?",
+      "Parce qu'un savant a une responsabilité unique : dire ce qu'Allah a dit, même si cela ne plaît pas aux puissants. Le Prophète ﷺ a dit : « Le meilleur des combats est une parole de justice devant un dirigeant injuste. » (Abou Dawoud 4344, Tirmidhi 2174, hadith authentique)",
+      "Mais attention, les imams n'étaient pas des révoltés. Ils ne prenaient pas les armes, et ils ne poussaient pas les gens à la rébellion. Ils conseillaient, ils refusaient de participer à l'injustice, et ils supportaient les conséquences avec patience. Ahmad, sous les fouets, n'a jamais appelé à la révolte contre le calife. Il a refusé une seule chose : dire un mensonge sur Allah.",
+      "Le Prophète ﷺ avait enseigné cet équilibre : « Pas d'obéissance à une créature dans la désobéissance au Créateur. » (Ahmad, hadith authentique, et le sens est dans al-Boukhari 7257 et Mouslim 1840 : « L'obéissance n'est due que dans le bien. »)",
+      "Il y a eu aussi des savants qui se sont approchés du pouvoir pour obtenir des postes et de l'argent, et qui ont changé la religion pour plaire. L'histoire les a souvent oubliés, ou les cite comme mauvais exemple. Les imams que nous aimons sont ceux qui ont gardé leur indépendance.",
+      "Ce n'est pas de l'orgueil. C'est de la protection. Si le savant dépend de l'argent du gouvernant, comment pourra-t-il lui dire la vérité ? C'est pour cela qu'Abou Hanifa était commerçant, qu'Ahmad refusait les cadeaux, et qu'al-Boukhari vivait de son héritage.",
+      "La leçon pour toi : ne vends jamais ta religion pour un poste, un salaire ou des abonnés. Et quand tu dois dire la vérité, dis-la avec sagesse et respect, comme Moussa et Haroun à qui Allah avait ordonné de parler à Pharaon « avec douceur » (20:44)."
+    ],
+    ayah: '20:44'
+  }, "Fouetté, enchaîné, emprisonné, chassé : pourquoi tant de savants ont-ils eu des problèmes avec les puissants ?");
+
+  insertAfter("Le savant et le pouvoir", {
+    t: "Les savants du désert",
+    p: [
+      "La science des imams n'est pas restée à Bagdad, à Médine ou au Caire. Elle a traversé le Sahara à dos de chameau, avec les caravanes de commerçants et de savants.",
+      "Au Sahel et dans le Sahara, l'école de l'imam Malik s'est implantée très tôt. Les livres malikites, comme la Risala d'Ibn Abi Zayd al-Qayrawani puis le Moukhtasar de Khalil, ont été copiés à la main, appris par cœur et enseignés pendant des siècles.",
+      "Tombouctou, au Mali, est devenue une grande ville de science. Ses mosquées, comme celle de Sankoré, attiraient des étudiants de toute l'Afrique de l'Ouest. On y a retrouvé des dizaines de milliers de manuscrits : du droit, de la grammaire, de l'astronomie, de la médecine, des commentaires du Coran.",
+      "Le plus célèbre savant de Tombouctou fut Ahmad Baba at-Tinboukti. Quand l'armée marocaine prit la ville à la fin du seizième siècle, il fut emmené enchaîné à Marrakech avec sa famille, et sa bibliothèque fut perdue. Il raconta qu'il avait perdu des centaines de livres. À Marrakech, il continua d'enseigner, et les savants marocains venaient l'écouter.",
+      "Dans le désert de Mauritanie, une autre tradition est née : la mahadra. Une école sous la tente, qui se déplace avec les campements. Les élèves y apprennent le Coran, puis les sciences de la langue et du fiqh, en récitant des milliers de vers de mémoire, sur des tablettes de bois, à la lumière du feu. Des villes comme Chinguetti ou Ouadane gardent encore des bibliothèques familiales de manuscrits anciens.",
+      "Cette chaîne de science est une fierté pour l'Afrique. Des Africains ont été parmi les plus grands savants de l'Islam. Le Prophète ﷺ a dit : « Le plus noble d'entre vous auprès d'Allah est le plus pieux. » (49:13) Et Bilal, l'Abyssin, a été la voix de l'Islam.",
+      "Si tu viens de ces terres, sache que tu es l'héritier d'une longue lignée de savants du désert. Ce que tes ancêtres ont appris sous la tente, avec presque rien, tu peux l'apprendre aujourd'hui avec beaucoup plus de moyens."
+    ],
+    ayah: '49:13'
+  }, "La science des imams traverse le Sahara à dos de chameau, jusqu'à Tombouctou et sous les tentes de Mauritanie.");
+
+  insertAfter("Les savants du désert", {
+    t: "La chaîne continue",
+    p: [
+      "Les quatre imams et al-Boukhari ne sont pas les derniers savants de l'Islam. Après eux, la chaîne a continué, génération après génération, jusqu'à aujourd'hui.",
+      "Au septième siècle de l'hégire, à Damas, vécut an-Nawawi. Il mourut jeune, vers quarante-cinq ans, sans s'être marié, entièrement consacré à la science. Pourtant, ses livres sont parmi les plus lus du monde musulman : les Quarante Hadiths, que des millions d'enfants apprennent par cœur, et Riyad as-Salihin, « les Jardins des vertueux », lu dans les mosquées et les maisons du monde entier.",
+      "Au huitième siècle vécurent Ibn Taymiyya et ses élèves Ibn al-Qayyim, adh-Dhahabi et Ibn Kathir. Ibn Kathir écrivit un commentaire du Coran qui est aujourd'hui l'un des plus utilisés, expliquant le Coran par le Coran, puis par la Sounna, puis par les paroles des compagnons.",
+      "Au neuvième siècle, Ibn Hajar al-'Asqalani écrivit Fath al-Bari, le grand commentaire du Sahih d'al-Boukhari, auquel il travailla pendant environ un quart de siècle.",
+      "Chacun de ces savants avait ses forces et ses limites. Certains ont été critiqués sur certains points, et des savants leur ont répondu. Mais tous ont contribué à transmettre l'héritage du Prophète ﷺ.",
+      "Et aujourd'hui ? La chaîne continue. Dans chaque ville, il y a des enseignants qui transmettent le Coran, des imams qui expliquent la religion, des savants qui répondent aux questions nouvelles. Peut-être que, parmi ceux qui lisent ces lignes, il y a un futur savant. Peut-être toi.",
+      "Le Prophète ﷺ a dit : « Une partie de ma communauté ne cessera d'être attachée à la vérité, triomphante, sans que ceux qui l'abandonnent ne puissent lui nuire, jusqu'à ce que vienne l'ordre d'Allah. » (Mouslim 1920) Cette lumière ne s'éteindra pas. La seule question est : en feras-tu partie ?"
+    ]
+  }, "Après les imams, la chaîne n'a pas été coupée. An-Nawawi, Ibn Kathir, Ibn Hajar… et peut-être toi.");
+
+  s.sources.push(
+    "Tirmidhi 3883 ('Aïcha) ; Ibn Majah 224 (chercher la science) ; al-Boukhari 101, Mouslim 2633 (le jour des femmes) ; Abou Dawoud 4344, Tirmidhi 2174 (la parole de justice) ; al-Boukhari 7257, Mouslim 1840 (l'obéissance dans le bien) ; Mouslim 1920 (le groupe attaché à la vérité)",
+    "adh-Dhahabi : Mizan al-I'tidal ; Ahmad Baba at-Tinboukti : Nayl al-Ibtihaj ; Coran 20:44 ; 49:13"
+  );
+  s.quiz.push(
+    ["Par qui une grande partie des éditions du Sahih d'al-Boukhari a-t-elle été transmise au cinquième siècle ?", ["Par un calife", "Par une femme savante, Karima al-Marwaziyya", "Par un poète", "Par personne"], 1,
+      "Des savants venaient de loin pour lire le Sahih devant elle. Les femmes ont toujours porté la science en Islam."],
+    ["Quelle est la position des imams face aux gouvernants injustes ?", ["Prendre les armes", "Conseiller, refuser de participer à l'injustice, et patienter sans appeler à la révolte", "Tout accepter pour avoir un poste", "Fuir la religion"], 1,
+      "« Pas d'obéissance dans la désobéissance au Créateur » ; « le meilleur combat est une parole de justice devant un dirigeant injuste » (Abou Dawoud 4344)."]
+  );
+})();
 
 /* Version longue, racontée en série : Prophète 'Issa (et sa mère Maryam). */
 S({
@@ -4000,7 +4652,7 @@ S({
         "En l'an 147 de l'hégire, le gouverneur de Médine, Ja'far ibn Soulayman, le fit fouetter. Selon les historiens, c'était à cause d'une fatwa : Malik enseignait que le divorce prononcé sous la contrainte ne compte pas. Or certains utilisaient des serments forcés de divorce pour obliger les gens à prêter allégeance aux gouvernants. La fatwa de Malik dérangeait. (rapporté par adh-Dhahabi dans Siyar)",
         "Il fut frappé et blessé à l'épaule. On rapporte qu'après cela, il ne pouvait plus lever correctement le bras.",
         "Mais Malik ne changea pas sa fatwa. Et après l'épreuve, les gens de Médine l'aimèrent et le respectèrent encore plus. On rapporte qu'il pardonna à celui qui l'avait frappé.",
-        "Il continua à enseigner jusqu'à sa vieillesse. Il mourut à Médine en l'an 179 de l'hégire, à environ quatre-vingt-cinq ans, et fut enterré au cimetière d'al-Baqi', près de nombreux compagnons."
+        "Il continua à enseigner jusqu'à sa vieillesse, toujours dans la mosquée de Médine puis dans sa maison, entouré d'élèves venus du monde entier."
       ] },
     { t: "« Sauf l'homme de cette tombe »",
       hook: "Il montre du doigt la tombe du Prophète ﷺ et prononce une phrase qui traverse les siècles.",
@@ -4037,6 +4689,179 @@ S({
       "L'imam Malik, l'un des plus grands savants, disait souvent « je ne sais pas ». Parler de la religion sans savoir est grave (17:36)."]
   ]
 });
+
+/* Malik ibn Anas, partie 2 : épisodes insérés pour atteindre environ 30 minutes. */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'malik'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("« Apprends son comportement avant sa science »", {
+    t: "Médine, la ville de la Sounna",
+    p: [
+      "Imagine grandir dans la ville où le Prophète ﷺ a vécu ses dix dernières années. Où chaque rue a vu passer les compagnons. Où l'on prie dans sa mosquée, à quelques pas de sa tombe. C'était l'enfance de Malik.",
+      "À son époque, Médine gardait encore la mémoire vivante de la Sounna. Les petits-enfants des compagnons racontaient : « Mon grand-père faisait ainsi, et il disait que le Prophète ﷺ faisait ainsi. » Les gens de Médine priaient, jeûnaient, faisaient leurs transactions comme ils l'avaient vu faire depuis des générations.",
+      "Juste avant Malik, Médine avait connu ce qu'on appelle « les sept juristes de Médine ». Parmi eux, Sa'id ibn al-Mousayyib, gendre d'Abou Hourayra, 'Ourwa ibn az-Zoubayr, neveu de 'Aïcha, et al-Qasim ibn Mouhammad, petit-fils d'Abou Bakr. Ils avaient appris directement auprès des compagnons.",
+      "Malik grandit au milieu de leurs élèves. Pour lui, la pratique des gens de Médine, transmise de génération en génération, était une sorte de grande chaîne de transmission collective : des milliers de personnes avaient vu faire, et avaient refait.",
+      "C'est pourquoi, dans son école, la pratique des gens de Médine a une place importante. D'autres savants ont discuté ce principe, car les compagnons s'étaient aussi dispersés ailleurs. Mais tous respectaient la science de Médine.",
+      "Le Prophète ﷺ a dit de cette ville : « La foi se repliera vers Médine comme le serpent se replie vers son trou. » (al-Boukhari 1876, Mouslim 147)",
+      "C'est dans cette ville que Malik vécut presque toute sa vie. On rapporte qu'il ne la quitta que pour le pèlerinage. Il disait vouloir mourir à Médine, près du Prophète ﷺ. Allah lui accorda ce souhait."
+    ]
+  }, "Grandir dans la ville où le Prophète ﷺ a vécu ses dix dernières années.");
+
+  insertAfter("Médine, la ville de la Sounna", {
+    t: "La chaîne d'or",
+    p: [
+      "Parmi les maîtres de Malik, il y en a un dont le nom revient sans cesse dans ses hadiths : Nafi'.",
+      "Nafi' était un ancien esclave affranchi par le compagnon 'Abdoullah ibn 'Omar, le fils du calife 'Omar. Il avait vécu près de trente ans à ses côtés, à le servir, à l'accompagner, à l'écouter.",
+      "Ibn 'Omar était connu pour son attachement extrême à la Sounna. Il cherchait à imiter le Prophète ﷺ dans les moindres détails : s'arrêter là où il s'était arrêté, prier là où il avait prié. Nafi' avait tout vu et tout retenu.",
+      "Malik s'attacha à Nafi' pendant des années. Les biographes rapportent qu'il venait le voir à midi, sous la chaleur, et qu'il s'abritait sous un arbre en attendant qu'il sorte.",
+      "La chaîne « Malik, de Nafi', d'Ibn 'Omar, du Prophète ﷺ » est devenue célèbre. Selon ce que rapportent Ibn Hajar et d'autres, l'imam al-Boukhari la considérait comme la chaîne la plus authentique de toutes. Les savants l'ont appelée « la chaîne d'or ».",
+      "Pense à ce que cela signifie : un ancien esclave, que personne n'aurait remarqué au marché, est devenu un maillon de la plus belle chaîne de la science de l'Islam. Dans cette religion, ce qui élève, ce n'est pas l'origine, c'est la science et la piété.",
+      "Allah dit : « Le plus noble d'entre vous auprès d'Allah est le plus pieux. » (49:13)"
+    ],
+    ayah: '49:13'
+  }, "Un ancien esclave devient un maillon de la plus belle chaîne de la science.");
+
+  insertAfter("Le respect du hadith", {
+    t: "Le cercle de Malik",
+    p: [
+      "Le cercle de Malik ne ressemblait à aucun autre. Pas de cris, pas de disputes, pas de rires bruyants. Les élèves étaient assis en silence, avec respect.",
+      "Malik avait ce que les Arabes appellent la hayba : une dignité qui imposait le respect. Les biographes rapportent que même les gouverneurs et les puissants se tenaient bien devant lui.",
+      "Des élèves venaient de tout le monde musulman : d'Irak, d'Égypte, du Cham, du Maghreb, d'Andalousie. Parmi eux, ach-Chafi'i, 'Abdoullah ibn al-Moubarak, et un jeune Andalou nommé Yahya ibn Yahya al-Laythi.",
+      "On raconte une anecdote célèbre à son sujet, rapportée par les biographes. Un jour, pendant le cours, quelqu'un cria qu'un éléphant arrivait à Médine. Les Arabes de Médine n'en avaient jamais vu. Tous les élèves sortirent en courant pour le regarder. Tous sauf un : Yahya resta assis.",
+      "Malik lui demanda : « Pourquoi ne vas-tu pas voir l'éléphant ? Il n'y en a pas dans ton pays. » Yahya répondit, selon le sens : « Je suis venu de mon pays pour te voir toi, et apprendre de ta science et de ton comportement. Je ne suis pas venu pour voir un éléphant. » Malik l'admira et l'appela « le sage d'al-Andalous ».",
+      "C'est grâce à Yahya ibn Yahya que la version la plus répandue du Mouwatta' nous est parvenue, et que l'école malikite s'est implantée en Andalousie.",
+      "Aujourd'hui, nos « éléphants », ce sont les notifications, les vidéos, les distractions qui nous font quitter le cercle de la science toutes les trente secondes. Sois comme Yahya : reste assis."
+    ]
+  }, "Un éléphant arrive à Médine en plein cours. Tous les élèves sortent en courant. Sauf un.");
+
+  insertAfter("Al-Mouwatta'", {
+    t: "« On vient à la science »",
+    p: [
+      "Le calife Haroun ar-Rachid vint un jour à Médine. Il voulut entendre le Mouwatta' de la bouche de son auteur.",
+      "Selon ce que rapportent les biographes, il envoya chercher Malik pour qu'il vienne au palais lui lire son livre. Malik refusa poliment et lui fit dire, selon le sens : « La science, on vient à elle ; elle ne se déplace pas. »",
+      "Le calife, au lieu de se fâcher, vint lui-même chez Malik. Il demanda ensuite que les autres gens sortent, pour avoir une lecture privée. Malik refusa encore, selon ce qui est rapporté : si on privait le peuple de la science à cause des grands, ni les grands ni le peuple n'en profiteraient.",
+      "On rapporte enfin que le calife s'assit sur une estrade, et que Malik lui fit remarquer, avec respect, que par humilité devant la science on s'assoit avec les autres. Le calife descendit et s'assit avec les élèves.",
+      "Ces récits viennent des livres de biographie, comme Tartib al-Madarik. Ils montrent une même idée, qu'on retrouve chez al-Boukhari plus tard : la science a une dignité. On ne la rabaisse pas devant les puissants, et on ne la réserve pas aux riches.",
+      "Malik n'était pourtant pas un révolté. Il respectait l'autorité, conseillait les gouvernants, priait pour eux. Mais il savait que la science appartient à Allah, et qu'elle doit rester ouverte à tous.",
+      "Le Prophète ﷺ a dit : « La religion, c'est le bon conseil. » On demanda : « Pour qui ? » Il répondit : « Pour Allah, pour Son Livre, pour Son Messager, pour les dirigeants des musulmans et pour l'ensemble des gens. » (Mouslim 55)"
+    ]
+  }, "Le calife le plus puissant du monde demande à Malik de venir au palais. Malik refuse.");
+
+  insertAfter("« On vient à la science »", {
+    t: "« Le comment est inconnu »",
+    p: [
+      "Un jour, un homme entra dans le cercle de Malik et lui posa une question sur un verset : « Le Tout Miséricordieux S'est établi sur le Trône. » (20:5) Il demanda : « Comment S'est-Il établi ? »",
+      "Les biographes rapportent que Malik baissa la tête, et qu'il se mit à transpirer, tant la question le troublait. Puis il releva la tête et dit une phrase devenue une règle pour toute l'Oumma : « L'établissement est connu, le comment est inconnu, y croire est obligatoire, et poser la question sur le comment est une innovation. » Puis il fit sortir l'homme. (rapporté par al-Lalaka'i et al-Bayhaqi ; adh-Dhahabi a jugé cette parole authentique de Malik)",
+      "Que veut dire cette phrase ? Le sens du mot « établi » est connu en arabe. Nous y croyons, car Allah l'a dit. Mais le « comment », nous ne le connaissons pas, car Allah ne nous l'a pas dit. Et nous ne Le comparons à rien : « Rien ne Lui ressemble, et c'est Lui qui entend et qui voit. » (42:11)",
+      "Cette règle s'applique à tous les attributs d'Allah. On affirme ce qu'Allah a affirmé de Lui-même, sans en changer le sens, sans dire comment, et sans Le comparer à Ses créatures.",
+      "Tu te souviens de l'écran de l'autre application qui demandait « Comment Allah crée-t-Il ? » Voilà la méthode de Malik : on dit ce qu'Allah a dit, par exemple : Il dit « Sois », et cela est. Et on s'arrête là où le texte s'arrête.",
+      "Malik disait aussi, selon ce que rapportent les savants : « La Sounna est comme l'arche de Nouh : celui qui y monte est sauvé, et celui qui reste en arrière est noyé. »"
+    ],
+    ayah: '42:11'
+  }, "Un homme pose une question sur Allah. Malik baisse la tête, et se met à transpirer.");
+
+  insertAfter("Frappé pour une fatwa", {
+    t: "Les dernières années",
+    p: [
+      "Dans les dernières années de sa vie, les gens remarquèrent quelque chose d'étrange : l'imam Malik ne venait plus prier à la mosquée du Prophète ﷺ. Il priait chez lui.",
+      "Les rumeurs commencèrent. Certains le critiquèrent. On lui demanda pourquoi. Il refusa de donner la raison, et dit seulement, selon ce qui est rapporté : « Tout le monde ne peut pas dire quelle est son excuse. » (rapporté par adh-Dhahabi dans Siyar)",
+      "Ce n'est qu'à la fin de sa vie qu'on comprit : il souffrait d'une maladie qui l'empêchait de garder ses ablutions, et il ne voulait pas salir la mosquée du Prophète ﷺ. Par pudeur, il préféra supporter les critiques plutôt que de révéler sa maladie.",
+      "Quelle leçon ! Combien de fois jugeons-nous les gens sans connaître leurs excuses ? Quelqu'un ne vient pas à la mosquée, ne répond pas, semble froid… Et peut-être porte-t-il une épreuve qu'il n'a pas le droit ou pas la force de raconter.",
+      "Malik tomba malade en l'an 179. On rapporte que, sur son lit de mort, il prononça l'attestation de foi, puis récita : « À Allah appartient le commandement, avant et après. » (30:4)",
+      "Il mourut à Médine, à environ quatre-vingt-cinq ans, après avoir enseigné pendant près de soixante ans. Il fut enterré au cimetière d'al-Baqi', au milieu des compagnons qu'il avait tant aimés.",
+      "Le Prophète ﷺ a dit : « Celui qui le peut, qu'il meure à Médine, car j'intercéderai pour celui qui y meurt. » (Tirmidhi 3917, hadith jugé authentique par al-Albani) Malik avait souhaité mourir à Médine. Allah exauça son vœu."
+    ]
+  }, "Les gens ne le voient plus à la mosquée. Les rumeurs commencent. Il refuse de donner son excuse.");
+
+  insertAfter("Les dernières années", {
+    t: "Le hadith du savant de Médine",
+    p: [
+      "Il existe un hadith que beaucoup de savants ont appliqué à l'imam Malik. Abou Hourayra rapporte que le Prophète ﷺ a dit : « Bientôt, les gens feront voyager les chameaux jusqu'à l'épuisement pour chercher la science, et ils ne trouveront personne de plus savant que le savant de Médine. » (Tirmidhi 2680)",
+      "At-Tirmidhi l'a jugé bon (hassan). Mais d'autres savants, comme al-Albani, l'ont jugé faible à cause d'un transmetteur dans sa chaîne. Nous le citons donc en précisant que son authenticité est discutée.",
+      "Soufyan ibn 'Oyayna, un grand savant de La Mecque, disait qu'il pensait que ce « savant de Médine » était Malik ibn Anas. D'autres savants l'ont appliqué à d'autres. Ce n'est pas une certitude.",
+      "Ce qui est certain, en revanche, c'est la réalité historique : des élèves de tout le monde musulman ont fait le voyage jusqu'à Médine pour apprendre auprès de Malik. Son livre a été lu et commenté dans tous les pays.",
+      "Pourquoi raconter ce détail sur l'authenticité ? Parce que c'est la méthode de Malik lui-même : il refusait de rapporter un hadith sans être sûr de sa chaîne. Si nous l'aimons, nous devons faire comme lui, même quand le hadith semble faire son éloge.",
+      "Ce qu'il nous laisse : l'adab avant la science, le courage de dire « je ne sais pas », le respect immense du hadith, la règle sur les attributs d'Allah, la pudeur, et l'amour de Médine. Qu'Allah fasse miséricorde à l'imam de la ville du Prophète ﷺ."
+    ]
+  }, "Un hadith semble parler de lui. Mais est-il authentique ? Faisons comme Malik : vérifions.");
+
+  s.sources.push(
+    "al-Boukhari 1876, Mouslim 147 (la foi se replie vers Médine) ; Mouslim 55 (la religion c'est le bon conseil) ; Tirmidhi 3917 (mourir à Médine) ; Tirmidhi 2680 (le savant de Médine, authenticité discutée)",
+    "al-Lalaka'i : Charh Oussoul I'tiqad Ahl as-Sounna ; al-Bayhaqi : al-Asma' wa as-Sifat (la parole sur l'établissement)",
+    "Ibn Hajar : Nouzhat an-Nazar (la « chaîne d'or ») ; Coran 49:13 ; 20:5 ; 42:11 ; 30:4"
+  );
+  s.quiz.push(
+    ["Quelle chaîne al-Boukhari considérait-il, selon ce qui est rapporté, comme la plus authentique ?", ["Malik, de Nafi', d'Ibn 'Omar", "Abou Hanifa, de Hammad, d'Ibrahim", "Ahmad, d'ach-Chafi'i, de Malik", "Aucune"], 0,
+      "On l'appelle « la chaîne d'or ». Nafi' était un ancien esclave d'Ibn 'Omar : la science élève plus que l'origine (49:13)."],
+    ["Que répondit Malik à celui qui demandait COMMENT Allah S'est établi sur le Trône ?", ["Il inventa une explication", "« L'établissement est connu, le comment est inconnu, y croire est obligatoire »", "« Ce verset n'existe pas »", "« Allah est comme un roi »"], 1,
+      "On affirme ce qu'Allah a dit, sans dire comment, et sans Le comparer : « Rien ne Lui ressemble » (42:11)."],
+    ["Un ami ne vient plus à la mosquée et ne dit pas pourquoi. Que t'apprend l'histoire de Malik ?", ["Le critiquer devant tout le monde", "Ne pas juger : il a peut-être une excuse qu'il ne peut pas dire", "Arrêter de lui parler", "Inventer une rumeur"], 1,
+      "Malik souffrait d'une maladie qu'il cachait par pudeur : « Tout le monde ne peut pas dire quelle est son excuse. »"]
+  );
+})();
+
+/* Malik ibn Anas, partie 3 : épisodes supplémentaires (environ 30 minutes au total). */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'malik'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("La chaîne d'or", {
+    t: "Ibn Chihab az-Zouhri",
+    p: [
+      "Parmi les maîtres de Malik, il y avait un homme dont le nom est lié à un tournant de l'histoire : Mouhammad ibn Chihab az-Zouhri.",
+      "Az-Zouhri était l'un des plus grands savants du hadith de sa génération. Il avait appris auprès de nombreux tabi'oun de Médine, et même de quelques compagnons encore vivants. Sa mémoire était célèbre.",
+      "C'est à lui, entre autres, que le calife 'Omar ibn 'Abd al-'Aziz confia la mission de rassembler les hadiths par écrit, pour que la science ne disparaisse pas avec la mort des savants. On le considère comme l'un des premiers à avoir rassemblé officiellement le hadith.",
+      "Malik étudia auprès de lui, et rapporta beaucoup de ses hadiths dans le Mouwatta'. Les biographes racontent que Malik, jeune, attendait parfois az-Zouhri pendant longtemps, et qu'il retenait d'un coup un grand nombre de hadiths en une seule séance.",
+      "Az-Zouhri disait, selon ce qui est rapporté, que la science est un trésor dont les clés sont les questions. Il encourageait les élèves à demander, à vérifier, à ne pas avoir honte de ne pas savoir.",
+      "Grâce à des hommes comme az-Zouhri, le passage s'est fait entre la science transmise oralement par les compagnons et la science écrite dans les livres. Malik, en écrivant le Mouwatta', a continué ce travail.",
+      "Le Prophète ﷺ avait dit : « Transmettez de moi, ne serait-ce qu'un verset. » (al-Boukhari 3461) Ces savants ont pris cette parole au sérieux : chaque hadith qu'ils notaient, c'était un dépôt qu'ils transmettaient à l'Oumma."
+    ]
+  }, "Un calife ordonne de mettre le hadith par écrit. Il confie la mission à un homme dont Malik sera l'élève.");
+
+  insertAfter("« Le comment est inconnu »", {
+    t: "« Le Prophète aurait-il trahi le message ? »",
+    p: [
+      "L'imam Malik était très ferme contre les innovations dans la religion, c'est-à-dire le fait d'ajouter à l'Islam des pratiques d'adoration que le Prophète ﷺ n'a pas enseignées.",
+      "L'imam ach-Chatibi rapporte dans son livre al-I'tisam cette parole attribuée à Malik : « Celui qui invente dans l'Islam une innovation qu'il trouve bonne prétend que Mouhammad ﷺ a trahi le message. Car Allah dit : Aujourd'hui, J'ai parachevé pour vous votre religion (5:3). Ce qui n'était pas religion ce jour-là n'est pas religion aujourd'hui. »",
+      "Le raisonnement de Malik est simple et fort. Si une adoration était bonne, le Prophète ﷺ nous l'aurait enseignée, car il nous a transmis tout le bien. Dire qu'une pratique religieuse inventée après lui est « une bonne chose que le Prophète a oubliée », c'est l'accuser de ne pas avoir tout transmis.",
+      "Le Prophète ﷺ a dit : « Celui qui introduit dans notre affaire, notre religion, une chose qui n'en fait pas partie, elle sera rejetée. » (al-Boukhari 2697, Mouslim 1718)",
+      "Attention à bien comprendre : il s'agit des pratiques d'adoration, des actes qu'on fait pour se rapprocher d'Allah. Les choses de la vie de tous les jours, comme les voitures, les téléphones ou les nouvelles techniques, ne sont pas des innovations interdites tant qu'elles ne contredisent pas la religion.",
+      "On rapporte aussi qu'un homme demanda à Malik de quel endroit il devait se mettre en état de sacralisation pour le pèlerinage. Malik lui indiqua l'endroit fixé par le Prophète ﷺ. L'homme dit qu'il voulait commencer de plus loin, par piété. Malik le mit en garde, en citant le verset : « Que ceux qui s'opposent à son ordre prennent garde qu'une épreuve ne les atteigne. » (24:63) Il expliqua qu'il n'y a pas de plus grand mérite que de suivre exactement le Prophète ﷺ.",
+      "La leçon : ce n'est pas la quantité d'adoration qui compte d'abord, c'est qu'elle soit sincère et conforme à la Sounna."
+    ],
+    ayah: '5:3'
+  }, "Un homme veut faire « plus » que le Prophète ﷺ, par piété. Malik le met en garde.");
+
+  insertAfter("« Sauf l'homme de cette tombe »", {
+    t: "Malik en Afrique",
+    p: [
+      "L'école de l'imam Malik a eu un destin extraordinaire : elle est devenue l'école de presque toute l'Afrique du Nord et de l'Ouest.",
+      "Tout commence avec ses élèves venus du Maghreb et d'Ifriqiya, la Tunisie d'aujourd'hui. Ils rentrèrent chez eux avec le Mouwatta' et l'enseignement de Malik. À Kairouan, le savant Sahnoun rassembla les réponses de Malik dans un immense livre : al-Moudawwana.",
+      "Plus tard, toujours à Kairouan, Ibn Abi Zayd al-Qayrawani écrivit un petit livre pour enseigner la croyance et le fiqh malikite aux enfants et aux débutants : la Risala. Ce livre a été appris par cœur pendant des siècles, du Maroc jusqu'au Soudan.",
+      "Puis, au huitième siècle de l'hégire, en Égypte, Khalil ibn Ishaq écrivit un résumé très dense de l'école : le Moukhtasar de Khalil. Dans les mahadras de Mauritanie, du Sénégal et du Mali, des générations d'élèves l'ont appris par cœur, mot par mot, avec ses commentaires.",
+      "Les caravanes de sel et d'or qui traversaient le Sahara portaient aussi des livres. Des savants africains comme Ahmad Baba à Tombouctou ont écrit de grands ouvrages dans l'école de Malik.",
+      "Ainsi, un homme qui ne quitta presque jamais Médine a vu sa science arriver jusqu'aux dunes de Mauritanie et aux rives du fleuve Niger. Quand un enfant de Nouakchott, de Dakar ou de Bamako apprend aujourd'hui à faire ses ablutions, il y a souvent, derrière ce qu'il apprend, la science de l'imam de Médine.",
+      "Et c'est justement pour cela que nous devons l'aimer comme il voulait être aimé : en suivant sa méthode, la preuve du Coran et de la Sounna, et en laissant tout avis, même de notre école, qui s'oppose clairement à un hadith authentique. C'est ce qu'il a lui-même demandé."
+    ]
+  }, "Un homme qui n'a presque jamais quitté Médine. Sa science arrive jusqu'aux dunes de Mauritanie.");
+
+  s.sources.push("al-Boukhari 3461 (transmettez de moi) ; al-Boukhari 2697, Mouslim 1718 (ce qui est rejeté) ; Coran 5:3 ; 24:63 ; ach-Chatibi : al-I'tisam ; Sahnoun : al-Moudawwana ; Ibn Abi Zayd : ar-Risala ; Khalil : al-Moukhtasar");
+  s.quiz.push(
+    ["Selon la parole attribuée à Malik, celui qui invente une innovation dans l'adoration prétend quoi ?", ["Qu'il est plus savant que Malik", "Que le Prophète ﷺ a trahi le message", "Que la religion est trop difficile", "Rien de grave"], 1,
+      "Allah a parachevé la religion (5:3). « Ce qui n'était pas religion ce jour-là n'est pas religion aujourd'hui. »"],
+    ["Quel livre malikite a été appris par cœur dans les mahadras de Mauritanie et d'Afrique de l'Ouest ?", ["Le Moukhtasar de Khalil", "Le Mousnad d'Ahmad", "Ar-Risala d'ach-Chafi'i", "Le Sahih de Mouslim"], 0,
+      "Avec la Risala d'Ibn Abi Zayd al-Qayrawani, le Moukhtasar de Khalil a été la base de l'enseignement malikite au Sahara et au Sahel."]
+  );
+})();
 
 /* Version longue, racontée en série : Prophète Moussa. */
 S({
@@ -5804,6 +6629,191 @@ S({
   ]
 });
 
+/* Ach-Chafi'i, partie 2 : épisodes insérés pour atteindre environ 30 minutes. */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'shafii'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("Né l'année où mourut Abou Hanifa", {
+    t: "À l'ombre de la Ka'ba",
+    p: [
+      "La Mecque, où grandit ach-Chafi'i, était le cœur du monde musulman. Chaque année, au moment du pèlerinage, des savants arrivaient de tous les pays. Pour un enfant qui aimait la science, c'était le meilleur endroit au monde.",
+      "Ach-Chafi'i descendait de Hachim et d'al-Mouttalib, les ancêtres du Prophète ﷺ. Sa lignée rejoint celle du Messager d'Allah ﷺ en 'Abd Manaf. Mais il ne s'en vantait pas. Orphelin et pauvre, il savait que la noblesse se gagne par les œuvres.",
+      "Il étudia dans la mosquée sacrée auprès de grands savants. Parmi eux, Soufyan ibn 'Oyayna, l'un des plus grands spécialistes du hadith de La Mecque, élève des élèves des compagnons. Et Mouslim ibn Khalid az-Zanji, le juriste de la ville.",
+      "Les biographes rapportent que Mouslim az-Zanji lui dit, alors qu'il était encore très jeune, peut-être vers quinze ans : « Donne des fatwas, ô Abou 'Abdillah, le moment est venu pour toi. » (rapporté par adh-Dhahabi dans Siyar)",
+      "Pourtant, il ne se contenta pas de cela. Il voulait plus de science, plus de hadiths, plus de compréhension. Il ne se croyait pas arrivé.",
+      "C'est une leçon pour toute personne qui commence à réussir : ne t'arrête pas au premier compliment. Allah dit : « Au-dessus de tout homme de science, il y a un plus savant. » (12:76)"
+    ],
+    ayah: '12:76'
+  }, "Un maître dit à l'adolescent : « Donne des fatwas, le moment est venu. » Il ne s'arrête pas là.");
+
+  insertAfter("Chez les Bédouins", {
+    t: "Le poète",
+    p: [
+      "Ach-Chafi'i n'était pas seulement juriste. Ses années chez les Bédouins avaient fait de lui un poète. On lui attribue de nombreux vers, rassemblés plus tard dans un recueil, son Diwan. Certains sont sûrement de lui, d'autres lui ont été attribués après sa mort.",
+      "Ses vers sont surtout des conseils de sagesse. Sur le voyage pour chercher la science, on lui attribue : « Voyage, tu trouveras un remplaçant à ce que tu quittes. Fatigue-toi, car la douceur de la vie est dans l'effort. »",
+      "Sur le silence face à l'insolent : « Quand le sot parle, ne lui réponds pas. Le silence vaut mieux que de lui répondre. »",
+      "Sur la confiance en Allah dans les épreuves : « Laisse les jours faire ce qu'ils veulent, et sois serein quand le destin décide. Ne t'afflige pas des événements de la nuit, car les événements de ce monde ne durent pas. »",
+      "Et sur l'effort personnel : « Rien ne gratte ta peau comme ton propre ongle. Prends donc toi-même en charge toutes tes affaires. »",
+      "Pourquoi ces vers sont-ils restés si célèbres pendant douze siècles ? Parce qu'ils disent en quelques mots ce que le Coran et la Sounna enseignent : la patience, le silence face à la provocation, l'effort, la confiance en Allah.",
+      "Allah dit des serviteurs du Tout Miséricordieux : « Quand les ignorants leur adressent la parole, ils disent : Paix. » (25:63) Ach-Chafi'i l'a dit en poésie."
+    ],
+    ayah: '25:63'
+  }, "Ses années dans le désert ont fait de lui un poète. Ses vers sont récités depuis douze siècles.");
+
+  insertAfter("Les chaînes et le calife", {
+    t: "La main ouverte",
+    p: [
+      "Ach-Chafi'i avait connu la pauvreté. Mais quand l'argent arrivait, il ne le gardait pas.",
+      "Les biographes rapportent qu'en revenant du Yémen, il avait avec lui une grosse somme d'argent. Il installa sa tente à l'extérieur de La Mecque. Les gens vinrent le saluer, les pauvres aussi. Avant d'entrer dans la ville, il avait tout distribué. (rapporté par adh-Dhahabi dans Siyar)",
+      "On rapporte qu'il disait : « Je ne me suis pas rassasié depuis seize ans. » Il expliquait que manger à satiété alourdit le corps, durcit le cœur, enlève la finesse de l'esprit, attire le sommeil et rend paresseux pour l'adoration.",
+      "C'est le conseil du Prophète ﷺ : « Le fils d'Adam ne remplit pas de récipient pire que son ventre. Il suffit au fils d'Adam de quelques bouchées qui maintiennent son dos droit. S'il doit absolument manger plus, alors un tiers pour la nourriture, un tiers pour la boisson, et un tiers pour la respiration. » (Tirmidhi 2380, Ibn Majah 3349, hadith authentique)",
+      "Ach-Chafi'i était aussi connu pour sa propreté, son beau langage et sa bonne humeur avec ses élèves. Il savait plaisanter sans blesser.",
+      "Le Prophète ﷺ était le plus généreux des hommes, et il l'était encore plus pendant le Ramadan. (al-Boukhari 6, Mouslim 2308) Ach-Chafi'i, son lointain parent, avait hérité un peu de cette main ouverte.",
+      "Toi aussi, quand Allah t'ouvre une porte de richesse, n'oublie pas ceux qui sont restés à l'extérieur de la ville."
+    ]
+  }, "Il revient du Yémen avec beaucoup d'argent. Il n'entre pas tout de suite à La Mecque.");
+
+  insertAfter("La Risala", {
+    t: "« Imam en huit choses »",
+    p: [
+      "À Bagdad, ach-Chafi'i rencontra un jeune homme d'une trentaine d'années, sérieux, pieux, passionné de hadith : Ahmad ibn Hanbal.",
+      "Ach-Chafi'i comprit immédiatement qu'il avait devant lui quelqu'un d'exceptionnel. On lui attribue cet éloge, rapporté par Ibn Abi Ya'la : « Ahmad est un imam en huit choses : imam en hadith, imam en fiqh, imam en langue arabe, imam en Coran, imam dans la pauvreté, imam dans le détachement de ce monde, imam dans le scrupule, et imam dans la Sounna. »",
+      "Et en quittant Bagdad, il dit, selon ce que rapporte al-Khatib : « J'ai quitté Bagdad, et je n'y ai laissé personne de plus pieux, de plus savant en fiqh et de plus scrupuleux qu'Ahmad ibn Hanbal. »",
+      "Remarque quelque chose : c'est le maître qui fait l'éloge de l'élève. Ach-Chafi'i n'avait pas peur d'être dépassé. Il se réjouissait de voir un jeune homme devenir plus fort que lui dans certains domaines.",
+      "Les jaloux craignent la réussite des autres. Les sincères s'en réjouissent, car ce qu'ils veulent, c'est que la vérité gagne, peu importe par qui.",
+      "Le Prophète ﷺ a dit : « Ne vous jalousez pas, ne vous haïssez pas, ne vous tournez pas le dos, et soyez, ô serviteurs d'Allah, des frères. » (al-Boukhari 6065, Mouslim 2559)"
+    ]
+  }, "Le maître fait l'éloge de son élève, et compte huit domaines où il est un imam.");
+
+  insertAfter("« Imam en huit choses »", {
+    t: "Le défenseur de la Sounna",
+    p: [
+      "À l'époque d'ach-Chafi'i, certains commençaient à dire : « Le Coran nous suffit, nous n'avons pas besoin des hadiths. » D'autres acceptaient seulement les hadiths transmis par un très grand nombre de personnes, et rejetaient les autres.",
+      "Ach-Chafi'i débattit avec eux et écrivit pour leur répondre. Il montra que le Coran lui-même ordonne de suivre le Messager ﷺ : « Quiconque obéit au Messager obéit à Allah. » (4:80) Et : « Ce que le Messager vous donne, prenez-le. » (59:7)",
+      "Il expliqua aussi que, sans la Sounna, on ne saurait ni comment prier, ni combien d'unités faire, ni comment payer la zakat, ni comment faire le pèlerinage. Le Coran ordonne la prière ; la Sounna montre comment la faire. Le Prophète ﷺ a dit : « Priez comme vous m'avez vu prier. » (al-Boukhari 631)",
+      "Il défendit aussi le hadith authentique transmis par une seule chaîne fiable : les compagnons eux-mêmes l'acceptaient, et changeaient leur pratique dès qu'un hadith fiable leur parvenait.",
+      "Abou Nou'aym rapporte cette parole d'ach-Chafi'i : « Si je rapporte du Messager d'Allah ﷺ un hadith authentique et que je ne le suis pas, prenez-vous à témoin que j'ai perdu la raison. »",
+      "C'est pour cela que les gens de Bagdad lui donnèrent un surnom : Nasir as-Sounna, « le défenseur de la Sounna ».",
+      "Aujourd'hui encore, certains disent : « Le Coran suffit. » Souviens-toi de la réponse d'ach-Chafi'i : c'est justement le Coran qui nous ordonne de suivre le Messager ﷺ."
+    ],
+    ayah: '4:80'
+  }, "Certains disent déjà : « Le Coran nous suffit, pas besoin des hadiths. » Ach-Chafi'i leur répond.");
+
+  insertAfter("Le défenseur de la Sounna", {
+    t: "Conseiller en secret",
+    p: [
+      "Ach-Chafi'i n'était pas seulement un savant des livres. C'était aussi un maître du comportement, et ses conseils sont encore cités.",
+      "Sur la façon de corriger quelqu'un, il a dit, selon ce que rapporte Abou Nou'aym dans Hilyat al-Awliya' : « Celui qui conseille son frère en secret l'a vraiment conseillé et l'a embelli. Celui qui le conseille en public l'a humilié et l'a enlaidi. »",
+      "Pense aux réseaux sociaux aujourd'hui. Combien de « conseils » sont donnés en public, dans les commentaires, pour humilier ? Ach-Chafi'i t'enseigne : si tu veux vraiment aider ton frère, parle-lui en privé.",
+      "Sur la sincérité, adh-Dhahabi rapporte qu'il a dit : « J'aurais aimé que les gens apprennent cette science sans qu'une seule lettre m'en soit attribuée. » Il ne voulait pas de gloire. Il voulait que la science se répande, peu importe le nom qu'on y attache.",
+      "Sur la science et l'action, on lui attribue : la science n'est pas ce qu'on mémorise, la science est ce qui profite.",
+      "Et sur les débats, nous avons déjà vu sa parole : il ne débattait jamais sans espérer qu'Allah fasse apparaître la vérité par la bouche de l'autre.",
+      "Le Prophète ﷺ a dit : « Les actions ne valent que par les intentions. » (al-Boukhari 1, Mouslim 1907) Ach-Chafi'i voulait que son intention reste pure jusqu'au bout, même s'il fallait que son nom disparaisse."
+    ]
+  }, "« J'aurais aimé que les gens apprennent cette science sans qu'une seule lettre m'en soit attribuée. »");
+
+  insertAfter("Changer d'avis pour la vérité", {
+    t: "Ses élèves après lui",
+    p: [
+      "En Égypte, ach-Chafi'i forma des élèves qui allaient transmettre sa science dans le monde entier.",
+      "Le premier était al-Bouwayti, son successeur dans son cercle. Plus tard, pendant l'Épreuve du Coran, al-Bouwayti refusa lui aussi de dire que le Coran est créé. Il fut emmené enchaîné à Bagdad et mourut en prison. Les élèves d'ach-Chafi'i et ceux d'Ahmad ont souffert pour la même vérité.",
+      "Il y avait aussi al-Mouzani, qui écrivit un résumé célèbre de l'école. Al-Mouzani raconte qu'il entra chez ach-Chafi'i pendant sa dernière maladie et lui demanda : « Comment te trouves-tu ce matin ? » Ach-Chafi'i répondit, selon ce qui est rapporté : « Ce matin, je quitte ce monde, je me sépare de mes frères, je vais boire la coupe de la mort, rencontrer mes mauvaises actions, et me présenter devant Allah. Je ne sais pas si mon âme ira au Paradis, pour que je la félicite, ou au Feu, pour que je la console. » Puis il pleura.",
+      "Et il y avait ar-Rabi' ibn Soulayman, qui transmit son grand livre al-Oumm. Ar-Rabi' n'était pas l'élève le plus rapide. On rapporte qu'ach-Chafi'i lui réexpliqua un jour la même question de nombreuses fois, avec patience, jusqu'à ce qu'il comprenne. Et ach-Chafi'i lui dit avec tendresse qu'il aurait aimé pouvoir lui faire avaler la science, tant il l'aimait.",
+      "C'est pourtant cet élève lent qui a transmis la plus grande partie de l'œuvre de son maître. La patience d'un enseignant peut changer le destin d'une science entière.",
+      "Ce que nous retenons de l'imam ach-Chafi'i : la science malgré la pauvreté, la langue arabe au service du Coran, la défense de la Sounna, l'éloge sincère des autres, le conseil en secret, et le courage de changer d'avis. Qu'Allah lui fasse miséricorde, ainsi qu'à ses élèves."
+    ]
+  }, "Un élève lent, un élève fidèle, un élève qui mourra enchaîné : ceux qui ont porté sa science.");
+
+  s.sources.push(
+    "Coran : 12:76 ; 25:63 ; 4:80 ; 59:7",
+    "Tirmidhi 2380, Ibn Majah 3349 (le ventre) ; al-Boukhari 6, Mouslim 2308 (la générosité) ; al-Boukhari 6065, Mouslim 2559 (ne vous jalousez pas) ; al-Boukhari 631 (priez comme vous m'avez vu prier) ; al-Boukhari 1, Mouslim 1907 (les intentions)",
+    "Abou Nou'aym : Hilyat al-Awliya' ; Ibn Abi Ya'la : Tabaqat al-Hanabila ; Diwan ach-Chafi'i (vers attribués)"
+  );
+  s.quiz.push(
+    ["Pourquoi ach-Chafi'i a-t-il été surnommé « le défenseur de la Sounna » ?", ["Il était soldat", "Il a montré par le Coran qu'il faut suivre les hadiths authentiques", "Il a écrit le Coran", "Il gardait la Ka'ba"], 1,
+      "« Quiconque obéit au Messager obéit à Allah » (4:80). Sans la Sounna, on ne saurait pas comment prier (al-Boukhari 631)."],
+    ["Selon ach-Chafi'i, comment faut-il conseiller son frère ?", ["En public pour que tout le monde voie", "En secret, pour l'aider sans l'humilier", "Jamais", "En se moquant de lui"], 1,
+      "« Celui qui conseille son frère en secret l'a vraiment conseillé ; en public, il l'a humilié » (Hilyat al-Awliya')."],
+    ["Quelqu'un dit : « Le Coran me suffit, je n'ai pas besoin des hadiths. » Quelle réponse d'ach-Chafi'i peux-tu donner ?", ["Il a raison", "C'est le Coran lui-même qui ordonne de suivre le Messager ﷺ, et sans la Sounna on ne saurait pas prier", "Les hadiths sont plus importants que le Coran", "Il ne faut rien répondre"], 1,
+      "« Ce que le Messager vous donne, prenez-le » (59:7). Le Coran ordonne la prière, la Sounna montre comment la faire."]
+  );
+})();
+
+/* Ach-Chafi'i, partie 3 : épisodes supplémentaires (environ 30 minutes au total). */
+(function () {
+  var s = window.STORIES.find(function (x) { return x.id === 'shafii'; });
+  function insertAfter(title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  insertAfter("Le poète", {
+    t: "L'archer",
+    p: [
+      "Ach-Chafi'i racontait lui-même qu'il avait deux passions dans sa jeunesse : la science et le tir à l'arc. Il était devenu si habile, selon ce qui est rapporté, qu'il atteignait sa cible presque à chaque tir.",
+      "Ce n'était pas un simple loisir. Le tir à l'arc est une Sounna. Le Prophète ﷺ passa un jour près de gens de la tribu d'Aslam qui s'entraînaient au tir, et il leur dit : « Tirez, fils d'Isma'il, car votre ancêtre était un archer. » (al-Boukhari 2899)",
+      "Il a dit aussi : « Le croyant fort est meilleur et plus aimé d'Allah que le croyant faible, et dans chacun il y a du bien. » (Mouslim 2664)",
+      "Les savants de l'Islam n'étaient pas des hommes fragiles enfermés dans des bibliothèques. Beaucoup marchaient des milliers de kilomètres, montaient à cheval, tiraient à l'arc, travaillaient de leurs mains. Ach-Chafi'i avait vécu dans le désert, avec ses dangers et sa dureté.",
+      "Cette force physique l'a aidé à supporter les voyages, la prison au Yémen, les chaînes jusqu'à Bagdad, et la maladie à la fin de sa vie.",
+      "Aujourd'hui, beaucoup de jeunes passent des heures assis devant un écran. Prendre soin de son corps fait partie de la religion : marcher, courir, nager, apprendre un sport utile, dormir et manger avec mesure. Le corps est un dépôt qu'Allah t'a confié.",
+      "Fais comme ach-Chafi'i : nourris ton esprit avec la science, et ton corps avec l'effort. Les deux sont au service d'Allah."
+    ]
+  }, "Il avait deux passions : la science et le tir à l'arc. Et la seconde était aussi une Sounna.");
+
+  insertAfter("La main ouverte", {
+    t: "La science des corps",
+    p: [
+      "On attribue à ach-Chafi'i une parole célèbre : « La science est de deux sortes : la science des religions, et la science des corps », c'est-à-dire la médecine.",
+      "On rapporte aussi qu'il regrettait que les musulmans aient laissé une grande partie de la médecine à d'autres. Il voyait que la communauté avait besoin de médecins compétents et pieux, autant que de juristes.",
+      "Ce n'est pas étonnant. L'Islam encourage à se soigner. Le Prophète ﷺ a dit : « Allah n'a pas fait descendre de maladie sans faire descendre pour elle un remède. » (al-Boukhari 5678) Et dans une autre version : « Soignez-vous, ô serviteurs d'Allah. » (Abou Dawoud 3855, Tirmidhi 2038, hadith authentique)",
+      "Les savants ont expliqué que certaines sciences sont une obligation collective, fard kifaya : si personne dans la communauté ne les apprend, tout le monde est en faute. La médecine en fait partie, comme l'ingénierie ou d'autres métiers dont les gens ont besoin.",
+      "Dans les siècles suivants, de grands médecins musulmans ont écrit des livres utilisés dans le monde entier pendant des siècles. Beaucoup étaient aussi des gens de religion.",
+      "Alors si tu étudies la médecine, les soins infirmiers, la pharmacie, ou tout métier utile aux gens, avec une bonne intention, tu fais aussi un acte d'adoration.",
+      "Et n'oublie pas le conseil de prudence : tout ce qu'on présente comme « médecine prophétique » sur internet n'est pas authentique. Vérifie les hadiths, et pour ta santé, consulte de vrais médecins. C'est ce que ferait un homme sage comme ach-Chafi'i."
+    ]
+  }, "« La science est de deux sortes. » Et la seconde, les musulmans l'avaient trop laissée aux autres.");
+
+  insertAfter("Conseiller en secret", {
+    t: "Al-Layth, le savant oublié",
+    p: [
+      "Quand ach-Chafi'i arriva en Égypte, il entendit parler d'un savant mort quelques années plus tôt : al-Layth ibn Sa'd, le grand imam de l'Égypte.",
+      "Al-Layth était un contemporain de Malik. Il était immensément riche, et immensément généreux. On rapporte qu'il donnait des sommes énormes aux savants et aux pauvres, et qu'il envoyait des cadeaux à l'imam Malik à Médine. Les deux savants s'écrivaient des lettres, et n'étaient pas toujours d'accord, mais ils se respectaient profondément.",
+      "Ach-Chafi'i a dit, selon ce que rapporte adh-Dhahabi : « Al-Layth était plus savant en fiqh que Malik, mais ses élèves ne l'ont pas préservé. »",
+      "Quelle phrase ! Un très grand savant dont l'école a presque disparu, simplement parce que ses élèves n'ont pas mis par écrit et transmis sa science, comme l'ont fait ceux de Malik, d'Abou Hanifa, d'ach-Chafi'i et d'Ahmad.",
+      "Cela nous apprend deux choses. D'abord, les quatre écoles ne sont pas les seules à avoir eu de grands savants. Il y en a eu beaucoup d'autres, comme al-Layth, al-Awza'i ou Soufyan ath-Thawri. Le fait qu'une école ait survécu ne veut pas dire que les autres avaient tort.",
+      "Ensuite, la transmission est une responsabilité. Ce que tu apprends, si tu ne le transmets pas, peut se perdre. Le Prophète ﷺ a dit : « Transmettez de moi, ne serait-ce qu'un verset. » (al-Boukhari 3461)",
+      "Ce que ta mère, ton père, ton maître t'ont appris de bon, transmets-le à tes enfants, à tes frères, à tes amis. Sinon, comme pour al-Layth, la science peut disparaître avec ceux qui la portaient."
+    ]
+  }, "« Il était plus savant que Malik, mais ses élèves ne l'ont pas préservé. »");
+
+  insertAfter("Al-Layth, le savant oublié", {
+    t: "Al-Oumm, le grand livre",
+    p: [
+      "En Égypte, dans les dernières années de sa vie, ach-Chafi'i dicta à ses élèves un livre immense : al-Oumm, « la Mère ». C'est l'œuvre où il expose sa nouvelle école, chapitre par chapitre : la purification, la prière, la zakat, le jeûne, le pèlerinage, le commerce, le mariage, la justice.",
+      "Ce qui rend al-Oumm si particulier, c'est que ach-Chafi'i ne se contente pas de donner des réponses. Il explique ses preuves, discute les avis des autres savants, et montre pourquoi il choisit telle opinion. Le lecteur apprend à raisonner, pas seulement à obéir.",
+      "Ach-Chafi'i était déjà malade quand il dictait ce livre. On rapporte qu'il souffrait beaucoup, qu'il saignait, et qu'il continuait pourtant à enseigner et à dicter, parfois appuyé sur des coussins.",
+      "Son élève ar-Rabi' ibn Soulayman, qui avait la charge de noter, a transmis al-Oumm après lui. C'est grâce à lui que ce livre est arrivé jusqu'à nous.",
+      "Pourquoi un homme malade, qui sait qu'il va bientôt mourir, s'épuise-t-il à dicter un livre ? Parce qu'il savait que la science utile continue après la mort. Le Prophète ﷺ a dit que les œuvres de l'homme s'arrêtent à sa mort, sauf trois, dont « une science dont on profite ». (Mouslim 1631)",
+      "Douze siècles plus tard, des savants étudient encore al-Oumm. Ach-Chafi'i continue à enseigner, par ses livres, des gens qu'il n'a jamais rencontrés.",
+      "Et toi, que laisseras-tu après toi ? Pas forcément un grand livre. Peut-être une sourate apprise à un enfant, un conseil sincère, une bonne habitude transmise. C'est aussi une science utile."
+    ]
+  }, "Malade, saignant, appuyé sur des coussins, il continue à dicter. Pourquoi ?");
+
+  s.sources.push("al-Boukhari 2899 (tirez, fils d'Isma'il) ; Mouslim 2664 (le croyant fort) ; al-Boukhari 5678 (un remède pour chaque maladie) ; Abou Dawoud 3855, Tirmidhi 2038 (soignez-vous) ; al-Boukhari 3461 ; Mouslim 1631 ; ach-Chafi'i : al-Oumm");
+  s.quiz.push(
+    ["Que disait ach-Chafi'i, selon ce qui est rapporté, au sujet d'al-Layth ibn Sa'd ?", ["Qu'il ne savait rien", "Qu'il était plus savant en fiqh que Malik, mais que ses élèves ne l'ont pas préservé", "Qu'il était son fils", "Qu'il fallait oublier ses livres"], 1,
+      "La transmission est une responsabilité : sans élèves qui transmettent, une grande science peut disparaître."],
+    ["Pourquoi ach-Chafi'i, malade, continuait-il à dicter al-Oumm ?", ["Pour gagner de l'argent", "Parce que la science utile continue à profiter après la mort", "Pour devenir calife", "Parce qu'on l'y obligeait"], 1,
+      "Les œuvres s'arrêtent à la mort sauf trois, dont une science dont on profite (Mouslim 1631)."]
+  );
+})();
+
 /* Version longue, racontée en série : Prophète Soulayman (et son père Dawoud). */
 S({
   id: 'sulaiman', cat: 'prophetes', title: 'Prophète Soulayman', ar: 'سُلَيْمَان', honor: 'as',
@@ -6958,6 +7968,96 @@ S({
     ["Quels sont les trois états de l'âme dans le Coran ?", ["Forte, faible, morte", "Qui incite au mal, qui se blâme, apaisée", "Riche, pauvre, sage", "Aucun"], 1],
     ["Qu'a demandé la vieille femme à Moussa en échange de la tombe de Youssouf ?", ["De l'or", "D'être avec lui au Paradis", "Une maison", "Rien"], 1]
   ]);
+})();
+
+/* Grands imams : derniers épisodes pour atteindre environ 30 minutes par série. */
+(function () {
+  function story(id) { return window.STORIES.find(function (x) { return x.id === id; }); }
+  function insertAfter(s, title, ep, teaser) {
+    var i = s.chapters.findIndex(function (c) { return c.t === title; });
+    if (i < 0) return;
+    ep.hook = s.chapters[i].hook; s.chapters[i].hook = teaser; s.chapters.splice(i + 1, 0, ep);
+  }
+
+  var ahmad = story('ahmad');
+  insertAfter(ahmad, "Un savant qui vivait pauvrement", {
+    t: "Celui qui fuyait la célébrité",
+    p: [
+      "L'imam Ahmad était devenu l'homme le plus célèbre de Bagdad. Partout où il passait, les gens le reconnaissaient, l'arrêtaient, voulaient lui embrasser la main. Et cela le faisait souffrir.",
+      "On rapporte qu'il disait : « J'aimerais être dans un des ravins de La Mecque, là où personne ne me connaît. » Et aussi : « Heureux celui dont Allah a rendu le nom obscur. »",
+      "Quand on le louait en sa présence, il changeait de visage. Il disait, selon ce qui est rapporté : « Celui qui se connaît lui-même, à quoi lui servent les louanges des gens ? » Il savait que les gens voyaient ses apparences, et qu'Allah seul connaissait ses défauts.",
+      "Il faisait lui-même ses courses au marché, portait ses propres affaires, et refusait qu'on le serve. Quand des élèves voulaient marcher derrière lui en cortège, il les renvoyait.",
+      "Pourquoi un tel refus de la célébrité ? Parce qu'il connaissait le danger de l'ostentation, ar-riya'. Le Prophète ﷺ a dit : « Ce que je crains le plus pour vous, c'est le petit associationnisme. » On lui demanda ce que c'était. Il dit : « L'ostentation. » (Ahmad 23630, hadith authentique)",
+      "Et il connaissait ce hadith : « Allah aime le serviteur pieux, riche de cœur et discret. » (Mouslim 2965)",
+      "Aujourd'hui, beaucoup cherchent la célébrité à tout prix : des vues, des abonnés, des likes. Même dans la religion, certains publient leurs prières et leurs aumônes pour être admirés. L'imam Ahmad, l'homme que tout Bagdad aimait, aurait voulu disparaître dans un ravin. Garde quelques bonnes actions entre toi et Allah, que personne d'autre ne connaîtra jamais."
+    ]
+  }, "Tout Bagdad le reconnaît dans la rue. Et lui rêve d'un ravin où personne ne le connaîtrait.");
+  ahmad.sources.push("Ahmad 23630 (l'ostentation) ; Mouslim 2965 (le serviteur discret)");
+
+  var ah = story('abuhanifa');
+  insertAfter(ah, "La science du marché", {
+    t: "« Voici ma maison »",
+    p: [
+      "Un savant célèbre a toujours des ennemis : des jaloux, des gens qui ne sont pas d'accord, ou simplement des gens en colère. Abou Hanifa en a eu beaucoup.",
+      "Les biographes rapportent qu'un jour, un homme se mit à l'insulter grossièrement pendant qu'il enseignait à la mosquée. Abou Hanifa ne répondit pas. Il continua son cours, et ordonna à ses élèves de ne rien dire.",
+      "À la fin du cours, il rentra chez lui. L'homme le suivit dans la rue, en continuant à l'insulter. Arrivé devant sa porte, Abou Hanifa se retourna et lui dit calmement, selon le sens : « Voici ma maison. S'il te reste quelque chose à dire, dis-le maintenant, avant que je n'entre. »",
+      "L'homme resta sans voix. Selon certaines versions, il eut honte, et demanda pardon.",
+      "Abou Hanifa avait compris un secret du Coran : « La bonne action et la mauvaise ne sont pas égales. Repousse le mal par ce qui est meilleur : et voilà que celui avec qui tu avais une inimitié devient comme un ami chaleureux. » (41:34)",
+      "On rapporte aussi qu'on lui demanda un jour de répondre aux insultes d'un homme. Il dit, selon le sens : « Qu'Allah lui pardonne. Allah sait que ce qu'il dit n'est pas vrai. Et s'il dit vrai, qu'Allah me pardonne. »",
+      "Aujourd'hui, sous chaque vidéo, il y a des insultes. On a envie de répondre, de se défendre, d'écraser l'autre. Pense à Abou Hanifa devant sa porte : le silence et la patience sont parfois la réponse la plus forte. Le Prophète ﷺ a dit : « Le fort n'est pas celui qui terrasse les autres. Le fort est celui qui se maîtrise quand il est en colère. » (al-Boukhari 6114, Mouslim 2609)"
+    ],
+    ayah: '41:34'
+  }, "Un homme l'insulte pendant tout le cours, puis le suit jusqu'à sa porte.");
+  ah.sources.push("Coran 41:34 ; al-Boukhari 6114, Mouslim 2609 (le fort est celui qui se maîtrise)");
+  ah.quiz.push(["Un homme t'insulte en public et te suit jusque chez toi. Que t'apprend Abou Hanifa ?", ["L'insulter encore plus fort", "Rester calme et repousser le mal par le bien", "Appeler tes amis pour le frapper", "Publier une vidéo contre lui"], 1,
+    "« Repousse le mal par ce qui est meilleur » (41:34). Le fort est celui qui se maîtrise dans la colère (al-Boukhari 6114)."]);
+
+  var ml = story('malik');
+  insertAfter(ml, "Al-Mouwatta'", {
+    t: "Ouvrons le Mouwatta'",
+    p: [
+      "Qu'y a-t-il exactement dans le Mouwatta' ? Ouvrons-le ensemble.",
+      "Le livre commence par les horaires de la prière. Malik y rapporte des hadiths du Prophète ﷺ, puis des lettres du calife 'Omar à ses gouverneurs, leur rappelant que la prière est la chose la plus importante de leur travail. Puis viennent la purification, la prière, le jeûne, la zakat, le pèlerinage, puis le mariage, le commerce, l'héritage, la justice, et les bonnes manières.",
+      "Ce qui frappe, c'est le mélange. À côté des hadiths du Prophète ﷺ, Malik rapporte les décisions des compagnons, les avis de leurs élèves, et la pratique des gens de Médine. Et souvent, il ajoute : « Et c'est ce que nous pratiquons ici. » Le lecteur voit la Sounna vivante, telle qu'on l'appliquait dans la ville du Prophète ﷺ.",
+      "On y trouve des perles. Par exemple, Malik rapporte que le Prophète ﷺ a dit : « J'ai laissé parmi vous deux choses : vous ne vous égarerez pas tant que vous vous y attacherez : le Livre d'Allah et la Sounna de Son Prophète. » Malik le rapporte sans chaîne complète, et d'autres savants, comme al-Hakim, l'ont rapporté avec des chaînes qui le renforcent.",
+      "Cette phrase résume toute la méthode des imams que nous avons racontés : le Livre d'Allah et la Sounna. Pas un homme, pas une école, pas un groupe.",
+      "Le Mouwatta' existe aujourd'hui en plusieurs versions, transmises par différents élèves de Malik. La plus répandue est celle de Yahya ibn Yahya al-Laythi, l'élève andalou qui n'était pas sorti voir l'éléphant.",
+      "Si tu veux un jour lire un grand livre de hadith dans sa langue d'origine, le Mouwatta' est un beau début : un livre court comparé aux autres, écrit avec amour, dans la ville du Prophète ﷺ."
+    ]
+  }, "Qu'y a-t-il dans ce livre qui a traversé douze siècles ? Ouvrons-le ensemble.");
+  ml.sources.push("Malik : al-Mouwatta' (horaires de la prière ; « deux choses ») ; al-Hakim : al-Moustadrak");
+
+  var sh = story('shafii');
+  insertAfter(sh, "Né l'année où mourut Abou Hanifa", {
+    t: "Une mère qui connaissait le Coran",
+    p: [
+      "On parle peu de la mère d'ach-Chafi'i. Pourtant, c'est elle qui a fait de lui ce qu'il est devenu. Veuve, pauvre, elle a pris son bébé dans ses bras et a traversé le désert de Gaza à La Mecque, pour qu'il grandisse près de la Ka'ba et de sa tribu.",
+      "Elle était aussi une femme intelligente, qui connaissait le Coran. Les biographes, comme al-Bayhaqi, rapportent une histoire à son sujet.",
+      "Un jour, elle fut appelée à témoigner devant un juge à La Mecque, avec une autre femme. Le juge voulut les séparer pour les interroger chacune de son côté, comme on le faisait parfois avec les témoins.",
+      "La mère d'ach-Chafi'i refusa avec respect, et lui rappela le verset sur le témoignage : « …afin que si l'une d'elles s'égare, l'autre puisse lui rappeler. » (2:282) Elle expliqua, selon le sens, qu'Allah avait voulu que les deux femmes témoignent ensemble, pour que l'une puisse rappeler à l'autre. Les séparer allait contre la sagesse du verset. Le juge reconnut qu'elle avait raison.",
+      "C'est dans cette maison, avec cette mère qui citait le Coran devant un juge, qu'a grandi le futur auteur du premier livre sur la compréhension des textes.",
+      "Comme pour l'imam Ahmad et pour al-Boukhari, derrière un grand savant, il y avait une mère seule, pauvre, courageuse, qui a tout sacrifié pour que son fils apprenne.",
+      "Le Prophète ﷺ, quand on lui demanda qui méritait le plus la bonne compagnie, répondit trois fois : « Ta mère », puis : « Ton père. » (al-Boukhari 5971, Mouslim 2548) Si tu as encore ta mère, va l'embrasser aujourd'hui. Et si elle n'est plus là, invoque pour elle."
+    ],
+    ayah: '2:282'
+  }, "Devant un juge de La Mecque, une femme pauvre récite un verset. Le juge reconnaît qu'elle a raison.");
+  sh.sources.push("Coran 2:282 ; al-Boukhari 5971, Mouslim 2548 (ta mère) ; al-Bayhaqi : Manaqib ach-Chafi'i");
+
+  var bk = story('bukhari');
+  insertAfter(bk, "La piété cachée", {
+    t: "Le Ramadan d'al-Boukhari",
+    p: [
+      "Les proches d'al-Boukhari racontent que le mois de Ramadan était pour lui un mois à part.",
+      "Selon ce que rapporte al-Khatib dans Tarikh Baghdad, quand arrivait la première nuit de Ramadan, ses compagnons se réunissaient autour de lui. Il dirigeait la prière de la nuit, et récitait à chaque unité vingt versets, jusqu'à terminer le Coran dans la prière.",
+      "On rapporte aussi qu'il lisait beaucoup le Coran pendant le jour, et qu'au moment de terminer une lecture complète, il faisait une invocation, en disant qu'à chaque fin du Coran il y a une invocation exaucée.",
+      "Le Ramadan est le mois du Coran. Allah dit : « Le mois de Ramadan, au cours duquel le Coran a été descendu comme guide pour les gens. » (2:185) Et Jibril venait chaque nuit de Ramadan réviser le Coran avec le Prophète ﷺ. (al-Boukhari 6, Mouslim 2308)",
+      "Ce qui est beau, c'est qu'al-Boukhari, l'homme du hadith, n'a jamais mis le hadith à la place du Coran. Les deux allaient ensemble : le Coran, parole d'Allah, au centre ; la Sounna pour l'expliquer et le vivre.",
+      "Le Prophète ﷺ a dit : « Celui qui jeûne le Ramadan avec foi et en espérant la récompense, ses péchés passés lui sont pardonnés. Et celui qui prie les nuits du Ramadan avec foi et en espérant la récompense, ses péchés passés lui sont pardonnés. » (al-Boukhari 38 et 37, Mouslim 760 et 759)",
+      "Au prochain Ramadan, fixe-toi un objectif, même modeste : une lecture complète du Coran, ou la moitié, ou un tiers. Et fais comme al-Boukhari : termine-le par une invocation sincère."
+    ],
+    ayah: '2:185'
+  }, "Chaque premier soir de Ramadan, ses compagnons se réunissent autour de lui.");
+  bk.sources.push("Coran 2:185 ; al-Boukhari 6, Mouslim 2308 (Jibril et le Coran) ; al-Boukhari 37-38, Mouslim 759-760 (le jeûne et la prière du Ramadan)");
 })();
 
 window.TR=window.TR||{en:{},ar:{}};
