@@ -131,6 +131,13 @@ h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.1;text-wrap:
 .page .num{font-size:.75rem;letter-spacing:.2em;color:var(--accent);font-weight:700}
 .page h1{font-size:2.5rem;margin-top:8px}
 .page .rule{width:56px;height:2px;background:var(--accent);margin:18px 0 22px;opacity:.6}
+.aplay{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:10px 14px;margin:0 0 22px}
+.aplay .pp{width:52px;height:52px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:1.25rem;display:grid;place-items:center}
+.aplay .mid{display:grid;gap:6px;min-width:0}
+.aplay .mid b{font-size:.92rem}
+.aplay .mid small{color:var(--muted);font-size:.78rem}
+.aplay input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+.aplay .sp{font-weight:800;font-size:.85rem;padding:8px 10px;border-radius:12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink)}
 .prose{font-family:var(--f-read);font-size:var(--read-size);line-height:1.75;max-width:65ch}
 .prose p{margin:0 0 1.05em}
 .prose .ref{font-family:var(--f-ui);font-size:.78em;font-weight:700;color:var(--accent);white-space:nowrap}
@@ -8060,6 +8067,7 @@ S({
   bk.sources.push("Coran 2:185 ; al-Boukhari 6, Mouslim 2308 (Jibril et le Coran) ; al-Boukhari 37-38, Mouslim 759-760 (le jeûne et la prière du Ramadan)");
 })();
 
+window.AUDIO={"yunus": {"1": 106, "2": 108, "3": 80, "4": 89, "5": 66, "6": 74, "7": 73, "8": 114, "9": 80, "10": 92, "11": 101, "12": 81}};
 window.TR=window.TR||{en:{},ar:{}};
 /* English translation: Prophet Muhammad ﷺ (episodes 1-11). */
 window.TR.en.muhammad = {
@@ -9053,6 +9061,7 @@ function go(h){ if(location.hash==='#'+h) route(); else location.hash=h; }
 function route(){
   document.querySelectorAll('.toc').forEach(x=>x.remove());
   if(SND.cur && !/^#(r|s)-/.test(location.hash)) stopAmb();
+  if(!/^#r-/.test(location.hash) && !AUD.paused) AUD.pause();
   const h = (location.hash||'#accueil').slice(1);
   let m;
   if(h==='accueil'||h==='') return home();
@@ -9165,6 +9174,9 @@ function noiseBuf(c, kind){ const n=c.sampleRate*4, b=c.createBuffer(1,n,c.sampl
     else d[i]=w*0.5; }
   return b; }
 function loopNoise(c,kind){ const s=c.createBufferSource(); s.buffer=noiseBuf(c,kind); s.loop=true; return s; }
+const AUD = new Audio(); AUD.preload='none'; let AUD_AUTO=false;
+function audioOf(id,i){ const a=(window.AUDIO||{})[id]; return a && a[i+1] ? {src:'audio/'+id+'/'+String(i+1).padStart(2,'0')+'.mp3', dur:a[i+1]} : null; }
+function fmtDur(sec){ sec=Math.round(sec||0); return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0'); }
 function stopAmb(){ SND.nodes.forEach(n=>{ try{ n.stop&&n.stop(); }catch(e){} try{ n.disconnect(); }catch(e){} }); SND.nodes=[]; clearInterval(SND.timer); SND.cur=null; }
 function startAmb(kind){
   stopAmb(); if(kind==='off') return; const c=actx(); if(!c) return; SND.cur=kind;
@@ -9216,7 +9228,7 @@ function reader(id){
     if(i<n){
       const c=s.chapters[i];
       pageEl.innerHTML=((st.lang||'fr')!=='fr' && !s._tr?'<div class="trnote"><b>Traduction en cours</b><br>Ce récit est pour l\'instant disponible en français. Sa traduction est en cours.</div>':'')+(i===0?'<div class="art" data-scene="'+s.scene+'" data-key="'+s.id+'-top" style="border-radius:18px;overflow:hidden;aspect-ratio:16/9;margin-bottom:22px;background:var(--night);max-width:100%"></div>':'')+
-        '<div class="num">ÉPISODE '+String(i+1).padStart(2,'0')+' / '+String(n).padStart(2,'0')+'</div><h1>'+esc(c.t)+'</h1><div class="rule"></div><div class="prose">'+c.p.map(t=>'<p>'+prose(t)+'</p>').join('')+'</div>'+
+        '<div class="num">ÉPISODE '+String(i+1).padStart(2,'0')+' / '+String(n).padStart(2,'0')+'</div><h1>'+esc(c.t)+'</h1><div class="rule"></div>'+(audioOf(id,i)?'<div class="aplay" id="ap"><button class="pp" id="apb" aria-label="Écouter l\'épisode">▶</button><div class="mid"><b>Écouter l\'épisode</b><input type="range" id="apr" min="0" max="1000" value="0" aria-label="Position"><small id="apt">0:00 / '+fmtDur(audioOf(id,i).dur)+' · voix de Sigma du Désert</small></div><button class="sp" id="aps" aria-label="Vitesse">'+(st.aspeed||1)+'×</button></div>':'')+'<div class="prose">'+c.p.map(t=>'<p>'+prose(t)+'</p>').join('')+'</div>'+
         (c.ayah?'<div class="ayah" id="ay" data-ref="'+c.ayah+'"><div class="muted">Chargement du verset '+c.ayah+'…</div></div>':'')+
         (i<n-1?'<div class="next-ep"><div class="eyebrow">À suivre · Épisode '+(i+2)+'</div>'+(c.hook?'<p class="hook">'+esc(c.hook)+'</p>':'')+'<b>'+esc(s.chapters[i+1].t)+'</b></div>':'<div class="next-ep"><div class="eyebrow">Fin de la série</div><b>Sources et quiz</b></div>')+'<nav class="pager" aria-label="Épisodes"><button class="pbtn" id="prev" '+(i===0?'disabled':'')+'>'+svg('back').replace('<svg','<svg width="18" height="18" style="stroke:currentColor;fill:none;stroke-width:2"')+'<span class="hide-s">Précédent</span></button><span class="c">'+(i+1)+' / '+n+'</span><button class="pbtn primary" id="next">'+(i<n-1?'Épisode suivant':'Terminer')+svg('next').replace('<svg','<svg width="18" height="18" style="stroke:currentColor;fill:none;stroke-width:2"')+'</button></nav>';
       if(c.ayah){ loadQuran().then(()=>{ const v=verse(c.ayah), el=document.getElementById('ay'); if(!el||!v) return;
@@ -9228,6 +9240,19 @@ function reader(id){
         '<div class="endcard"><a class="big" style="text-align:center;text-decoration:none" href="#q-'+id+'">Faire le quiz · '+s.quiz.length+' questions</a><button class="pbtn" id="prev" style="justify-content:center">Revoir le dernier épisode</button><a class="pbtn" style="justify-content:center;text-decoration:none" href="#explorer">Choisir un autre récit</a></div>';
     }
     paintArts(pageEl);
+    const au=i<n?audioOf(id,i):null, apb=document.getElementById('apb');
+    if(au && apb){
+      const apr=document.getElementById('apr'), apt=document.getElementById('apt'), aps=document.getElementById('aps');
+      const url=new URL(au.src, location.href).href, mine=AUD.src===url;
+      const paint=()=>{ apb.textContent=(mine||AUD.src===url)&&!AUD.paused?'❚❚':'▶'; if(AUD.src===url && AUD.duration){ apr.value=Math.round(AUD.currentTime/AUD.duration*1000); apt.textContent=fmtDur(AUD.currentTime)+' / '+fmtDur(AUD.duration)+' · voix de Sigma du Désert'; } };
+      AUD.ontimeupdate=paint; AUD.onplay=paint; AUD.onpause=paint;
+      AUD.onended=()=>{ paint(); if(i<n-1 && audioOf(id,i+1)){ AUD_AUTO=true; i++; st.pos[id]=i; save(); show(); window.scrollTo(0,0); } };
+      apb.onclick=()=>{ if(AUD.src!==url){ AUD.src=url; AUD.playbackRate=st.aspeed||1; } if(AUD.paused) AUD.play().catch(()=>toast('Audio indisponible pour le moment')); else AUD.pause(); };
+      apr.oninput=()=>{ if(AUD.src===url && AUD.duration) AUD.currentTime=apr.value/1000*AUD.duration; };
+      aps.onclick=()=>{ const L=[1,1.25,1.5,0.75], k=(L.indexOf(st.aspeed||1)+1)%L.length; st.aspeed=L[k]; save(); AUD.playbackRate=L[k]; aps.textContent=L[k]+'×'; };
+      if(AUD_AUTO){ AUD_AUTO=false; AUD.src=url; AUD.playbackRate=st.aspeed||1; AUD.play().catch(()=>{}); }
+      paint();
+    } else if(!AUD.paused && !AUD_AUTO) { /* l'audio d'un autre épisode continue jusqu'à ce qu'on l'arrête */ }
     const p=document.getElementById('prev'), nx=document.getElementById('next');
     if(p) p.onclick=()=>{ if(i>0){ i--; st.pos[id]=i; save(); show(); window.scrollTo(0,0);} };
     if(nx) nx.onclick=()=>{ i++; st.pos[id]=Math.min(i,n); save(); show(); window.scrollTo(0,0); };
