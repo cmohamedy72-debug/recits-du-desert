@@ -1,5 +1,5 @@
 // Récits du Désert : lecture hors connexion. La page se met à jour seule quand le réseau est disponible.
-const CACHE = 'rdd-2ffc72d8f3';
+const CACHE = 'rdd-3ad37d6fe4';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'quran.json', 'quran_en.json'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
